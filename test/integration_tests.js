@@ -97,6 +97,11 @@ var validateReports = function(test, input) {
                     test.done();
                 } else {
                     test.ok(report.conforms() === expectedReport.conforms());
+                    if (report.results().length !== expectedReport.results().length) {
+                        console.log(JSON.stringify(report.results()))
+                        console.log("expected:")
+                        console.log(JSON.stringify(expectedReport.results()))
+                    }
                     test.ok(report.results().length === expectedReport.results().length);
                     var results = report.results() || [];
                     var expectedResults = expectedReport.results();

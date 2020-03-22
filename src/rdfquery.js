@@ -912,23 +912,45 @@ function compareTerms(t1, t2) {
         return bt;
     }
     else {
-        // TODO: Does not handle numeric or date comparison
-        var bv = t1.value.localeCompare(t2.value);
-        if(bv != 0) {
-            return bv;
+        if(t1.isLiteral()) {
+            // TODO: Does not handle date comparison
+            var bd = t1.datatype.uri.localeCompare(t2.datatype.uri);
+            if(bd != 0) {
+                return bd;
+            }
+            else if(T("rdf:langString").equals(t1.datatype)) {
+                return t1.language.localeCompare(t2.language);
+            }
+            else if(T("xsd:integer").equals(t1.datatype) || T("xsd:decimal").equals(t1.datatype) || T("xsd:long").equals(t1.datatype)) {
+                const t1val = parseInt(t1.valueOf());
+                const t2val = parseInt(t2.valueOf());
+                if (t1val === t2val) {
+                    return 0;
+                } else if (t1val < t2val) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+            else if(T("xsd:float").equals(t1.datatype) || T("xsd:double").equals(t1.datatype)) {
+                const t1val = parseFloat(t1.valueOf());
+                const t2val = parseFloat(t2.valueOf());
+                if (t1val === t2val) {
+                    return 0;
+                } else if (t1val < t2val) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+            else {
+                return 0;
+            }
         }
         else {
-            if(t1.isLiteral()) {
-                var bd = t1.datatype.uri.localeCompare(t2.datatype.uri);
-                if(bd != 0) {
-                    return bd;
-                }
-                else if(T("rdf:langString").equals(t1.datatype)) {
-                    return t1.language.localeCompare(t2.language);
-                }
-                else {
-                    return 0;
-                }
+            var bv = t1.value.localeCompare(t2.value);
+            if(bv != 0) {
+                return bv;
             }
             else {
                 return 0;

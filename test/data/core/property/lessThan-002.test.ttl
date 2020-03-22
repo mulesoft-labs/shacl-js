@@ -57,19 +57,63 @@ ex:GraphValidationTestCase
           sh:sourceShape ex:TestShape-first ;
           sh:value 2 ;
         ] ;
+      sh:result [
+          rdf:type sh:ValidationResult ;
+          sh:focusNode ex:InvalidInstance2 ;
+          sh:resultPath ex:first ;
+          sh:resultSeverity sh:Violation ;
+          sh:sourceConstraintComponent sh:LessThanConstraintComponent ;
+          sh:sourceShape ex:TestShape-first ;
+          sh:value "10"^^xsd:integer ;
+      ] ;
+      sh:result [
+          rdf:type sh:ValidationResult ;
+          sh:focusNode ex:InvalidInstance2 ;
+          sh:resultPath ex:first ;
+          sh:resultSeverity sh:Violation ;
+          sh:sourceConstraintComponent sh:LessThanConstraintComponent ;
+          sh:sourceShape ex:TestShape-first ;
+          sh:value "10"^^xsd:integer ;
+      ] ;
+      sh:result [
+          rdf:type sh:ValidationResult ;
+          sh:focusNode ex:InvalidInstance2 ;
+          sh:resultPath ex:first ;
+          sh:resultSeverity sh:Violation ;
+          sh:sourceConstraintComponent sh:LessThanConstraintComponent ;
+          sh:sourceShape ex:TestShape-first ;
+          sh:value "10.0"^^xsd:double ;
+      ] ;
+      sh:result [
+          rdf:type sh:ValidationResult ;
+          sh:focusNode ex:InvalidInstance2 ;
+          sh:resultPath ex:first ;
+          sh:resultSeverity sh:Violation ;
+          sh:sourceConstraintComponent sh:LessThanConstraintComponent ;
+          sh:sourceShape ex:TestShape-first ;
+          sh:value "10.0"^^xsd:double ;
+        ] ;
     ] ;
 .
 ex:InvalidInstance1
   ex:first 1 ;
   ex:first 2 ;
   ex:second "a" ;
-  ex:second "b" ;
+  ex:second "b"
 .
+
+ex:InvalidInstance2
+  ex:first "10"^^xsd:integer ;
+  ex:first "10.0"^^xsd:double ;
+  ex:second "3"^^xsd:integer ;
+  ex:second "3.0"^^xsd:double
+.
+
 ex:TestShape
   rdf:type sh:NodeShape ;
   rdfs:label "Test shape" ;
   sh:property ex:TestShape-first ;
-  sh:targetNode ex:InvalidInstance1 ;
+  sh:targetNode ex:InvalidInstance1 , ex:InvalidInstance2;
 .
 ex:TestShape-first
   sh:path ex:first ;
