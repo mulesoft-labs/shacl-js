@@ -12,9 +12,9 @@
     "rdflib": "^0.15.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-browserify": "^0.5.1",
-    "gulp-cli": "^1.4.0",
+    "gulp-cli": "^2.2.0",
     "gulp-nodeunit": "^0.1.0",
     "gulp-serve": "^1.4.0",
     "http-browserify": "^1.7.0",

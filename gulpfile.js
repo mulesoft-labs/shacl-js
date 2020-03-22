@@ -60,12 +60,12 @@ gulp.task('checkJavaFiles', function (cb) {
     checkFiles(files);
 });
 
-gulp.task('test', function () {
-    gulp.src('./test/**/*.js')
-        .pipe(nodeunit({}));
+gulp.task('test', function (done) {
+    gulp.src('./test/**/*.js').pipe(nodeunit({}));
+    done();
 });
 
-gulp.task('browserify', function () {
+gulp.task('browserify', function (done) {
     if (fs.existsSync('dist/index.js')) {
         fs.unlinkSync('dist/index.js');
     }
@@ -79,6 +79,7 @@ gulp.task('browserify', function () {
         .pipe(gulp.dest('dist'))
         .on('end', function () {
             fs.renameSync('dist/index.js', 'dist/shacl.js');
+            done();
         });
 });
 
@@ -144,6 +145,10 @@ gulp.task('generate-public-test-cases', function () {
 });
 
 
-gulp.task('test-web', ['generate-public-test-cases', 'browserify-public-tests'], serve('public'));
+gulp.task('test-web', gulp.series('generate-public-test-cases', 'browserify-public-tests', serve('public'), function(done) {
+    done();
+}));
 
-gulp.task('default', ['test', 'browserify']);
+gulp.task('default', gulp.series('test', 'browserify', function(done) {
+    done();
+}));
