@@ -1,8 +1,10 @@
 var gulp = require('gulp');
 var nodeunit = require('gulp-nodeunit');
-var browserify = require('gulp-browserify');
-var fs = require('fs');
+var browserify = require("browserify");
+var source = require('vinyl-source-stream');
 var serve = require('gulp-serve');
+var fs = require('fs');
+
 
 var http = require("https");
 
@@ -17,6 +19,19 @@ var fetch = function (url, c) {
         });
     });
 };
+
+gulp.task('browserify', function() {
+    if (fs.existsSync('dist/shacl.js')) {
+        fs.unlinkSync('dist/shacl.js');
+    }
+
+    return browserify('./index.js')
+        .bundle()
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('shacl.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest('./dist/'));
+});
 
 gulp.task('checkJavaFiles', function (cb) {
     var files = [
@@ -62,6 +77,7 @@ gulp.task('test', function (done) {
     done();
 });
 
+/*
 gulp.task('browserify', function (done) {
     if (fs.existsSync('dist/index.js')) {
         fs.unlinkSync('dist/index.js');
@@ -79,7 +95,7 @@ gulp.task('browserify', function (done) {
             done();
         });
 });
-
+*/
 
 gulp.task('generate-vocabularies', function () {
     var vocabularies = fs.readdirSync("./vocabularies");

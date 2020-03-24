@@ -1,25 +1,63 @@
-var $rdf = require("rdflib");
+const n3 = require("n3");
+const JsonLdParser = require("jsonld-streaming-parser").JsonLdParser;
+
+var $rdf = n3.DataFactory;
+$rdf.parse = function(data, store, namedGraph, mediaType, cb) {
+    const parser = new n3.Parser({format: mediaType});
+    parser.parse(data, function(error, quad, prefixes) {
+        if (error) {
+            cb(error)
+        } else if (quad) {
+            store.addQuad(quad.subject, quad.predicate, quad.object, $rdf.namedNode(namedGraph))
+        } else {
+            cb(null, store);
+        }
+    })
+};
+$rdf.graph = function() {
+    const store = new n3.Store();
+
+    store.add = function(s,p,o) {
+        store.addQuad(s, p, o);
+    };
+
+    store.toNT = function(cb) {
+        const writer = new n3.Writer({ format: 'application/n-quads' });
+        store.forEach(function(quad) {
+            writer.addQuad(quad.subject, quad.predicate, quad.object);
+        });
+        writer.end(cb)
+    };
+
+
+    return store;
+};
+
 var RDFQuery = require("./rdfquery");
 var T = RDFQuery.T;
 
 var errorHandler = function(e){
-    require("debug")("rdflib-graph::error")(e);
+    require("debug")("n3-graph::error")(e);
     throw(e);
 };
 
 // Monkey Patching rdflib, Literals, BlankNodes and NamedNodes
 var exLiteral = $rdf.literal("a", "de");
 Object.defineProperty(Object.getPrototypeOf(exLiteral), "lex", { get: function () { return this.value } });
+Object.getPrototypeOf(exLiteral).toString = function() { return this.value };
 Object.getPrototypeOf(exLiteral).isBlankNode = function () { return false };
 Object.getPrototypeOf(exLiteral).isLiteral = function () { return true };
 Object.getPrototypeOf(exLiteral).isURI = function () { return false };
 
 var exBlankNode = $rdf.blankNode();
+Object.getPrototypeOf(exBlankNode).toString = function() { return this.id };
 Object.getPrototypeOf(exBlankNode).isBlankNode = function () { return true };
 Object.getPrototypeOf(exBlankNode).isLiteral = function () { return false };
 Object.getPrototypeOf(exBlankNode).isURI = function () { return false };
 
 var exNamedNode = $rdf.namedNode("urn:x-dummy");
+Object.defineProperty(Object.getPrototypeOf(exNamedNode), "uri", {get: function() { return this.id }});
+Object.getPrototypeOf(exNamedNode).toString = function() { return this.id };
 Object.getPrototypeOf(exNamedNode).isBlankNode = function () { return false };
 Object.getPrototypeOf(exNamedNode).isLiteral = function () { return false };
 Object.getPrototypeOf(exNamedNode).isURI = function () { return true };
@@ -31,13 +69,15 @@ Object.getPrototypeOf(exNamedNode).isURI = function () { return true };
  * @param store rdflib graph object
  * @constructor
  */
-var RDFLibGraph = function (store) {
+const RDFLibGraph = function (store) {
     if (store != null) {
         this.store = store;
     } else {
         this.store = $rdf.graph();
     }
 };
+
+RDFLibGraph.$rdf = $rdf;
 
 RDFLibGraph.prototype.find = function (s, p, o) {
     return new RDFLibGraphIterator(this.store, s, p, o);
@@ -53,27 +93,30 @@ RDFLibGraph.prototype.loadMemoryGraph = function(graphURI, rdfModel, andThen) {
 };
 
 RDFLibGraph.prototype.loadGraph = function(str, graphURI, mimeType, andThen, handleError) {
-    var newStore = $rdf.graph();
+    const newStore = $rdf.graph();
     handleError = handleError || errorHandler;
-    var that = this;
+    const that = this;
     if (mimeType === "application/ld+json") {
-        var error = false;
-        $rdf.parse(str, newStore, graphURI, mimeType, function (err, kb) {
-            if (err) {
-                error = true;
-                handleError(err)
-            }
-            else if (!error) {
-                postProcessGraph(that.store, graphURI, newStore);
-                andThen();
-            }
+        const myParser = new JsonLdParser({
+            dataFactory: $rdf
         });
+        myParser
+            .on('data', that.store.addQuad)
+            .on('error', handleError)
+            .on('end', andThen);
     }
     else {
         try {
-            $rdf.parse(str, newStore, graphURI, mimeType);
-            postProcessGraph(this.store, graphURI, newStore);
-            andThen();
+            const parser = new n3.Parser({format: 'text/turtle'});
+            parser.parse(str, function(error, quad, prefixes) {
+                if (error) {
+                    handleError(error);
+                } else if(quad) {
+                    that.store.addQuad(quad)
+                } else {
+                    andThen()
+                }
+            });
         }
         catch (ex) {
             handleError(ex);
@@ -89,7 +132,7 @@ RDFLibGraph.prototype.clear = function() {
 
 var RDFLibGraphIterator = function (store, s, p, o) {
     this.index = 0;
-    this.ss = store.statementsMatching(s, p, o);
+    this.ss = store.getQuads(s, p, o);
 };
 
 RDFLibGraphIterator.prototype.close = function () {
@@ -118,7 +161,7 @@ function ensureBlankId(component) {
 
 function postProcessGraph(store, graphURI, newStore) {
 
-    var ss = newStore.statementsMatching(undefined, undefined, undefined);
+    var ss = newStore.getQuads();
     for (var i = 0; i < ss.length; i++) {
         var object = ss[i].object;
         ensureBlankId(ss[i].subject);

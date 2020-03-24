@@ -1,8 +1,7 @@
 var SHACLValidator = require("../index");
 var fs = require("fs");
 // expected result
-var $rdf = require("rdflib");
-var rdflibgraph = require("../src/rdflib-graph");
+var rdflibgraph = require("../src/n3-graph");
 var RDFLibGraph = rdflibgraph.RDFLibGraph;
 
 
@@ -78,7 +77,7 @@ var expectedResult = function(data, mediaType, cb) {
 };
 
 var isBlank = function(s) {
-    return s != null && (s.indexOf("_:") === 0 || s.indexOf("_g_") > -1);
+    return s != null && (s.indexOf("_:") === 0 || s.indexOf("_g_") > -1 || s.startsWith("b"));
 }
 
 var validateReports = function(test, input) {
@@ -92,7 +91,9 @@ var validateReports = function(test, input) {
         } else {
             new SHACLValidator().validate(data, "text/turtle", data, "text/turtle", function (e, report) {
                 if (e != null) {
+                    console.log("----------- HERE -----------------")
                     console.log(e);
+                    console.log("----------------------------------")
                     test.ok(e == null);
                     test.done();
                 } else {
@@ -115,7 +116,6 @@ var validateReports = function(test, input) {
                                 results[i].sourceConstraintComponent() === expectedResults[j].sourceConstraintComponent()) {
                                 found = true;
                             }
-
                         }
                         test.ok(found === true);
                     }

@@ -230,6 +230,10 @@ ValidationEngine.prototype.validateNodeAgainstConstraint = function (focusNode, 
             }
             return errorFound;
         }
+        if (T("sh:SPARQLConstraintComponent").equals(constraint.component.node)) {
+            console.log("SPARQL CONSTRAINT!!!")
+            throw new Error("WIP!")
+        }
         else {
             var validationFunction = constraint.shape.isPropertyShape() ?
                 constraint.component.propertyValidationFunction :

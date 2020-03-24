@@ -2,19 +2,19 @@
  * Created by antoniogarrote on 08/05/2017.
  */
 
-var jsonld = require("jsonld");
+const JsonLdSerializer = require("jsonld-streaming-serializer").JsonLdSerializer;
 var ValidationReport = require("./src/validation-report");
 var debug = require("debug")("index");
 var error = require("debug")("index::error");
-var $rdf = require("rdflib");
 
 var TermFactory = require("./src/rdfquery/term-factory");
 var RDFQuery = require("./src/rdfquery");
 var T = RDFQuery.T;
 var ShapesGraph = require("./src/shapes-graph");
 var ValidationEngine = require("./src/validation-engine");
-var rdflibgraph = require("./src/rdflib-graph");
+var rdflibgraph = require("./src/n3-graph");
 var RDFLibGraph = rdflibgraph.RDFLibGraph;
+var $rdf = RDFLibGraph.$rdf;
 var fs = require("fs");
 var ValidationEngineConfiguration = require("./src/validation-engine-configuration");
 
@@ -163,28 +163,21 @@ SHACLValidator.prototype.showValidationResults = function(cb) {
             resultGraph.add(result[0], result[1], result[2]);
         }
 
-        // Unsupported bug in JSON parser bug workaround
-        var oldToString = resultGraph.toString;
-        resultGraph.toString = function () {
-            var text = oldToString.call(resultGraph);
-            text = text.replace(/^\{/, "").replace(/\}$/, "");
-            return text;
-        };
-        //////////////////
-
-        jsonld.fromRDF(resultGraph.toNT(), {}, function (err, doc) {
-            if (err != null) {
-                cb(err);
-            } else {
-                jsonld.flatten(doc, function (err, result) {
-                    if (err != null) {
-                        cb(err);
-                    } else {
-                        cb(null, new ValidationReport(result));
-                    }
-                });
-            }
-        });
+        const mySerializer = new JsonLdSerializer({ space: '  ' });
+        var acc = "";
+        mySerializer
+            .on('data', function(chunk) {
+                acc = acc += chunk;
+            })
+            .on('error', cb)
+            .on('end', function() {
+                cb(null, new ValidationReport(JSON.parse(acc)));
+            });
+        const resultGraphDataSet = resultGraph.getQuads();
+        for (let i=0; i< resultGraphDataSet.length; i++) {
+            mySerializer.write(resultGraphDataSet[i]);
+        }
+        mySerializer.end();
     }
 };
 

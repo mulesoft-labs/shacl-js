@@ -8,6 +8,7 @@ exports.maxErrorsTest = function(test) {
     var data = fs.readFileSync(__dirname + "/data/core/property/class-001.test.ttl").toString();
 
     validator.validate(data, "text/turtle", data, "text/turtle", function(e, report) {
+        console.log(e)
         test.ok(report.conforms() === false);
         test.ok(report.results().length === 2);
         validator.getConfiguration().setValidationErrorBatch(1);

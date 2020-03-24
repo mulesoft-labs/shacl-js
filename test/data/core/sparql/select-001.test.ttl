@@ -1,0 +1,52 @@
+# baseURI: http://datashapes.org/sh/tests/core/sparql/select-001.test
+# imports: http://datashapes.org/dash
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://datashapes.org/sh/tests/core/sparql/select-001.test#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://datashapes.org/sh/tests/core/sparql/select-001.test>
+    rdf:type owl:Ontology ;
+    rdfs:label "Test of sh:select at shape 001" ;
+    owl:imports <http://datashapes.org/dash> ;
+.
+ex:LanguageExampleShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Country ;
+    sh:sparql [
+            sh:message "Values are literals with German language tag." ;
+            #sh:prefixes ex: ;
+            sh:select """
+			SELECT $this (<http://datashapes.org/sh/tests/core/sparql/select-001.test#germanLabel> AS ?path) ?value
+			WHERE {
+				$this <http://datashapes.org/sh/tests/core/sparql/select-001.test#germanLabel> ?value .
+				FILTER (!isLiteral(?value) || !langMatches(lang(?value), "de"))
+			}
+			""" ;
+              ]
+.
+ex:GraphValidationTestCase
+    rdf:type dash:GraphValidationTestCase ;
+    dash:expectedResult [	a sh:ValidationReport ;
+                             sh:conforms false ;
+                             sh:result [
+                                           a sh:ValidationResult ;
+                                           sh:resultSeverity sh:Violation ;
+                                           sh:focusNode ex:InvalidCountry ;
+                                           sh:resultPath ex:germanLabel ;
+                                           sh:value "Spain"@en ;
+                                           sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+                                           sh:sourceShape ex:LanguageExampleShape ;
+                                       ]
+                        ] ;
+.
+ex:ValidCountry a ex:Country ;
+                ex:germanLabel "Spanien"@de .
+
+ex:InvalidCountry a ex:Country ;
+                  ex:germanLabel "Spain"@en .
