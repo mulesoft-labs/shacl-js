@@ -77,26 +77,6 @@ gulp.task('test', function (done) {
     done();
 });
 
-/*
-gulp.task('browserify', function (done) {
-    if (fs.existsSync('dist/index.js')) {
-        fs.unlinkSync('dist/index.js');
-    }
-    if (fs.existsSync('dist/shacl.js')) {
-        fs.unlinkSync('dist/shacl.js');
-    }
-    gulp.src('index.js')
-        .pipe(browserify({
-            standalone: 'SHACLValidator'
-        }))
-        .pipe(gulp.dest('dist'))
-        .on('end', function () {
-            fs.renameSync('dist/index.js', 'dist/shacl.js');
-            done();
-        });
-});
-*/
-
 gulp.task('generate-vocabularies', function () {
     var vocabularies = fs.readdirSync("./vocabularies");
     var acc = {};

@@ -5,7 +5,6 @@ var debug = require("debug")("validation-function");
 var globalObject = typeof window !== 'undefined' ? window : global;
 
 var ValidationFunction = function (functionName, parameters, findInScript) {
-
     this.funcName = functionName;
     this.func = findInScript(functionName);
     if (!this.func) {
@@ -39,7 +38,11 @@ var ValidationFunction = function (functionName, parameters, findInScript) {
 };
 
 ValidationFunction.prototype.doExecute = function (args) {
-    return this.func.apply(globalObject, args);
+    try {
+        return this.func.apply(globalObject, args);
+    } catch(e)  {
+        throw(e)
+    }
 };
 
 ValidationFunction.prototype.execute = function (focusNode, valueNode, constraint) {

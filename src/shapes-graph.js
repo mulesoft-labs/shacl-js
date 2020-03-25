@@ -162,6 +162,7 @@ var Constraint = function(shape, component, paramValue, rdfShapesGraph) {
     this.shape = shape;
     this.component = component;
     this.paramValue = paramValue;
+    this.$shapes = rdfShapesGraph;
     var parameterValues = {};
     var params = component.getParameters();
     for (var i = 0; i < params.length; i++) {
@@ -177,6 +178,33 @@ var Constraint = function(shape, component, paramValue, rdfShapesGraph) {
 
 Constraint.prototype.getParameterValue = function (paramName) {
     return this.parameterValues[paramName];
+};
+
+Constraint.prototype.sparql = function() {
+    const select = this.$shapes.query()
+        .match(this.paramValue, "sh:select", "?query")
+        .getNode("?query");
+
+    const ask = this.$shapes.query()
+        .match(this.paramValue, "sh:ask", "?query")
+        .getNode("?query");
+
+    const query = (select || ask);
+
+    if (query != null) {
+        return query.lex;
+    }
+    return query;
+};
+
+Constraint.prototype.validateSparql = function(valueNode, rdfDataGraph, cb) {
+    rdfDataGraph.sparqlQuery(this.sparql(), function(e, result) {
+        const filteredResult = result.filter(function(result) {
+            const thisBinding = (result.get("?this") || result.get("$this"));
+            return thisBinding.toString() === valueNode.uri || thisBinding.toString() === valueNode.id
+        });
+        cb(e,filteredResult);
+    });
 };
 
 // class ConstraintComponent

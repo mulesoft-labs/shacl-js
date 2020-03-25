@@ -83,8 +83,13 @@ SHACLValidator.prototype.nodeConformsToShape = function(focusNode, shapeNode) {
     var shape = this.shapesGraph.getShape(shapeNode);
     try {
         this.depth++;
-        var foundViolations = this.validationEngine.validateNodeAgainstShape(focusNode, shape, this.$data);
-        return !foundViolations;
+        return this.validationEngine.validateNodeAgainstShape(focusNode, shape, this.$data, false)
+            .then((foundViolations) =>{
+                return !foundViolations;
+            })
+            .catch((e) => {
+                this.depth--;
+            })
     }
     finally {
         this.depth--;
@@ -129,10 +134,11 @@ SHACLValidator.prototype.updateValidationEngine = function() {
         if (this.sequence) {
             this.sequence = [];
         }
-        this.validationEngine.validateAll(this.$data);
+        return this.validationEngine.validateAll(this.$data);
     }
     catch (ex) {
         this.validationError = ex;
+        return new Promise((_, reject) => reject(ex));
     }
 };
 
@@ -242,14 +248,15 @@ SHACLValidator.prototype.onDataGraphChange = function(startTime, cb) {
     var that = this;
     return function() {
         var midTime = new Date().getTime();
-        that.updateValidationEngine();
-        var endTime = new Date().getTime();
-        debug("Parsing took " + (midTime - startTime) + " ms. Validating the data took " + (endTime - midTime) + " ms.");
-        try {
-            that.showValidationResults(cb);
-        } catch (e) {
-            cb(e, null);
-        }
+        that.updateValidationEngine().then((_) => {
+            var endTime = new Date().getTime();
+            debug("Parsing took " + (midTime - startTime) + " ms. Validating the data took " + (endTime - midTime) + " ms.");
+            try {
+                that.showValidationResults(cb);
+            } catch (e) {
+                cb(e, null);
+            }
+        }).catch(cb);
     }
 }
 
@@ -279,16 +286,17 @@ SHACLValidator.prototype.onShapesGraphChange = function(startTime, cb) {
             if (err) {
                 cb(err, null);
             } else {
-                that.updateValidationEngine();
-                var endTime = new Date().getTime();
-                debug("Parsing took " + (midTime - startTime) + " ms. Preparing the shapes took " + (midTime2 - midTime)
-                    + " ms. Validation the data took " + (endTime - midTime2) + " ms.");
-                try {
+                that.updateValidationEngine().then((e, results) => {
+                    var endTime = new Date().getTime();
+                    debug("Parsing took " + (midTime - startTime) + " ms. Preparing the shapes took " + (midTime2 - midTime)
+                        + " ms. Validation the data took " + (endTime - midTime2) + " ms.");
+                    try {
 
-                    that.showValidationResults(cb);
-                } catch (e) {
-                    cb(e, null);
-                }
+                        that.showValidationResults(cb);
+                    } catch (e) {
+                        cb(e, null);
+                    }
+                }).catch(cb);
             }
         });
     }

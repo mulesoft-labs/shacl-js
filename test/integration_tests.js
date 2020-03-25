@@ -91,11 +91,18 @@ var validateReports = function(test, input) {
         } else {
             new SHACLValidator().validate(data, "text/turtle", data, "text/turtle", function (e, report) {
                 if (e != null) {
-                    console.log("----------- HERE -----------------")
-                    console.log(e);
-                    console.log("----------------------------------")
-                    test.ok(e == null);
-                    test.done();
+                    var testCase = new RDFLibGraph();
+                    testCase.loadGraph(data, input, "text/turtle", function() {
+                        var maybeFailure = testCase
+                            .query()
+                            .match("?s","dash:expectedResult", "dash:FailureResult")
+                            .hasSolution();
+                        test.ok(maybeFailure);
+                        test.done();
+                    }, function(e) {
+                        test.ok(e == null);
+                        test.done()
+                    })
                 } else {
                     test.ok(report.conforms() === expectedReport.conforms());
                     if (report.results().length !== expectedReport.results().length) {

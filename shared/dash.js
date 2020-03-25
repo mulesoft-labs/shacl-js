@@ -14,14 +14,23 @@ XSDDecimalTypes.addAll(XSDIntegerTypes.toArray());
 XSDDecimalTypes.add(T("xsd:decimal"));
 XSDDecimalTypes.add(T("xsd:float"));
 
+function toPromise(value) {
+	return new Promise((resolve, _) => {
+		resolve(value);
+	});
+}
+
 function validateAnd($value, $and) {
-	var shapes = new RDFQueryUtil($shapes).rdfListToArray($and);
-	for(var i = 0; i < shapes.length; i++) {
-		if(!SHACL.nodeConformsToShape($value, shapes[i])) {
-			return false;
+	const shapes = new RDFQueryUtil($shapes).rdfListToArray($and);
+	const promises = shapes.map((shape) => SHACL.nodeConformsToShape($value, shape));
+	return Promise.all(promises).then((results) => {
+		for(var i = 0; i < results.length; i++) {
+			if(!results[i]) {
+				return false;
+			}
 		}
-	}
-	return true;
+		return true;
+	});
 }
 
 function validateClass($value, $class) {
@@ -289,17 +298,20 @@ function validateNonRecursiveProperty($this, $path, $nonRecursive) {
 }
 
 function validateNot($value, $not) {
-	return !SHACL.nodeConformsToShape($value, $not);
+	return SHACL.nodeConformsToShape($value, $not).then((v) => !v);
 }
 
 function validateOr($value, $or) {
 	var shapes = new RDFQueryUtil($shapes).rdfListToArray($or);
-	for(var i = 0; i < shapes.length; i++) {
-		if(SHACL.nodeConformsToShape($value, shapes[i])) {
-			return true;
+	const promises = shapes.map((shape) => SHACL.nodeConformsToShape($value, shape));
+	return Promise.all(promises).then((results) => {
+		for(var i = 0; i < shapes.length; i++) {
+			if(results[i]) {
+				return true;
+			}
 		}
-	}
-	return false;
+		return false;
+	});
 }
 
 function validatePattern($value, $pattern, $flags) {
@@ -325,17 +337,19 @@ function validatePrimaryKeyProperty($this, $path, $uriStart) {
 }
 
 function validateQualifiedMaxCountProperty($this, $path, $qualifiedValueShape, $qualifiedValueShapesDisjoint, $qualifiedMaxCount, $currentShape) {
-	var c = validateQualifiedHelper($this, $path, $qualifiedValueShape, $qualifiedValueShapesDisjoint, $currentShape);
-	return c <= Number($qualifiedMaxCount.lex);
+	return validateQualifiedHelper($this, $path, $qualifiedValueShape, $qualifiedValueShapesDisjoint, $currentShape).then((c) =>{
+		return c <= Number($qualifiedMaxCount.lex);
+	});
 }
 
 function validateQualifiedMinCountProperty($this, $path, $qualifiedValueShape, $qualifiedValueShapesDisjoint, $qualifiedMinCount, $currentShape) {
-	var c = validateQualifiedHelper($this, $path, $qualifiedValueShape, $qualifiedValueShapesDisjoint, $currentShape);
-	return c >= Number($qualifiedMinCount.lex);
+	return validateQualifiedHelper($this, $path, $qualifiedValueShape, $qualifiedValueShapesDisjoint, $currentShape).then((c) => {
+		return c >= Number($qualifiedMinCount.lex);
+	});
 }
 
 function validateQualifiedHelper($this, $path, $qualifiedValueShape, $qualifiedValueShapesDisjoint, $currentShape) {
-	var siblingShapes = new NodeSet();
+	let siblingShapes = new NodeSet();
 	if(T("true").equals($qualifiedValueShapesDisjoint)) {
 		$shapes.query().
 			match("?parentShape", "sh:property", $currentShape).
@@ -344,22 +358,39 @@ function validateQualifiedHelper($this, $path, $qualifiedValueShape, $qualifiedV
 			filter(exprNotEquals("?siblingShape", $qualifiedValueShape)) .
 			addAllNodes("?siblingShape", siblingShapes);
 	}
-	return $data.query().
-		path($this, toRDFQueryPath($path), "?value").
-		filter(function(sol) { 
-			return SHACL.nodeConformsToShape(sol.value, $qualifiedValueShape) &&
-				!validateQualifiedConformsToASibling(sol.value, siblingShapes.toArray()); 
-		}).
-		getCount();
+	const allResults = $data.query()
+		.path($this, toRDFQueryPath($path), "?value")
+		.getArray();
+
+	const proms = allResults.map((sol) => {
+		const condProm1 = SHACL.nodeConformsToShape(sol.value, $qualifiedValueShape);
+		const condProm2 = validateQualifiedConformsToASibling(sol.value, siblingShapes.toArray());
+		return Promise.all([condProm1, condProm2]).then((results) => {
+			return results[0] && !results[1]; // negation on second condition
+		});
+	});
+
+	return Promise.all(proms).then((results) => {
+		let count =0;
+		results.forEach((result) => {
+			if(result) {
+				count++
+			}
+		});
+		return count
+	});
 }
 
 function validateQualifiedConformsToASibling(value, siblingShapes) {
-	for(var i = 0; i < siblingShapes.length; i++) {
-		if(SHACL.nodeConformsToShape(value, siblingShapes[i])) {
-			return true;
+	const proms = siblingShapes.map((sibling) => SHACL.nodeConformsToShape(value, sibling));
+	return Promise.all(proms).then((results) => {
+		for(var i = 0; i < results.length; i++) {
+			if(results[i] === true) {
+				return true;
+			}
 		}
-	}
-	return false;
+		return false;
+	});
 }
 
 function validateRootClass($value, $rootClass) {
@@ -426,12 +457,15 @@ function validateUniqueValueForClass($this, $uniqueValueForClass, $path) {
 function validateXone($value, $xone) {
 	var shapes = new RDFQueryUtil($shapes).rdfListToArray($xone);
 	var count = 0;
-	for(var i = 0; i < shapes.length; i++) {
-		if(SHACL.nodeConformsToShape($value, shapes[i])) {
-			count++;
+	const promises = shapes.map((shape) => SHACL.nodeConformsToShape($value, shape));
+	return Promise.all(promises).then((results) => {
+		for(var i = 0; i < shapes.length; i++) {
+			if(results[i]) {
+				count++;
+			}
 		}
-	}
-	return count == 1;
+		return count == 1;
+	});
 }
 
 

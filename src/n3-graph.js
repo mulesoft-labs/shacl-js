@@ -1,5 +1,6 @@
 const n3 = require("n3");
 const JsonLdParser = require("jsonld-streaming-parser").JsonLdParser;
+const SPARQLEngine = require('@comunica/actor-init-sparql-rdfjs').newEngine;
 
 var $rdf = n3.DataFactory;
 $rdf.parse = function(data, store, namedGraph, mediaType, cb) {
@@ -70,6 +71,8 @@ Object.getPrototypeOf(exNamedNode).isURI = function () { return true };
  * @constructor
  */
 const RDFLibGraph = function (store) {
+    this.queryCache = {};
+
     if (store != null) {
         this.store = store;
     } else {
@@ -88,11 +91,13 @@ RDFLibGraph.prototype.query = function () {
 };
 
 RDFLibGraph.prototype.loadMemoryGraph = function(graphURI, rdfModel, andThen) {
+    this.queryCache = {};
     postProcessGraph(this.store, graphURI, rdfModel)
     andThen();
 };
 
 RDFLibGraph.prototype.loadGraph = function(str, graphURI, mimeType, andThen, handleError) {
+    this.queryCache = {};
     const newStore = $rdf.graph();
     handleError = handleError || errorHandler;
     const that = this;
@@ -124,7 +129,36 @@ RDFLibGraph.prototype.loadGraph = function(str, graphURI, mimeType, andThen, han
     }
 };
 
+RDFLibGraph.prototype.sparqlQuery = function(sparql, cb) {
+    try {
+        if (this.queryCache[sparql] != null) {
+            cb(null, this.queryCache[sparql]);
+        } else {
+            const engine = SPARQLEngine();
+            let acc = [];
+            const that = this;
+            engine.query(sparql, {sources: [{type: 'rdfjsSource', value: this.store}]})
+                .then(function (result) {
+                    result.bindingsStream
+                        .on('data', (data) => {
+                            // Each data object contains a mapping from variables to RDFJS terms.
+                            acc.push(data);
+                        })
+                        .on('end', () => {
+                            that.queryCache[sparql] = acc;
+                            cb(null, acc);
+                        })
+                        .on('error', cb)
+                })
+                .catch(cb)
+        }
+    } catch (e) {
+        cb(e);
+    }
+};
+
 RDFLibGraph.prototype.clear = function() {
+    this.queryCache = {};
     this.store = $rdf.graph();
 };
 
@@ -136,6 +170,7 @@ var RDFLibGraphIterator = function (store, s, p, o) {
 };
 
 RDFLibGraphIterator.prototype.close = function () {
+    this.queryCache = {};
     // Do nothing
 };
 

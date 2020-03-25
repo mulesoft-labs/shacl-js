@@ -9,6 +9,7 @@
   "author": "Holger Knublauch <holger@topquadrant.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "@comunica/actor-init-sparql-rdfjs": "^1.10.0",
     "jsonld-streaming-parser": "^1.1.2",
     "jsonld-streaming-serializer": "^1.0.1",
     "n3": "^1.3.5"
