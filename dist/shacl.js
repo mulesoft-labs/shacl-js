@@ -96689,7 +96689,7 @@ Constraint.prototype.getParameterValue = function (paramName) {
     return this.parameterValues[paramName];
 };
 
-Constraint.prototype.sparql = function() {
+Constraint.prototype.sparql = function(prefixes) {
     const select = this.$shapes.query()
         .match(this.paramValue, "sh:select", "?query")
         .getNode("?query");
@@ -96701,18 +96701,66 @@ Constraint.prototype.sparql = function() {
     const query = (select || ask);
 
     if (query != null) {
-        return query.lex;
+        return (prefixes || "") + query.lex;
     }
     return query;
 };
 
+// SPARQL Query validation
+
 Constraint.prototype.validateSparql = function(valueNode, rdfDataGraph, cb) {
-    rdfDataGraph.sparqlQuery(this.sparql(), function(e, result) {
-        const filteredResult = result.filter(function(result) {
-            const thisBinding = (result.get("?this") || result.get("$this"));
-            return thisBinding.toString() === valueNode.uri || thisBinding.toString() === valueNode.id
+
+    if (rdfDataGraph.prefixesCache != null) {
+        this.runQuery(rdfDataGraph.prefixesCache, rdfDataGraph, valueNode, cb)
+    } else {
+        this.fetchPrefixes(rdfDataGraph, (e, prefixString) => {
+            if (e) {
+                cb(e)
+            } else {
+                rdfDataGraph.prefixesCache = prefixString;
+                this.runValidationQuery(rdfDataGraph.prefixesCache, rdfDataGraph, valueNode, cb)
+            }
         });
-        cb(e,filteredResult);
+    }
+};
+
+Constraint.prototype.fetchPrefixes = function(rdfDataGraph, cb) {
+    const prefixQuery = "PREFIX sh: <http://www.w3.org/ns/shacl#>" +
+        "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+        "SELECT ?prefix ?namespace WHERE { " +
+        "?base sh:prefixes/sh:declare ?declaration ." +
+        "?declaration sh:prefix ?prefix ; sh:namespace ?namespace" +
+        "}";
+
+
+    rdfDataGraph.sparqlQuery(prefixQuery, (e, result) => {
+        if (e) {
+            cb(e)
+        } else {
+            let prefixString = "";
+
+            (result||[]).forEach((result) => {
+                const prefix = result.get("?prefix");
+                const namespace = result.get("?namespace");
+                prefixString = prefixString + "PREFIX " + prefix + ": <" + namespace + ">\n";
+            });
+
+            cb(null, prefixString)
+        }
+    });
+};
+
+Constraint.prototype.runValidationQuery = function(prefixString, rdfDataGraph, valueNode, cb) {
+    rdfDataGraph.sparqlQuery(this.sparql(prefixString), function(e, result) {
+        if (e) {
+            cb(e)
+        } else {
+            const filteredResult = result.filter(function(result) {
+                const thisBinding = (result.get("?this") || result.get("$this"));
+                return thisBinding.toString() === valueNode.uri || thisBinding.toString() === valueNode.id
+            });
+            cb(e,filteredResult);
+        }
     });
 };
 
