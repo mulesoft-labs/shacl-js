@@ -373,4 +373,6 @@ SHACLValidator.prototype.registerJSCode = function(url, jsCode){
 // Expose the RDF interface
 SHACLValidator.$rdf = $rdf;
 
+GlobalSHACLValidator = SHACLValidator;
+
 module.exports = SHACLValidator;

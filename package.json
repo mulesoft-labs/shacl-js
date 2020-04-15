@@ -22,6 +22,8 @@
     "gulp-nodeunit": "^0.1.0",
     "gulp-serve": "^1.4.0",
     "nodeunit": "^0.11.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }

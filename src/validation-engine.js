@@ -218,30 +218,34 @@ ValidationEngine.prototype.validateNodeAgainstConstraint = async function (focus
                 for (let i=0; i<valueNodes.length; i++) {
                     const valueNode = valueNodes[i];
                     constraint.validateSparql(valueNode, rdfDataGraph, (err, data) => {
-                        try {
-                            let foundError = false;
-                            data.forEach((result) => {
-                                const failureNode = result.get("?failure") || result.get("$failure");
-                                if (!(failureNode && failureNode.value === "true" && failureNode.datatype.equals(T("xsd:boolean")))) {
-                                    let valueNode = result.get("?value") || result.get("$value");
-                                    let path = result.get("?path") || result.get("$path");
-                                    if (valueNode) {
-                                        foundError = true;
-                                        const result = {
-                                            value: valueNode.id,
-                                            path: (path != null) ? path.value : null
-                                        };
-                                        this.createResultFromObject(result, constraint, focusNode, valueNode, topLevel);
+                        if (err) {
+                            reject(err);
+                        } else {
+                            try {
+                                let foundError = false;
+                                data.forEach((result) => {
+                                    const failureNode = result.get("?failure") || result.get("$failure");
+                                    if (!(failureNode && failureNode.value === "true" && failureNode.datatype.equals(T("xsd:boolean")))) {
+                                        let valueNode = result.get("?value") || result.get("$value");
+                                        let path = result.get("?path") || result.get("$path");
+                                        if (valueNode) {
+                                            foundError = true;
+                                            const result = {
+                                                value: valueNode.id,
+                                                path: (path != null) ? path.value : null
+                                            };
+                                            this.createResultFromObject(result, constraint, focusNode, valueNode, topLevel);
+                                        } else {
+                                            this.createResultFromObject(null, constraint, focusNode, valueNode, topLevel);
+                                        }
                                     } else {
-                                        this.createResultFromObject(null, constraint, focusNode, valueNode, topLevel);
+                                        reject(new Error("Failure variable returned true in SPARQL query for shape <" + constraint.shape.shapeNode + ">"));
                                     }
-                                } else {
-                                    reject(new Error("Failure variable returned true in SPARQL query for shape <" + constraint.shape.shapeNode + ">"));
-                                }
-                            });
-                            resolve(foundError)
-                        } catch (e) {
-                            reject(e);
+                                });
+                                resolve(foundError)
+                            } catch (e) {
+                                reject(e);
+                            }
                         }
                     });
                 }

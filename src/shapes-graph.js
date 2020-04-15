@@ -201,15 +201,15 @@ Constraint.prototype.sparql = function(prefixes) {
 
 Constraint.prototype.validateSparql = function(valueNode, rdfDataGraph, cb) {
 
-    if (rdfDataGraph.prefixesCache != null) {
-        this.runQuery(rdfDataGraph.prefixesCache, rdfDataGraph, valueNode, cb)
+    if (this.$shapes.prefixesCache != null) {
+        this.runValidationQuery(this.$shapes.prefixesCache, rdfDataGraph, valueNode, cb)
     } else {
-        this.fetchPrefixes(rdfDataGraph, (e, prefixString) => {
+        this.fetchPrefixes(this.$shapes, (e, prefixString) => {
             if (e) {
                 cb(e)
             } else {
-                rdfDataGraph.prefixesCache = prefixString;
-                this.runValidationQuery(rdfDataGraph.prefixesCache, rdfDataGraph, valueNode, cb)
+                this.$shapes.prefixesCache = prefixString;
+                this.runValidationQuery(this.$shapes.prefixesCache, rdfDataGraph, valueNode, cb)
             }
         });
     }
@@ -218,7 +218,7 @@ Constraint.prototype.validateSparql = function(valueNode, rdfDataGraph, cb) {
 Constraint.prototype.fetchPrefixes = function(rdfDataGraph, cb) {
     const prefixQuery = "PREFIX sh: <http://www.w3.org/ns/shacl#>" +
         "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
-        "SELECT ?prefix ?namespace WHERE { " +
+        "SELECT DISTINCT ?prefix ?namespace WHERE { " +
         "?base sh:prefixes/sh:declare ?declaration ." +
         "?declaration sh:prefix ?prefix ; sh:namespace ?namespace" +
         "}";
