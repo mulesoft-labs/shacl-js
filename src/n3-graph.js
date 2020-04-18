@@ -106,9 +106,11 @@ RDFLibGraph.prototype.loadGraph = function(str, graphURI, mimeType, andThen, han
             dataFactory: $rdf
         });
         myParser
-            .on('data', that.store.addQuad)
+            .on('data', (q) => that.store.addQuad(q))
             .on('error', handleError)
             .on('end', andThen);
+        myParser.write(str);
+        myParser.end()
     }
     else {
         try {
