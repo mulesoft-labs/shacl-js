@@ -6,30 +6,37 @@ var $rdf = n3.DataFactory;
 $rdf.parse = function(data, store, namedGraph, mediaType, cb) {
     const parser = new n3.Parser({format: mediaType});
     parser.parse(data, function(error, quad, prefixes) {
-        if (error) {
-            cb(error)
-        } else if (quad) {
-            store.addQuad(quad.subject, quad.predicate, quad.object, $rdf.namedNode(namedGraph))
-        } else {
-            cb(null, store);
-        }
+	if (error) {
+	    cb(error)
+	} else if (quad) {
+	    store.addQuad(quad.subject, quad.predicate, quad.object, $rdf.namedNode(namedGraph))
+	} else {
+	    cb(null, store);
+	}
     })
 };
 $rdf.graph = function() {
     const store = new n3.Store();
 
     store.add = function(s,p,o) {
-        store.addQuad(s, p, o);
+	store.addQuad(s, p, o);
     };
 
     store.toNT = function(cb) {
-        const writer = new n3.Writer({ format: 'application/n-quads' });
-        store.forEach(function(quad) {
-            writer.addQuad(quad.subject, quad.predicate, quad.object);
-        });
-        writer.end(cb)
+	const writer = new n3.Writer({ format: 'application/n-quads' });
+	store.forEach(function(quad) {
+	    writer.addQuad(quad.subject, quad.predicate, quad.object);
+	});
+	writer.end(cb)
     };
 
+    store.toNTSync = function() {
+	var result = "";
+	this.toNT(function(e,r) {
+	    result = r;
+	})
+	return result;
+    };
 
     return store;
 };
@@ -74,9 +81,9 @@ const RDFLibGraph = function (store) {
     this.queryCache = {};
 
     if (store != null) {
-        this.store = store;
+	this.store = store;
     } else {
-        this.store = $rdf.graph();
+	this.store = $rdf.graph();
     }
 };
 
@@ -102,60 +109,60 @@ RDFLibGraph.prototype.loadGraph = function(str, graphURI, mimeType, andThen, han
     handleError = handleError || errorHandler;
     const that = this;
     if (mimeType === "application/ld+json") {
-        const myParser = new JsonLdParser({
-            dataFactory: $rdf
-        });
-        myParser
-            .on('data', (q) => that.store.addQuad(q))
-            .on('error', handleError)
-            .on('end', andThen);
-        myParser.write(str);
-        myParser.end()
+	const myParser = new JsonLdParser({
+	    dataFactory: $rdf
+	});
+	myParser
+	    .on('data', (q) => that.store.addQuad(q))
+	    .on('error', handleError)
+	    .on('end', andThen);
+	myParser.write(str);
+	myParser.end()
     }
     else {
-        try {
-            const parser = new n3.Parser({format: 'text/turtle'});
-            parser.parse(str, function(error, quad, prefixes) {
-                if (error) {
-                    handleError(error);
-                } else if(quad) {
-                    that.store.addQuad(quad)
-                } else {
-                    andThen()
-                }
-            });
-        }
-        catch (ex) {
-            handleError(ex);
-        }
+	try {
+	    const parser = new n3.Parser({format: 'text/turtle'});
+	    parser.parse(str, function(error, quad, prefixes) {
+		if (error) {
+		    handleError(error);
+		} else if(quad) {
+		    that.store.addQuad(quad)
+		} else {
+		    andThen()
+		}
+	    });
+	}
+	catch (ex) {
+	    handleError(ex);
+	}
     }
 };
 
 RDFLibGraph.prototype.sparqlQuery = function(sparql, cb) {
     try {
-        if (this.queryCache[sparql] != null) {
-            cb(null, this.queryCache[sparql]);
-        } else {
-            const engine = SPARQLEngine();
-            let acc = [];
-            const that = this;
-            engine.query(sparql, {sources: [{type: 'rdfjsSource', value: this.store}]})
-                .then(function (result) {
-                    result.bindingsStream
-                        .on('data', (data) => {
-                            // Each data object contains a mapping from variables to RDFJS terms.
-                            acc.push(data);
-                        })
-                        .on('end', () => {
-                            that.queryCache[sparql] = acc;
-                            cb(null, acc);
-                        })
-                        .on('error', cb)
-                })
-                .catch(cb)
-        }
+	if (this.queryCache[sparql] != null) {
+	    cb(null, this.queryCache[sparql]);
+	} else {
+	    const engine = SPARQLEngine();
+	    let acc = [];
+	    const that = this;
+	    engine.query(sparql, {sources: [{type: 'rdfjsSource', value: this.store}]})
+		.then(function (result) {
+		    result.bindingsStream
+			.on('data', (data) => {
+			    // Each data object contains a mapping from variables to RDFJS terms.
+			    acc.push(data);
+			})
+			.on('end', () => {
+			    that.queryCache[sparql] = acc;
+			    cb(null, acc);
+			})
+			.on('error', cb)
+		})
+		.catch(cb)
+	}
     } catch (e) {
-        cb(e);
+	cb(e);
     }
 };
 
@@ -178,19 +185,19 @@ RDFLibGraphIterator.prototype.close = function () {
 
 RDFLibGraphIterator.prototype.next = function () {
     if (this.index >= this.ss.length) {
-        return null;
+	return null;
     }
     else {
-        return this.ss[this.index++];
+	return this.ss[this.index++];
     }
 };
 
 function ensureBlankId(component) {
     if (component.termType === "BlankNode") {
-        if (typeof(component.value) !== "string") {
-            component.value = "_:" + component.id;
-        }
-        return component;
+	if (typeof(component.value) !== "string") {
+	    component.value = "_:" + component.id;
+	}
+	return component;
     }
 
     return component
@@ -200,32 +207,32 @@ function postProcessGraph(store, graphURI, newStore) {
 
     var ss = newStore.getQuads();
     for (var i = 0; i < ss.length; i++) {
-        var object = ss[i].object;
-        ensureBlankId(ss[i].subject);
-        ensureBlankId(ss[i].predicate);
-        ensureBlankId(ss[i].object);
-        if (T("xsd:boolean").equals(object.datatype)) {
-            if ("0" === object.value || "false" === object.value) {
-                store.add(ss[i].subject, ss[i].predicate, T("false"), graphURI);
-            }
-            else if ("1" === object.value || "true" === object.value) {
-                store.add(ss[i].subject, ss[i].predicate, T("true"), graphURI);
-            } else {
-                store.add(ss[i].subject, ss[i].predicate, object, graphURI);
-            }
-        }
-        else if (object.termType === 'collection') {
-            var items = object.elements;
-            store.add(ss[i].subject, ss[i].predicate, createRDFListNode(store, items, 0));
-        }
-        else {
-            store.add(ss[i].subject, ss[i].predicate, ss[i].object, graphURI);
-        }
+	var object = ss[i].object;
+	ensureBlankId(ss[i].subject);
+	ensureBlankId(ss[i].predicate);
+	ensureBlankId(ss[i].object);
+	if (T("xsd:boolean").equals(object.datatype)) {
+	    if ("0" === object.value || "false" === object.value) {
+		store.add(ss[i].subject, ss[i].predicate, T("false"), graphURI);
+	    }
+	    else if ("1" === object.value || "true" === object.value) {
+		store.add(ss[i].subject, ss[i].predicate, T("true"), graphURI);
+	    } else {
+		store.add(ss[i].subject, ss[i].predicate, object, graphURI);
+	    }
+	}
+	else if (object.termType === 'collection') {
+	    var items = object.elements;
+	    store.add(ss[i].subject, ss[i].predicate, createRDFListNode(store, items, 0));
+	}
+	else {
+	    store.add(ss[i].subject, ss[i].predicate, ss[i].object, graphURI);
+	}
     }
 
     for (var prefix in newStore.namespaces) {
-        var ns = newStore.namespaces[prefix];
-        store.namespaces[prefix] = ns;
+	var ns = newStore.namespaces[prefix];
+	store.namespaces[prefix] = ns;
     }
 }
 
