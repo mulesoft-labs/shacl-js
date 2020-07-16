@@ -1,19 +1,31 @@
 const n3 = require("n3");
-const JsonLdParser = require("jsonld-streaming-parser").JsonLdParser;
 const SPARQLEngine = require('@comunica/actor-init-sparql-rdfjs').newEngine;
+const jsonldParser = require("./jsonldparser");
 
 var $rdf = n3.DataFactory;
+
+
 $rdf.parse = function(data, store, namedGraph, mediaType, cb) {
-    const parser = new n3.Parser({format: mediaType});
-    parser.parse(data, function(error, quad, prefixes) {
-	if (error) {
-	    cb(error)
-	} else if (quad) {
-	    store.addQuad(quad.subject, quad.predicate, quad.object, $rdf.namedNode(namedGraph))
+	if (mediaType === "application/ld+json") {
+		jsonldParser(data, store, cb);
 	} else {
-	    cb(null, store);
+		const parser = new n3.Parser({format: mediaType});
+		parser.parse(data, function (error, quad, prefixes) {
+			if (error) {
+				if (cb) {
+					cb(error)
+				} else {
+					console.log(error)
+				}
+			} else if (quad) {
+				store.addQuad(quad.subject, quad.predicate, quad.object, $rdf.namedNode(namedGraph))
+			} else {
+				if (cb) {
+					cb(null, store);
+				}
+			}
+		})
 	}
-    })
 };
 $rdf.graph = function() {
     const store = new n3.Store();
@@ -105,36 +117,33 @@ RDFLibGraph.prototype.loadMemoryGraph = function(graphURI, rdfModel, andThen) {
 
 RDFLibGraph.prototype.loadGraph = function(str, graphURI, mimeType, andThen, handleError) {
     this.queryCache = {};
-    const newStore = $rdf.graph();
     handleError = handleError || errorHandler;
     const that = this;
     if (mimeType === "application/ld+json") {
-	const myParser = new JsonLdParser({
-	    dataFactory: $rdf
-	});
-	myParser
-	    .on('data', (q) => that.store.addQuad(q))
-	    .on('error', handleError)
-	    .on('end', andThen);
-	myParser.write(str);
-	myParser.end()
+		jsonldParser(str, that.store, function(error, result) {
+			if (error) {
+				handleError(error)
+			} else {
+				andThen(result)
+			}
+		});
     }
     else {
-	try {
-	    const parser = new n3.Parser({format: 'text/turtle'});
-	    parser.parse(str, function(error, quad, prefixes) {
-		if (error) {
-		    handleError(error);
-		} else if(quad) {
-		    that.store.addQuad(quad)
-		} else {
-		    andThen()
+		try {
+			const parser = new n3.Parser({format: 'text/turtle'});
+			parser.parse(str, function(error, quad, prefixes) {
+				if (error) {
+					handleError(error);
+				} else if(quad) {
+					that.store.addQuad(quad)
+				} else {
+					andThen()
+				}
+			});
 		}
-	    });
-	}
-	catch (ex) {
-	    handleError(ex);
-	}
+		catch (ex) {
+			handleError(ex);
+		}
     }
 };
 
