@@ -1,0 +1,56 @@
++ Shape: http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 3 nodes found
+     Selected: [{"id":"Alti","tracerId":"_tracer_1"},{"id":"Aldi","tracerId":"_tracer_2"},{"id":"aLdI","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+       [node]
+       Target: Alti
+       TracerId: _tracer_1
+       Evaluating target node Alti
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+         [function]
+         Target: Alti
+         TracerId: _tracer_1
+         Evaluating function validatePattern
+         Args: {"$value":"\"Alti\"","pattern":"\"Aldi\"","flags":"\"i\""}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+       [node]
+       Target: Aldi
+       TracerId: _tracer_2
+       Evaluating target node Aldi
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+         [function]
+         Target: Aldi
+         TracerId: _tracer_2
+         Evaluating function validatePattern
+         Args: {"$value":"\"Aldi\"","pattern":"\"Aldi\"","flags":"\"i\""}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+       [node]
+       Target: aLdI
+       TracerId: _tracer_3
+       Evaluating target node aLdI
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-002.test#TestShape
+         [function]
+         Target: aLdI
+         TracerId: _tracer_3
+         Evaluating function validatePattern
+         Args: {"$value":"\"aLdI\"","pattern":"\"Aldi\"","flags":"\"i\""}
+         Error? false

@@ -1,0 +1,74 @@
++ Shape: http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+     [target-selection]
+     Selecting targets by Target nodes => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/closed-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/closed-002.test#ValidInstance1","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/closed-002.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/node/closed-002.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/closed-002.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating function validateClosed
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/closed-002.test#InvalidInstance1","closed":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","ignoredProperties":"_:b1559"}
+         Explanation: [{"path":{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/node/closed-002.test#otherProperty"},"value":{"termType":"Literal","value":"4","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}}]
+         Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/node/closed-002.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b1560
+           [path]
+           Target: http://datashapes.org/sh/tests/core/node/closed-002.test#InvalidInstance1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/node/closed-002.test#someProperty"
+           Selected: [{"termType":"Literal","value":"3","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
+           Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/closed-002.test#ValidInstance1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/closed-002.test#ValidInstance1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/closed-002.test#ValidInstance1
+         TracerId: _tracer_2
+         Evaluating function validateClosed
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/closed-002.test#ValidInstance1","closed":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","ignoredProperties":"_:b1559"}
+         Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/closed-002.test#MyShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/node/closed-002.test#ValidInstance1
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b1560
+           [path]
+           Target: http://datashapes.org/sh/tests/core/node/closed-002.test#ValidInstance1
+           TracerId: _tracer_2
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/node/closed-002.test#someProperty"
+           Selected: [{"termType":"Literal","value":"3","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
+           Error? false

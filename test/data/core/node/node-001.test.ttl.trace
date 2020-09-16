@@ -1,0 +1,55 @@
++ Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+         [shape]
+         Target: http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance
+         TracerId: _tracer_1
+         Evaluating shape
+         Error? true
+        |
+        -> Shape: _:b3224
+           [function]
+           Target: http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance
+           TracerId: _tracer_1
+           Evaluating function validateClass
+           Args: {"$value":"http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance","class":"http://datashapes.org/sh/tests/core/node/node-001.test#OtherClass"}
+           Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+         [shape]
+         Target: http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance
+         TracerId: _tracer_2
+         Evaluating shape
+         Error? false
+        |
+        -> Shape: _:b3224
+           [function]
+           Target: http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance
+           TracerId: _tracer_2
+           Evaluating function validateClass
+           Args: {"$value":"http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance","class":"http://datashapes.org/sh/tests/core/node/node-001.test#OtherClass"}
+           Error? false

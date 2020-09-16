@@ -101,7 +101,7 @@ gulp.task('generate-libraries', function (done) {
     for (var library in libraries) {
         console.log("Generating " + library);
         acc[library] = fs.readFileSync(libraries[library]).toString();
-        fs.writeFileSync("./src/libraries.js", "module.exports = " + JSON.stringify(acc));
+        fs.writeFileSync("./src/libraries.js", "var tracer = require(\"./trace\");\nmodule.exports = " + JSON.stringify(acc));
     }
 
     var rdfqueryTemplate = fs.readFileSync("./templates/rdfquery.js").toString();

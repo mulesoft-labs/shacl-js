@@ -1,0 +1,43 @@
++ Shape: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#InvalidInstance","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#ValidInstance","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#InvalidInstance
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#InvalidInstance
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass
+         [function]
+         Target: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#InvalidInstance
+         TracerId: _tracer_1
+         Evaluating function validateIn
+         Args: {"$value":"http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#InvalidInstance","in":"_:b10303"}
+         Explanation: {"set":["http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#ValidInstance"]}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#ValidInstance
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#ValidInstance
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass
+         [function]
+         Target: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#ValidInstance
+         TracerId: _tracer_2
+         Evaluating function validateIn
+         Args: {"$value":"http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#ValidInstance","in":"_:b10303"}
+         Explanation: {"set":["http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#ValidInstance"]}
+         Error? false

@@ -21,14 +21,22 @@ function toPromise(value) {
 }
 
 function validateAnd($value, $and) {
+	tracer.log($and, $value, $value.__TRACER_ID,"AND", "" )
 	const shapes = new RDFQueryUtil($shapes).rdfListToArray($and);
-	const promises = shapes.map((shape) => SHACL.nodeConformsToShape($value, shape));
+	const promises = shapes.map((shape) => {
+		tracer.log(shape, $value, $value.__TRACER_ID,"AND-BRANCH", {and: $and.id} )
+		const result = SHACL.nodeConformsToShape($value, shape)
+		tracer.log(shape, $value, $value.__TRACER_ID,"AND-BRANCH-RESULT", {and: $and.id, result: result} )
+		return result
+	});
 	return Promise.all(promises).then((results) => {
 		for(var i = 0; i < results.length; i++) {
 			if(!results[i]) {
+				tracer.log($and, $value, $value.__TRACER_ID,"AND-RESULT", {result: true} )
 				return false;
 			}
 		}
+		tracer.log($and, $value, $value.__TRACER_ID,"AND-RESULT", {result: false} )
 		return true;
 	});
 }
@@ -172,6 +180,7 @@ function validateHasValueWithClass($this, $path, $hasValueWithClass) {
 function validateIn($value, $in) {
 	var set = new NodeSet();
 	set.addAll(new RDFQueryUtil($shapes).rdfListToArray($in));
+	tracer.log($in, $value, $value.__TRACER_ID,"EXPLANATION", {set: set.values.map((v) => v.value) })
 	return set.contains($value);
 }
 
@@ -302,14 +311,22 @@ function validateNot($value, $not) {
 }
 
 function validateOr($value, $or) {
+	tracer.log($or, $value, $value.__TRACER_ID,"OR", "" )
 	var shapes = new RDFQueryUtil($shapes).rdfListToArray($or);
-	const promises = shapes.map((shape) => SHACL.nodeConformsToShape($value, shape));
+	const promises = shapes.map((shape) => {
+		tracer.log(shape, $value, $value.__TRACER_ID,"OR-BRANCH", {or: $or.id});
+		const result = SHACL.nodeConformsToShape($value, shape)
+		tracer.log(shape, $value, $value.__TRACER_ID, "OR-BRANCH-RESULT", {or: $or.id});
+		return result
+	})
 	return Promise.all(promises).then((results) => {
 		for(var i = 0; i < shapes.length; i++) {
 			if(results[i]) {
+				tracer.log($or, $value, $value.__TRACER_ID,"OR-RESULT", {result: false} )
 				return true;
 			}
 		}
+		tracer.log($or, $value, $value.__TRACER_ID,"OR-RESULT", {result: true} )
 		return false;
 	});
 }
@@ -455,16 +472,23 @@ function validateUniqueValueForClass($this, $uniqueValueForClass, $path) {
 }
 
 function validateXone($value, $xone) {
+	tracer.log($xone, $value, $value.__TRACER_ID,"XONE", "" )
 	var shapes = new RDFQueryUtil($shapes).rdfListToArray($xone);
 	var count = 0;
-	const promises = shapes.map((shape) => SHACL.nodeConformsToShape($value, shape));
+	const promises = shapes.map((shape) => {
+		tracer.log(shape, $value, $value.__TRACER_ID, "XONE-BRANCH", {xone: $xone.id});
+		const result = SHACL.nodeConformsToShape($value, shape)
+		tracer.log(shape, $value, $value.__TRACER_ID, "XONE-BRANCH-RESULT", {xone: $xone.id});
+		return result;
+	});
 	return Promise.all(promises).then((results) => {
 		for(var i = 0; i < shapes.length; i++) {
 			if(results[i]) {
 				count++;
 			}
 		}
-		return count == 1;
+		tracer.log($xone, $value, $value.__TRACER_ID,"XONE-RESULT", {result: !(count === 1)} )
+		return count === 1;
 	});
 }
 

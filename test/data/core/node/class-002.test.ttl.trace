@@ -1,0 +1,77 @@
++ Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/node/class-002.test#BNodeClass => 2 nodes found
+     Selected: [{"id":"b53_b9751","tracerId":"_tracer_1"},{"id":"b1320","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+       [node]
+       Target: b53_b9751
+       TracerId: _tracer_1
+       Evaluating target node b53_b9751
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+         [function]
+         Target: b53_b9751
+         TracerId: _tracer_1
+         Evaluating function validateClass
+         Args: {"$value":"_:b53_b9751","class":"http://datashapes.org/sh/tests/core/node/class-002.test#TestClass"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+       [node]
+       Target: b1320
+       TracerId: _tracer_2
+       Evaluating target node b1320
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+         [function]
+         Target: b1320
+         TracerId: _tracer_2
+         Evaluating function validateClass
+         Args: {"$value":"_:b1320","class":"http://datashapes.org/sh/tests/core/node/class-002.test#TestClass"}
+         Error? false
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 2 nodes found
+     Selected: [{"id":"String","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/node/class-002.test#NamedInstance","tracerId":"_tracer_4"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+       [node]
+       Target: String
+       TracerId: _tracer_3
+       Evaluating target node String
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+         [function]
+         Target: String
+         TracerId: _tracer_3
+         Evaluating function validateClass
+         Args: {"$value":"\"String\"","class":"http://datashapes.org/sh/tests/core/node/class-002.test#TestClass"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/class-002.test#NamedInstance
+       TracerId: _tracer_4
+       Evaluating target node http://datashapes.org/sh/tests/core/node/class-002.test#NamedInstance
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/class-002.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/class-002.test#NamedInstance
+         TracerId: _tracer_4
+         Evaluating function validateClass
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/class-002.test#NamedInstance","class":"http://datashapes.org/sh/tests/core/node/class-002.test#TestClass"}
+         Error? false

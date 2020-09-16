@@ -1,0 +1,50 @@
++ Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
+  Selected: []
+  Error? false
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
+     [target-selection]
+     Selecting targets by Target nodes => 1 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1","tracerId":"_tracer_1"}]
+     Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape-related
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
+           TracerId: _tracer_1
+           Selecting target 3 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related"
+           Selected: [{"termType":"BlankNode","value":"b9356"},{"termType":"BlankNode","value":"b9358"},{"termType":"BlankNode","value":"b9360"}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape-related
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
+             TracerId: _tracer_1
+             Evaluating function validateQualifiedMaxCountProperty
+             Args: {"qualifiedValueShape":"_:b9362","qualifiedValueShapesDisjoint":null,"qualifiedMaxCount":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape-related
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
+             TracerId: _tracer_1
+             Evaluating function validateQualifiedMinCountProperty
+             Args: {"qualifiedValueShape":"_:b9362","qualifiedValueShapesDisjoint":null,"qualifiedMinCount":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false

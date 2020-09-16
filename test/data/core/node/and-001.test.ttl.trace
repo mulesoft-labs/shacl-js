@@ -1,0 +1,239 @@
++ Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+         [and]
+         Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+         TracerId: _tracer_1
+         Evaluating AND
+         Error? true
+        |
+        -> Shape: _:b957
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+           TracerId: _tracer_1
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+           Error? true
+          |
+          -> Shape: _:b957
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+             TracerId: _tracer_1
+             Evaluating nested property constraints
+             Error? true
+            |
+            -> Shape: _:b958
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+               TracerId: _tracer_1
+               Selecting target 0 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-001.test#width"
+               Selected: []
+               Error? true
+              |
+              -> Shape: _:b958
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+                 TracerId: _tracer_1
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? true
+        |
+        -> Shape: _:b960
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+           TracerId: _tracer_1
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+           Error? false
+          |
+          -> Shape: _:b960
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+             TracerId: _tracer_1
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b961
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+               TracerId: _tracer_1
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-001.test#height"
+               Selected: [{"termType":"Literal","value":"3","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
+               Error? false
+              |
+              -> Shape: _:b961
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1
+                 TracerId: _tracer_1
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+         [and]
+         Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+         TracerId: _tracer_2
+         Evaluating AND
+         Error? true
+        |
+        -> Shape: _:b957
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+           TracerId: _tracer_2
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+           Error? false
+          |
+          -> Shape: _:b957
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+             TracerId: _tracer_2
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b958
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+               TracerId: _tracer_2
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-001.test#width"
+               Selected: [{"termType":"Literal","value":"2","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
+               Error? false
+              |
+              -> Shape: _:b958
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+                 TracerId: _tracer_2
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+        |
+        -> Shape: _:b960
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+           TracerId: _tracer_2
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+           Error? true
+          |
+          -> Shape: _:b960
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+             TracerId: _tracer_2
+             Evaluating nested property constraints
+             Error? true
+            |
+            -> Shape: _:b961
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+               TracerId: _tracer_2
+               Selecting target 0 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-001.test#height"
+               Selected: []
+               Error? true
+              |
+              -> Shape: _:b961
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2
+                 TracerId: _tracer_2
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle
+         [and]
+         Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+         TracerId: _tracer_3
+         Evaluating AND
+         Error? false
+        |
+        -> Shape: _:b957
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+           TracerId: _tracer_3
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+           Error? false
+          |
+          -> Shape: _:b957
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+             TracerId: _tracer_3
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b958
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+               TracerId: _tracer_3
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-001.test#width"
+               Selected: [{"termType":"Literal","value":"2","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
+               Error? false
+              |
+              -> Shape: _:b958
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+                 TracerId: _tracer_3
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+        |
+        -> Shape: _:b960
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+           TracerId: _tracer_3
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+           Error? false
+          |
+          -> Shape: _:b960
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+             TracerId: _tracer_3
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b961
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+               TracerId: _tracer_3
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-001.test#height"
+               Selected: [{"termType":"Literal","value":"3","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
+               Error? false
+              |
+              -> Shape: _:b961
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1
+                 TracerId: _tracer_3
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false

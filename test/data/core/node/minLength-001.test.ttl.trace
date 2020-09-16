@@ -1,0 +1,182 @@
++ Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestClass => 1 nodes found
+     Selected: [{"id":"b128_b9649","tracerId":"_tracer_1"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: b128_b9649
+       TracerId: _tracer_1
+       Evaluating target node b128_b9649
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: b128_b9649
+         TracerId: _tracer_1
+         Evaluating function validateMinLength
+         Args: {"$value":"_:b128_b9649","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 10 nodes found
+     Selected: [{"id":"a:b","tracerId":"_tracer_2"},{"id":"123","tracerId":"_tracer_3"},{"id":"Hel","tracerId":"_tracer_4"},{"id":"http://datashapes.org/sh/tests/core/node/minLength-001.test#John","tracerId":"_tracer_5"},{"id":"1234","tracerId":"_tracer_6"},{"id":"12345","tracerId":"_tracer_7"},{"id":"2017-03-29","tracerId":"_tracer_8"},{"id":"Hell","tracerId":"_tracer_9"},{"id":"Hell","tracerId":"_tracer_10"},{"id":"Hello","tracerId":"_tracer_11"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: a:b
+       TracerId: _tracer_2
+       Evaluating target node a:b
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: a:b
+         TracerId: _tracer_2
+         Evaluating function validateMinLength
+         Args: {"$value":"a:b","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: 123
+       TracerId: _tracer_3
+       Evaluating target node 123
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: 123
+         TracerId: _tracer_3
+         Evaluating function validateMinLength
+         Args: {"$value":"\"123\"^^http://www.w3.org/2001/XMLSchema#integer","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: Hel
+       TracerId: _tracer_4
+       Evaluating target node Hel
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: Hel
+         TracerId: _tracer_4
+         Evaluating function validateMinLength
+         Args: {"$value":"\"Hel\"","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/minLength-001.test#John
+       TracerId: _tracer_5
+       Evaluating target node http://datashapes.org/sh/tests/core/node/minLength-001.test#John
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/minLength-001.test#John
+         TracerId: _tracer_5
+         Evaluating function validateMinLength
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/minLength-001.test#John","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: 1234
+       TracerId: _tracer_6
+       Evaluating target node 1234
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: 1234
+         TracerId: _tracer_6
+         Evaluating function validateMinLength
+         Args: {"$value":"\"1234\"^^http://www.w3.org/2001/XMLSchema#integer","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: 12345
+       TracerId: _tracer_7
+       Evaluating target node 12345
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: 12345
+         TracerId: _tracer_7
+         Evaluating function validateMinLength
+         Args: {"$value":"\"12345\"^^http://www.w3.org/2001/XMLSchema#integer","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: 2017-03-29
+       TracerId: _tracer_8
+       Evaluating target node 2017-03-29
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: 2017-03-29
+         TracerId: _tracer_8
+         Evaluating function validateMinLength
+         Args: {"$value":"\"2017-03-29\"^^http://www.w3.org/2001/XMLSchema#date","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: Hell
+       TracerId: _tracer_9
+       Evaluating target node Hell
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: Hell
+         TracerId: _tracer_9
+         Evaluating function validateMinLength
+         Args: {"$value":"\"Hell\"","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: Hell
+       TracerId: _tracer_10
+       Evaluating target node Hell
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: Hell
+         TracerId: _tracer_10
+         Evaluating function validateMinLength
+         Args: {"$value":"\"Hell\"@en","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+       [node]
+       Target: Hello
+       TracerId: _tracer_11
+       Evaluating target node Hello
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minLength-001.test#TestShape
+         [function]
+         Target: Hello
+         TracerId: _tracer_11
+         Evaluating function validateMinLength
+         Args: {"$value":"\"Hello\"","minLength":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false

@@ -1,0 +1,164 @@
++ Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/hasValue-001.test#MalePerson => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/hasValue-001.test#InvalidMalePerson","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson1","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson2","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#InvalidMalePerson
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/hasValue-001.test#InvalidMalePerson
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#InvalidMalePerson
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#InvalidMalePerson
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/hasValue-001.test#gender"
+           Selected: [{"termType":"Literal","value":"female","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#InvalidMalePerson
+             TracerId: _tracer_1
+             Evaluating function validateHasValueProperty
+             Args: {"hasValue":"\"male\""}
+             Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+             [node]
+             Target: "female"
+             TracerId: _tracer_4
+             Evaluating target node "female"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+               [function]
+               Target: "female"
+               TracerId: _tracer_4
+               Evaluating function validateDatatype
+               Args: {"$value":"\"female\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson1
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson1
+           TracerId: _tracer_2
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/hasValue-001.test#gender"
+           Selected: [{"termType":"Literal","value":"male","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson1
+             TracerId: _tracer_2
+             Evaluating function validateHasValueProperty
+             Args: {"hasValue":"\"male\""}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+             [node]
+             Target: "male"
+             TracerId: _tracer_5
+             Evaluating target node "male"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+               [function]
+               Target: "male"
+               TracerId: _tracer_5
+               Evaluating function validateDatatype
+               Args: {"$value":"\"male\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson2
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson2
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson2
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson2
+           TracerId: _tracer_3
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/hasValue-001.test#gender"
+           Selected: [{"termType":"Literal","value":"female","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"male","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/hasValue-001.test#ValidMalePerson2
+             TracerId: _tracer_3
+             Evaluating function validateHasValueProperty
+             Args: {"hasValue":"\"male\""}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+             [node]
+             Target: "female"
+             TracerId: _tracer_6
+             Evaluating target node "female"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+               [function]
+               Target: "female"
+               TracerId: _tracer_6
+               Evaluating function validateDatatype
+               Args: {"$value":"\"female\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+             [node]
+             Target: "male"
+             TracerId: _tracer_7
+             Evaluating target node "male"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/hasValue-001.test#PersonShape-gender
+               [function]
+               Target: "male"
+               TracerId: _tracer_7
+               Evaluating function validateDatatype
+               Args: {"$value":"\"male\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false

@@ -1,0 +1,239 @@
++ Shape: http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+     [target-selection]
+     Selecting targets by Target nodes => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+         [and]
+         Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating AND
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#SuperShape
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+           TracerId: _tracer_1
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#SuperShape
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+             TracerId: _tracer_1
+             Evaluating nested property constraints
+             Error? true
+            |
+            -> Shape: _:b1091
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+               TracerId: _tracer_1
+               Selecting target 0 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-002.test#property"
+               Selected: []
+               Error? true
+              |
+              -> Shape: _:b1091
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+                 TracerId: _tracer_1
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? true
+        |
+        -> Shape: _:b1086
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+           TracerId: _tracer_1
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+           Error? false
+          |
+          -> Shape: _:b1086
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+             TracerId: _tracer_1
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b1087
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+               TracerId: _tracer_1
+               Selecting target 0 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-002.test#property"
+               Selected: []
+               Error? false
+              |
+              -> Shape: _:b1087
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance1
+                 TracerId: _tracer_1
+                 Evaluating function validateMaxCountProperty
+                 Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+         [and]
+         Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+         TracerId: _tracer_2
+         Evaluating AND
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#SuperShape
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+           TracerId: _tracer_2
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#SuperShape
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+             TracerId: _tracer_2
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b1091
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+               TracerId: _tracer_2
+               Selecting target 2 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-002.test#property"
+               Selected: [{"termType":"Literal","value":"One","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"Two","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b1091
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+                 TracerId: _tracer_2
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+        |
+        -> Shape: _:b1086
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+           TracerId: _tracer_2
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+           Error? true
+          |
+          -> Shape: _:b1086
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+             TracerId: _tracer_2
+             Evaluating nested property constraints
+             Error? true
+            |
+            -> Shape: _:b1087
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+               TracerId: _tracer_2
+               Selecting target 2 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-002.test#property"
+               Selected: [{"termType":"Literal","value":"One","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"Two","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? true
+              |
+              -> Shape: _:b1087
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-002.test#InvalidInstance2
+                 TracerId: _tracer_2
+                 Evaluating function validateMaxCountProperty
+                 Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#AndShape
+         [and]
+         Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+         TracerId: _tracer_3
+         Evaluating AND
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#SuperShape
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+           TracerId: _tracer_3
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/node/and-002.test#SuperShape
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+             TracerId: _tracer_3
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b1091
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+               TracerId: _tracer_3
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-002.test#property"
+               Selected: [{"termType":"Literal","value":"One","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b1091
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+                 TracerId: _tracer_3
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+        |
+        -> Shape: _:b1086
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+           TracerId: _tracer_3
+           Evaluating target node http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+           Error? false
+          |
+          -> Shape: _:b1086
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+             TracerId: _tracer_3
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b1087
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+               TracerId: _tracer_3
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/and-002.test#property"
+               Selected: [{"termType":"Literal","value":"One","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b1087
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/and-002.test#ValidInstance1
+                 TracerId: _tracer_3
+                 Evaluating function validateMaxCountProperty
+                 Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false

@@ -1,0 +1,169 @@
++ Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#MyClass => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape-myProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+           TracerId: _tracer_1
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#myProperty"
+           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"B","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape-myProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+             TracerId: _tracer_1
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape-myProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1
+           TracerId: _tracer_2
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#myProperty"
+           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape-myProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1
+             TracerId: _tracer_2
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+     [target-selection]
+     Selecting targets by subjects of predicate: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#myProperty => 6 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2","tracerId":"_tracer_4"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1","tracerId":"_tracer_5"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance2","tracerId":"_tracer_6"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1","tracerId":"_tracer_7"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2","tracerId":"_tracer_8"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+       Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2
+       TracerId: _tracer_4
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2
+         TracerId: _tracer_4
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape-myProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2
+           TracerId: _tracer_4
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#myProperty"
+           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"B","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape-myProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2
+             TracerId: _tracer_4
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1
+       TracerId: _tracer_5
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1
+       Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance2
+       TracerId: _tracer_6
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance2
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance2
+         TracerId: _tracer_6
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape-myProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance2
+           TracerId: _tracer_6
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#myProperty"
+           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape-myProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance2
+             TracerId: _tracer_6
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+       TracerId: _tracer_7
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1
+       Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2
+       TracerId: _tracer_8
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2
+       Error? false

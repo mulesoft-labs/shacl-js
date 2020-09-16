@@ -1,0 +1,26 @@
++ Shape: http://datashapes.org/sh/tests/core/misc/severity-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/misc/severity-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/misc/severity-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 1 nodes found
+     Selected: [{"id":"Hello","tracerId":"_tracer_1"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/misc/severity-001.test#TestShape
+       [node]
+       Target: Hello
+       TracerId: _tracer_1
+       Evaluating target node Hello
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/misc/severity-001.test#TestShape
+         [function]
+         Target: Hello
+         TracerId: _tracer_1
+         Evaluating function validateDatatype
+         Args: {"$value":"\"Hello\"","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true

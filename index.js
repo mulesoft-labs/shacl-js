@@ -11,6 +11,7 @@ const JsonLdSerializer = require("jsonld-streaming-serializer").JsonLdSerializer
 var ValidationReport = require("./src/validation-report");
 var debug = require("debug")("index");
 var error = require("debug")("index::error");
+var tracer = require("./src/trace");
 
 var TermFactory = require("./src/rdfquery/term-factory");
 var RDFQuery = require("./src/rdfquery");
@@ -67,6 +68,10 @@ var SHACLValidator = function() {
 	this.configuration = new ValidationEngineConfiguration();
 	this.functionsRegistry = require("./src/libraries");
 };
+
+SHACLValidator.prototype.trace = function(shouldTrace) {
+	tracer.withTracing(shouldTrace);
+}
 
 SHACLValidator.prototype.compareNodes = function(node1, node2) {
 	// TODO: Does not handle the case where nodes cannot be compared
@@ -192,6 +197,9 @@ SHACLValidator.prototype.showValidationResults = function(cb) {
 	}
 };
 
+SHACLValidator.prototype.getTrace = function() {
+	return tracer.frames();
+}
 /**
  * Reloads the shapes graph.
  * It will load SHACL and DASH shapes constraints.
@@ -311,6 +319,7 @@ SHACLValidator.prototype.onShapesGraphChange = function(startTime, cb) {
  * Validates the provided data graph against the provided shapes graph
  */
 SHACLValidator.prototype.validate = function (data, dataMediaType, shapes, shapesMediaType, cb) {
+	tracer.reset();
 	var that = this;
 	this.updateDataGraph(data, dataMediaType, function (e) {
 		if (e != null) {
@@ -333,6 +342,7 @@ SHACLValidator.prototype.validate = function (data, dataMediaType, shapes, shape
  */
 SHACLValidator.prototype.validateFromModels = function (dataRdfGraph, shapesRdfGraph, cb) {
 	var that = this;
+	tracer.reset();
 	this.updateDataGraphRdfModel(dataRdfGraph, function (e) {
 		if (e != null) {
 			cb(e, null);

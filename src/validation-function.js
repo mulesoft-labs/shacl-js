@@ -1,7 +1,7 @@
 // class ValidationFunction
 var RDFQuery = require("./rdfquery");
 var debug = require("debug")("validation-function");
-
+var tracer = require("./trace")
 var globalObject = typeof window !== 'undefined' ? window : global;
 
 var ValidationFunction = function (functionName, parameters, findInScript) {
@@ -46,19 +46,31 @@ ValidationFunction.prototype.doExecute = function (args) {
 };
 
 ValidationFunction.prototype.execute = function (focusNode, valueNode, constraint) {
-    debug("Validating " + this.funcName);
     var args = [];
+    var namedParams = {};
     for (var i = 0; i < this.funcArgs.length; i++) {
         var arg = this.funcArgs[i];
         var param = this.parameters[i];
         if (param) {
             var value = constraint.getParameterValue(arg);
             args.push(value);
+
+            if (value) {
+                namedParams[arg] = value.id;
+            } else {
+                namedParams[arg] = null;
+            }
         }
         else if (arg === "focusNode") {
             args.push(focusNode);
+            if (focusNode != null) {
+                namedParams["focusNode"] = focusNode.id;
+            }
         }
         else if (arg === "value") {
+            if (valueNode != null) {
+                namedParams["$value"] = valueNode.id;
+            }
             args.push(valueNode);
         }
         else if (arg === "currentShape") {
@@ -77,7 +89,16 @@ ValidationFunction.prototype.execute = function (focusNode, valueNode, constrain
             throw "Unexpected validator function argument " + arg + " for function " + this.funcName;
         }
     }
-    return this.doExecute(args);
+    const result = this.doExecute(args);
+
+    tracer.log(constraint.shape.shapeNode.toString(), (valueNode||focusNode), (valueNode||focusNode).__TRACER_ID,"FUNCTION-EVALUATION", {
+        function: this.funcName,
+        valueNode: valueNode,
+        from: focusNode,
+        args: namedParams,
+        result: result
+    });
+    return result;
 };
 
 module.exports = ValidationFunction;

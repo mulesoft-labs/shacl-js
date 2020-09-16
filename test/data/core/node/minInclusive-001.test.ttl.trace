@@ -1,0 +1,56 @@
++ Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 3 nodes found
+     Selected: [{"id":"7","tracerId":"_tracer_1"},{"id":"8","tracerId":"_tracer_2"},{"id":"9","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+       [node]
+       Target: 7
+       TracerId: _tracer_1
+       Evaluating target node 7
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+         [function]
+         Target: 7
+         TracerId: _tracer_1
+         Evaluating function validateMinInclusive
+         Args: {"$value":"\"7\"^^http://www.w3.org/2001/XMLSchema#integer","minInclusive":"\"8\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+       [node]
+       Target: 8
+       TracerId: _tracer_2
+       Evaluating target node 8
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+         [function]
+         Target: 8
+         TracerId: _tracer_2
+         Evaluating function validateMinInclusive
+         Args: {"$value":"\"8\"^^http://www.w3.org/2001/XMLSchema#integer","minInclusive":"\"8\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+       [node]
+       Target: 9
+       TracerId: _tracer_3
+       Evaluating target node 9
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape
+         [function]
+         Target: 9
+         TracerId: _tracer_3
+         Evaluating function validateMinInclusive
+         Args: {"$value":"\"9\"^^http://www.w3.org/2001/XMLSchema#integer","minInclusive":"\"8\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false

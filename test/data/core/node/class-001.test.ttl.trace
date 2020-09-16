@@ -1,0 +1,71 @@
++ Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 4 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/class-001.test#Quokki","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/class-001.test#Typeless","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/node/class-001.test#John","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/node/class-001.test#Someone","tracerId":"_tracer_4"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/class-001.test#Quokki
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/node/class-001.test#Quokki
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/class-001.test#Quokki
+         TracerId: _tracer_1
+         Evaluating function validateClass
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/class-001.test#Quokki","class":"http://datashapes.org/sh/tests/core/node/class-001.test#Person"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/class-001.test#Typeless
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/class-001.test#Typeless
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/class-001.test#Typeless
+         TracerId: _tracer_2
+         Evaluating function validateClass
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/class-001.test#Typeless","class":"http://datashapes.org/sh/tests/core/node/class-001.test#Person"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/class-001.test#John
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/node/class-001.test#John
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/class-001.test#John
+         TracerId: _tracer_3
+         Evaluating function validateClass
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/class-001.test#John","class":"http://datashapes.org/sh/tests/core/node/class-001.test#Person"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/class-001.test#Someone
+       TracerId: _tracer_4
+       Evaluating target node http://datashapes.org/sh/tests/core/node/class-001.test#Someone
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/class-001.test#Someone
+         TracerId: _tracer_4
+         Evaluating function validateClass
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/class-001.test#Someone","class":"http://datashapes.org/sh/tests/core/node/class-001.test#Person"}
+         Error? false

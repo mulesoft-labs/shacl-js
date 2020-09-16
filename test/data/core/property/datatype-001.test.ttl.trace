@@ -1,0 +1,150 @@
++ Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/datatype-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/datatype-001.test#ValidResource","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/datatype-001.test#InvalidResource1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/datatype-001.test#InvalidResource1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/datatype-001.test#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-dateProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/datatype-001.test#InvalidResource1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/datatype-001.test#dateProperty"
+           Selected: [{"termType":"Literal","value":"2011-01-01","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#dateTime"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-dateProperty
+             [node]
+             Target: "2011-01-01"^^http://www.w3.org/2001/XMLSchema#dateTime
+             TracerId: _tracer_3
+             Evaluating target node "2011-01-01"^^http://www.w3.org/2001/XMLSchema#dateTime
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-dateProperty
+               [function]
+               Target: "2011-01-01"^^http://www.w3.org/2001/XMLSchema#dateTime
+               TracerId: _tracer_3
+               Evaluating function validateDatatype
+               Args: {"$value":"\"2011-01-01\"^^http://www.w3.org/2001/XMLSchema#dateTime","datatype":"http://www.w3.org/2001/XMLSchema#date"}
+               Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-integerProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/datatype-001.test#InvalidResource1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/datatype-001.test#integerProperty"
+           Selected: [{"termType":"Literal","value":"11.1","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#decimal"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-integerProperty
+             [node]
+             Target: "11.1"^^http://www.w3.org/2001/XMLSchema#decimal
+             TracerId: _tracer_4
+             Evaluating target node "11.1"^^http://www.w3.org/2001/XMLSchema#decimal
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-integerProperty
+               [function]
+               Target: "11.1"^^http://www.w3.org/2001/XMLSchema#decimal
+               TracerId: _tracer_4
+               Evaluating function validateDatatype
+               Args: {"$value":"\"11.1\"^^http://www.w3.org/2001/XMLSchema#decimal","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/datatype-001.test#ValidResource
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/datatype-001.test#ValidResource
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/datatype-001.test#ValidResource
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-dateProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/datatype-001.test#ValidResource
+           TracerId: _tracer_2
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/datatype-001.test#dateProperty"
+           Selected: [{"termType":"Literal","value":"2014-09-01","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#date"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-dateProperty
+             [node]
+             Target: "2014-09-01"^^http://www.w3.org/2001/XMLSchema#date
+             TracerId: _tracer_5
+             Evaluating target node "2014-09-01"^^http://www.w3.org/2001/XMLSchema#date
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-dateProperty
+               [function]
+               Target: "2014-09-01"^^http://www.w3.org/2001/XMLSchema#date
+               TracerId: _tracer_5
+               Evaluating function validateDatatype
+               Args: {"$value":"\"2014-09-01\"^^http://www.w3.org/2001/XMLSchema#date","datatype":"http://www.w3.org/2001/XMLSchema#date"}
+               Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-integerProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/datatype-001.test#ValidResource
+           TracerId: _tracer_2
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/datatype-001.test#integerProperty"
+           Selected: [{"termType":"Literal","value":"0","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}},{"termType":"Literal","value":"1234","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-integerProperty
+             [node]
+             Target: "0"^^http://www.w3.org/2001/XMLSchema#integer
+             TracerId: _tracer_6
+             Evaluating target node "0"^^http://www.w3.org/2001/XMLSchema#integer
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-integerProperty
+               [function]
+               Target: "0"^^http://www.w3.org/2001/XMLSchema#integer
+               TracerId: _tracer_6
+               Evaluating function validateDatatype
+               Args: {"$value":"\"0\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+               Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-integerProperty
+             [node]
+             Target: "1234"^^http://www.w3.org/2001/XMLSchema#integer
+             TracerId: _tracer_7
+             Evaluating target node "1234"^^http://www.w3.org/2001/XMLSchema#integer
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-001.test#TestShape-integerProperty
+               [function]
+               Target: "1234"^^http://www.w3.org/2001/XMLSchema#integer
+               TracerId: _tracer_7
+               Evaluating function validateDatatype
+               Args: {"$value":"\"1234\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+               Error? false

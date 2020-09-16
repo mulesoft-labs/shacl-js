@@ -1,0 +1,57 @@
++ Shape: http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape1
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape1
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape1
+     [target-selection]
+     Selecting targets by Target nodes => 1 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/misc/severity-002.test#InvalidResource1","tracerId":"_tracer_1"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape1
+       [node]
+       Target: http://datashapes.org/sh/tests/core/misc/severity-002.test#InvalidResource1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/misc/severity-002.test#InvalidResource1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape1
+         [function]
+         Target: http://datashapes.org/sh/tests/core/misc/severity-002.test#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating function validateNodeKind
+         Args: {"$value":"http://datashapes.org/sh/tests/core/misc/severity-002.test#InvalidResource1","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+         Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape1
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/misc/severity-002.test#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape2
+           [path]
+           Target: http://datashapes.org/sh/tests/core/misc/severity-002.test#InvalidResource1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/misc/severity-002.test#property"
+           Selected: [{"termType":"Literal","value":"true","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#boolean"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape2
+             [node]
+             Target: "true"^^http://www.w3.org/2001/XMLSchema#boolean
+             TracerId: _tracer_2
+             Evaluating target node "true"^^http://www.w3.org/2001/XMLSchema#boolean
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/misc/severity-002.test#TestShape2
+               [function]
+               Target: "true"^^http://www.w3.org/2001/XMLSchema#boolean
+               TracerId: _tracer_2
+               Evaluating function validateDatatype
+               Args: {"$value":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+               Error? true

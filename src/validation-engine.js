@@ -2,6 +2,7 @@ var RDFQuery = require("./rdfquery");
 var T = RDFQuery.T;
 var TermFactory = require("./rdfquery/term-factory");
 var ValidationEngineConfiguration = require("./validation-engine-configuration");
+var tracer = require("./trace");
 
 var nodeLabel = function (node, store) {
     if (node.termType === "Collection") {
@@ -37,6 +38,10 @@ var ValidationEngine = function (context, conformanceOnly) {
     this.violationsCount = 0;
     this.setConfiguration(new ValidationEngineConfiguration());
 };
+
+ValidationEngine.prototype.withTracing = function(shouldTrace) {
+    tracer.withTracing(shouldTrace);
+}
 
 ValidationEngine.prototype.addResultProperty = function (result, predicate, object) {
     this.results.push([result, predicate, object]);
@@ -165,6 +170,7 @@ ValidationEngine.prototype.validateAll = async function (rdfDataGraph) {
         const shapes = this.context.shapesGraph.getShapesWithTarget();
         for (let i = 0; i < shapes.length; i++) {
             const shape = shapes[i];
+            tracer.setRootShape(shape.shapeNode)
             const focusNodes = shape.getTargetNodes(rdfDataGraph);
             const asyncValidations = focusNodes.map((focusNode) => this.validateNodeAgainstShape(focusNode, shape, rdfDataGraph, true));
             const results = await Promise.all(asyncValidations);
@@ -172,6 +178,7 @@ ValidationEngine.prototype.validateAll = async function (rdfDataGraph) {
                 foundError = foundError || result
             })
         }
+
         return foundError;
     }
 };
@@ -184,6 +191,7 @@ ValidationEngine.prototype.validateNodeAgainstShape = async function (focusNode,
         return true;
     } else {
         if (shape.deactivated) {
+            tracer.log(shape.shapeNode, focusNode.id, focusNode.__TRACER_ID,"DEACTIVATED", "Shape is deactivated, not validating");
             return false;
         }
         const constraints = shape.getConstraints();
@@ -207,7 +215,9 @@ ValidationEngine.prototype.validateNodeAgainstConstraint = async function (focus
         if (T("sh:PropertyConstraintComponent").equals(constraint.component.node)) {
             var errorFound = false;
             for (var i = 0; i < valueNodes.length; i++) {
-                if (await this.validateNodeAgainstShape(valueNodes[i], this.context.shapesGraph.getShape(constraint.paramValue), rdfDataGraph, topLevel)) {
+                let nestedShape = this.context.shapesGraph.getShape(constraint.paramValue);
+                tracer.log(constraint.shape.shapeNode, valueNodes[i], valueNodes[i].__TRACER_ID, "BRANCH", {constraint: constraint.paramValue.toString(), nested: nestedShape.shapeNode.toString(), from: focusNode})
+                if (await this.validateNodeAgainstShape(valueNodes[i], nestedShape, rdfDataGraph, topLevel)) {
                     errorFound = true;
                 }
             }
@@ -242,6 +252,7 @@ ValidationEngine.prototype.validateNodeAgainstConstraint = async function (focus
                                         reject(new Error("Failure variable returned true in SPARQL query for shape <" + constraint.shape.shapeNode + ">"));
                                     }
                                 });
+                                tracer.log(constraint.shape.shapeNode, valueNode, valueNode.__TRACER_ID, "SPARQL-QUERY-RESULT", {error: foundError})
                                 resolve(foundError)
                             } catch (e) {
                                 reject(e);

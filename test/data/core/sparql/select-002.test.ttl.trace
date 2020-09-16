@@ -1,0 +1,57 @@
++ Shape: http://datashapes.org/sh/tests/core/sparql/select-002.test#LanguageExampleShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/sparql/select-002.test#LanguageExampleShape
+  Selected: []
+  Error? false
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/sparql/select-002.test#LanguageExampleShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/sparql/select-002.test#Country => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/sparql/select-002.test#ValidCountry","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/sparql/select-002.test#InvalidCountry","tracerId":"_tracer_2"}]
+     Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/sparql/select-002.test#LanguageExampleShape
+       [sparql]
+       Target: http://datashapes.org/sh/tests/core/sparql/select-002.test#ValidCountry
+       TracerId: _tracer_1
+       Executing a SPARQL based validation
+       Query:
+          PREFIX dash: <http://datashapes.org/dash#>
+          PREFIX dcterms: <http://purl.org/dc/terms/>
+          PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+          PREFIX owl: <http://www.w3.org/2002/07/owl#>
+          PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+          
+          			SELECT $this (<http://datashapes.org/sh/tests/core/sparql/select-002.test#germanLabel> AS ?path) ?value (!langMatches(lang(?value), "de") AS ?failure)
+          			WHERE {
+          				$this <http://datashapes.org/sh/tests/core/sparql/select-002.test#germanLabel> ?value .
+          				FILTER (!isLiteral(?value) || !langMatches(lang(?value), "de"))
+          			}
+          			
+       Results: []
+       Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/sparql/select-002.test#LanguageExampleShape
+       [sparql]
+       Target: http://datashapes.org/sh/tests/core/sparql/select-002.test#InvalidCountry
+       TracerId: _tracer_2
+       Executing a SPARQL based validation
+       Query:
+          PREFIX dash: <http://datashapes.org/dash#>
+          PREFIX dcterms: <http://purl.org/dc/terms/>
+          PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+          PREFIX owl: <http://www.w3.org/2002/07/owl#>
+          PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+          
+          			SELECT $this (<http://datashapes.org/sh/tests/core/sparql/select-002.test#germanLabel> AS ?path) ?value (!langMatches(lang(?value), "de") AS ?failure)
+          			WHERE {
+          				$this <http://datashapes.org/sh/tests/core/sparql/select-002.test#germanLabel> ?value .
+          				FILTER (!isLiteral(?value) || !langMatches(lang(?value), "de"))
+          			}
+          			
+       Results: [{"?this":{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/sparql/select-002.test#InvalidCountry"},"?value":{"termType":"Literal","value":"Spain","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},"?path":{"value":"http://datashapes.org/sh/tests/core/sparql/select-002.test#germanLabel"},"?failure":{"value":"true","datatype":{"value":"http://www.w3.org/2001/XMLSchema#boolean"},"language":""}}]
+       Error? false

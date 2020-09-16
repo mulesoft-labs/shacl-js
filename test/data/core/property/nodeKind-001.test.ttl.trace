@@ -1,0 +1,1704 @@
++ Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_4"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_5"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_6"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b79526
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"BlankNode","value":"b343_b55454"}]
+           Error? true
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: _:b343_b55454
+             TracerId: _tracer_7
+             Evaluating target node _:b343_b55454
+             Error? true
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: _:b343_b55454
+               TracerId: _tracer_7
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b55454","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b79526
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+           TracerId: _tracer_2
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"BlankNode","value":"b343_b67098"}]
+           Error? true
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_8
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_8
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? true
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: _:b343_b67098
+             TracerId: _tracer_9
+             Evaluating target node _:b343_b67098
+             Error? true
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: _:b343_b67098
+               TracerId: _tracer_9
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b67098","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b79526
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+           TracerId: _tracer_3
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"BlankNode","value":"b343_b99026"}]
+           Error? true
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_10
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_10
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? false
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: _:b343_b99026
+             TracerId: _tracer_11
+             Evaluating target node _:b343_b99026
+             Error? true
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: _:b343_b99026
+               TracerId: _tracer_11
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b99026","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       TracerId: _tracer_4
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+         TracerId: _tracer_4
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b79526
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+           TracerId: _tracer_4
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"}]
+           Error? true
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_12
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_12
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       TracerId: _tracer_5
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+         TracerId: _tracer_5
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b79526
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+           TracerId: _tracer_5
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_13
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_13
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? true
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_14
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_14
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       TracerId: _tracer_6
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+         TracerId: _tracer_6
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b79526
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+           TracerId: _tracer_6
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: _:b344_b79526
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_15
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b79526
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_15
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#Literal"}
+               Error? false
++ Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_16"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_17"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_18"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_19"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_20"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_21"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       TracerId: _tracer_16
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+         TracerId: _tracer_16
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b97614
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+           TracerId: _tracer_16
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"BlankNode","value":"b343_b55454"}]
+           Error? true
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: _:b343_b55454
+             TracerId: _tracer_22
+             Evaluating target node _:b343_b55454
+             Error? true
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: _:b343_b55454
+               TracerId: _tracer_22
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b55454","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       TracerId: _tracer_17
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+         TracerId: _tracer_17
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b97614
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+           TracerId: _tracer_17
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"BlankNode","value":"b343_b67098"}]
+           Error? true
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_23
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_23
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? false
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: _:b343_b67098
+             TracerId: _tracer_24
+             Evaluating target node _:b343_b67098
+             Error? true
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: _:b343_b67098
+               TracerId: _tracer_24
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b67098","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       TracerId: _tracer_18
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+         TracerId: _tracer_18
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b97614
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+           TracerId: _tracer_18
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"BlankNode","value":"b343_b99026"}]
+           Error? true
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_25
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_25
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? true
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: _:b343_b99026
+             TracerId: _tracer_26
+             Evaluating target node _:b343_b99026
+             Error? true
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: _:b343_b99026
+               TracerId: _tracer_26
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b99026","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       TracerId: _tracer_19
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+         TracerId: _tracer_19
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b97614
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+           TracerId: _tracer_19
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"}]
+           Error? false
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_27
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_27
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       TracerId: _tracer_20
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+         TracerId: _tracer_20
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b97614
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+           TracerId: _tracer_20
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_28
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_28
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? false
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_29
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_29
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       TracerId: _tracer_21
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+         TracerId: _tracer_21
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b97614
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+           TracerId: _tracer_21
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b344_b97614
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_30
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b97614
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_30
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? true
++ Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_31"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_32"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_33"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_34"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_35"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_36"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       TracerId: _tracer_31
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+         TracerId: _tracer_31
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b97860
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+           TracerId: _tracer_31
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"BlankNode","value":"b343_b55454"}]
+           Error? true
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: _:b343_b55454
+             TracerId: _tracer_37
+             Evaluating target node _:b343_b55454
+             Error? true
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: _:b343_b55454
+               TracerId: _tracer_37
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b55454","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       TracerId: _tracer_32
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+         TracerId: _tracer_32
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b97860
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+           TracerId: _tracer_32
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"BlankNode","value":"b343_b67098"}]
+           Error? true
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_38
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_38
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? false
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: _:b343_b67098
+             TracerId: _tracer_39
+             Evaluating target node _:b343_b67098
+             Error? true
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: _:b343_b67098
+               TracerId: _tracer_39
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b67098","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       TracerId: _tracer_33
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+         TracerId: _tracer_33
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b97860
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+           TracerId: _tracer_33
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"BlankNode","value":"b343_b99026"}]
+           Error? true
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_40
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_40
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? false
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: _:b343_b99026
+             TracerId: _tracer_41
+             Evaluating target node _:b343_b99026
+             Error? true
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: _:b343_b99026
+               TracerId: _tracer_41
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b99026","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       TracerId: _tracer_34
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+         TracerId: _tracer_34
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b97860
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+           TracerId: _tracer_34
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"}]
+           Error? false
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_42
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_42
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       TracerId: _tracer_35
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+         TracerId: _tracer_35
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b97860
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+           TracerId: _tracer_35
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_43
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_43
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? false
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_44
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_44
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       TracerId: _tracer_36
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+         TracerId: _tracer_36
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b97860
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+           TracerId: _tracer_36
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: _:b344_b97860
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_45
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b97860
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_45
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#IRIOrLiteral"}
+               Error? false
++ Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_46"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_47"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_48"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_49"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_50"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_51"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       TracerId: _tracer_46
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+         TracerId: _tracer_46
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b14975
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+           TracerId: _tracer_46
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"BlankNode","value":"b343_b55454"}]
+           Error? false
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: _:b343_b55454
+             TracerId: _tracer_52
+             Evaluating target node _:b343_b55454
+             Error? false
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: _:b343_b55454
+               TracerId: _tracer_52
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b55454","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       TracerId: _tracer_47
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+         TracerId: _tracer_47
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b14975
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+           TracerId: _tracer_47
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"BlankNode","value":"b343_b67098"}]
+           Error? true
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_53
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_53
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? true
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: _:b343_b67098
+             TracerId: _tracer_54
+             Evaluating target node _:b343_b67098
+             Error? false
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: _:b343_b67098
+               TracerId: _tracer_54
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b67098","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       TracerId: _tracer_48
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+         TracerId: _tracer_48
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b14975
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+           TracerId: _tracer_48
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"BlankNode","value":"b343_b99026"}]
+           Error? false
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_55
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_55
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? false
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: _:b343_b99026
+             TracerId: _tracer_56
+             Evaluating target node _:b343_b99026
+             Error? false
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: _:b343_b99026
+               TracerId: _tracer_56
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b99026","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       TracerId: _tracer_49
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+         TracerId: _tracer_49
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b14975
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+           TracerId: _tracer_49
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"}]
+           Error? true
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_57
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_57
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       TracerId: _tracer_50
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+         TracerId: _tracer_50
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b14975
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+           TracerId: _tracer_50
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_58
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_58
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? true
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_59
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_59
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       TracerId: _tracer_51
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+         TracerId: _tracer_51
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b14975
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+           TracerId: _tracer_51
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: _:b344_b14975
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_60
+             Evaluating target node "Literal"
+             Error? false
+            |
+            -> Shape: _:b344_b14975
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_60
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrLiteral"}
+               Error? false
++ Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_61"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_62"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_63"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_64"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_65"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_66"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       TracerId: _tracer_61
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+         TracerId: _tracer_61
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b38619
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+           TracerId: _tracer_61
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"BlankNode","value":"b343_b55454"}]
+           Error? false
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: _:b343_b55454
+             TracerId: _tracer_67
+             Evaluating target node _:b343_b55454
+             Error? false
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: _:b343_b55454
+               TracerId: _tracer_67
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b55454","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       TracerId: _tracer_62
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+         TracerId: _tracer_62
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b38619
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+           TracerId: _tracer_62
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"BlankNode","value":"b343_b67098"}]
+           Error? true
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_68
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_68
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? true
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: _:b343_b67098
+             TracerId: _tracer_69
+             Evaluating target node _:b343_b67098
+             Error? false
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: _:b343_b67098
+               TracerId: _tracer_69
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b67098","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       TracerId: _tracer_63
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+         TracerId: _tracer_63
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b38619
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+           TracerId: _tracer_63
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"BlankNode","value":"b343_b99026"}]
+           Error? true
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_70
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_70
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? true
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: _:b343_b99026
+             TracerId: _tracer_71
+             Evaluating target node _:b343_b99026
+             Error? false
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: _:b343_b99026
+               TracerId: _tracer_71
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b99026","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       TracerId: _tracer_64
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+         TracerId: _tracer_64
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b38619
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+           TracerId: _tracer_64
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"}]
+           Error? true
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_72
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_72
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       TracerId: _tracer_65
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+         TracerId: _tracer_65
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b38619
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+           TracerId: _tracer_65
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_73
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? true
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_73
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? true
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_74
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_74
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       TracerId: _tracer_66
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+         TracerId: _tracer_66
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b38619
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+           TracerId: _tracer_66
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b344_b38619
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_75
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b38619
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_75
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNode"}
+               Error? true
++ Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_76"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_77"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_78"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_79"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_80"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_81"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       TracerId: _tracer_76
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+         TracerId: _tracer_76
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b3078
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode
+           TracerId: _tracer_76
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"BlankNode","value":"b343_b55454"}]
+           Error? false
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: _:b343_b55454
+             TracerId: _tracer_82
+             Evaluating target node _:b343_b55454
+             Error? false
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: _:b343_b55454
+               TracerId: _tracer_82
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b55454","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       TracerId: _tracer_77
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+         TracerId: _tracer_77
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b3078
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI
+           TracerId: _tracer_77
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"BlankNode","value":"b343_b67098"}]
+           Error? false
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_83
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_83
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? false
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: _:b343_b67098
+             TracerId: _tracer_84
+             Evaluating target node _:b343_b67098
+             Error? false
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: _:b343_b67098
+               TracerId: _tracer_84
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b67098","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       TracerId: _tracer_78
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+         TracerId: _tracer_78
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b3078
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral
+           TracerId: _tracer_78
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"BlankNode","value":"b343_b99026"}]
+           Error? true
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_85
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_85
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? true
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: _:b343_b99026
+             TracerId: _tracer_86
+             Evaluating target node _:b343_b99026
+             Error? false
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: _:b343_b99026
+               TracerId: _tracer_86
+               Evaluating function validateNodeKind
+               Args: {"$value":"_:b343_b99026","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       TracerId: _tracer_79
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+         TracerId: _tracer_79
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b344_b3078
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI
+           TracerId: _tracer_79
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"}]
+           Error? false
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_87
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_87
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       TracerId: _tracer_80
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+         TracerId: _tracer_80
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b3078
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral
+           TracerId: _tracer_80
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Class"},{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Class
+             TracerId: _tracer_88
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Class
+             Error? false
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Class
+               TracerId: _tracer_88
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Class","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? false
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_89
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_89
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       TracerId: _tracer_81
+       Evaluating target node http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+         TracerId: _tracer_81
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b344_b3078
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral
+           TracerId: _tracer_81
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/nodeKind-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"Literal","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b344_b3078
+             [node]
+             Target: "Literal"
+             TracerId: _tracer_90
+             Evaluating target node "Literal"
+             Error? true
+            |
+            -> Shape: _:b344_b3078
+               [function]
+               Target: "Literal"
+               TracerId: _tracer_90
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"Literal\"","nodeKind":"http://www.w3.org/ns/shacl#BlankNodeOrIRI"}
+               Error? true

@@ -1,0 +1,73 @@
++ Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyClass => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/targetClass-001.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/targets/targetClass-001.test#ValidInstance1","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetClass-001.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape-myProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#InvalidInstance1
+           TracerId: _tracer_1
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/targets/targetClass-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"B","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape-myProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#InvalidInstance1
+             TracerId: _tracer_1
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#ValidInstance1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/targetClass-001.test#ValidInstance1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#ValidInstance1
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape-myProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#ValidInstance1
+           TracerId: _tracer_2
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/targets/targetClass-001.test#myProperty"
+           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#MyShape-myProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/targets/targetClass-001.test#ValidInstance1
+             TracerId: _tracer_2
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false

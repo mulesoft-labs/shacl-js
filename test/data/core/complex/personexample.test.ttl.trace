@@ -1,0 +1,275 @@
++ Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/complex/personexample.test#Person => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/complex/personexample.test#Alice","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/complex/personexample.test#Bob","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Alice
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/complex/personexample.test#Alice
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Alice
+         TracerId: _tracer_1
+         Evaluating function validateClosed
+         Args: {"$value":"http://datashapes.org/sh/tests/core/complex/personexample.test#Alice","closed":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","ignoredProperties":"_:b376"}
+         Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Alice
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b377
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Alice
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/complex/personexample.test#ssn"
+           Selected: [{"termType":"Literal","value":"987-65-432A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b377
+             [function]
+             Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Alice
+             TracerId: _tracer_1
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: _:b377
+             [node]
+             Target: "987-65-432A"
+             TracerId: _tracer_4
+             Evaluating target node "987-65-432A"
+             Error? true
+            |
+            -> Shape: _:b377
+               [function]
+               Target: "987-65-432A"
+               TracerId: _tracer_4
+               Evaluating function validateDatatype
+               Args: {"$value":"\"987-65-432A\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: _:b377
+               [function]
+               Target: "987-65-432A"
+               TracerId: _tracer_4
+               Evaluating function validatePattern
+               Args: {"$value":"\"987-65-432A\"","pattern":"\"^\\d{3}-\\d{2}-\\d{4}$\"","flags":null}
+               Error? true
+        |
+        -> Shape: _:b378
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Alice
+           TracerId: _tracer_1
+           Selecting target 0 values for path
+           Path: "http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor"
+           Selected: []
+           Error? false
+        |
+        -> Shape: _:b379
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Alice
+           TracerId: _tracer_1
+           Selecting target 0 values for path
+           Path: {"inverse":"http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor"}
+           Selected: []
+           Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Bob
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/complex/personexample.test#Bob
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Bob
+         TracerId: _tracer_2
+         Evaluating function validateClosed
+         Args: {"$value":"http://datashapes.org/sh/tests/core/complex/personexample.test#Bob","closed":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","ignoredProperties":"_:b376"}
+         Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Bob
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b377
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Bob
+           TracerId: _tracer_2
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/complex/personexample.test#ssn"
+           Selected: [{"termType":"Literal","value":"123-45-6789","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"124-35-6789","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: _:b377
+             [function]
+             Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Bob
+             TracerId: _tracer_2
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? true
+          |
+          -> Shape: _:b377
+             [node]
+             Target: "123-45-6789"
+             TracerId: _tracer_5
+             Evaluating target node "123-45-6789"
+             Error? false
+            |
+            -> Shape: _:b377
+               [function]
+               Target: "123-45-6789"
+               TracerId: _tracer_5
+               Evaluating function validateDatatype
+               Args: {"$value":"\"123-45-6789\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: _:b377
+               [function]
+               Target: "123-45-6789"
+               TracerId: _tracer_5
+               Evaluating function validatePattern
+               Args: {"$value":"\"123-45-6789\"","pattern":"\"^\\d{3}-\\d{2}-\\d{4}$\"","flags":null}
+               Error? false
+          |
+          -> Shape: _:b377
+             [node]
+             Target: "124-35-6789"
+             TracerId: _tracer_6
+             Evaluating target node "124-35-6789"
+             Error? false
+            |
+            -> Shape: _:b377
+               [function]
+               Target: "124-35-6789"
+               TracerId: _tracer_6
+               Evaluating function validateDatatype
+               Args: {"$value":"\"124-35-6789\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: _:b377
+               [function]
+               Target: "124-35-6789"
+               TracerId: _tracer_6
+               Evaluating function validatePattern
+               Args: {"$value":"\"124-35-6789\"","pattern":"\"^\\d{3}-\\d{2}-\\d{4}$\"","flags":null}
+               Error? false
+        |
+        -> Shape: _:b378
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Bob
+           TracerId: _tracer_2
+           Selecting target 0 values for path
+           Path: "http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor"
+           Selected: []
+           Error? false
+        |
+        -> Shape: _:b379
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Bob
+           TracerId: _tracer_2
+           Selecting target 0 values for path
+           Path: {"inverse":"http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor"}
+           Selected: []
+           Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin
+         TracerId: _tracer_3
+         Evaluating function validateClosed
+         Args: {"$value":"http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin","closed":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","ignoredProperties":"_:b376"}
+         Explanation: [{"path":{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/complex/personexample.test#birthDate"},"value":{"termType":"Literal","value":"1999-09-09","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#date"}}}]
+         Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b377
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin
+           TracerId: _tracer_3
+           Selecting target 0 values for path
+           Path: "http://datashapes.org/sh/tests/core/complex/personexample.test#ssn"
+           Selected: []
+           Error? false
+          |
+          -> Shape: _:b377
+             [function]
+             Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin
+             TracerId: _tracer_3
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+        |
+        -> Shape: _:b378
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin
+           TracerId: _tracer_3
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany"}]
+           Error? true
+          |
+          -> Shape: _:b378
+             [node]
+             Target: http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany
+             TracerId: _tracer_7
+             Evaluating target node http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany
+             Error? true
+            |
+            -> Shape: _:b378
+               [function]
+               Target: http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany
+               TracerId: _tracer_7
+               Evaluating function validateClass
+               Args: {"$value":"http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany","class":"http://datashapes.org/sh/tests/core/complex/personexample.test#Company"}
+               Error? true
+            |
+            -> Shape: _:b378
+               [function]
+               Target: http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany
+               TracerId: _tracer_7
+               Evaluating function validateNodeKind
+               Args: {"$value":"http://datashapes.org/sh/tests/core/complex/personexample.test#UntypedCompany","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? false
+        |
+        -> Shape: _:b379
+           [path]
+           Target: http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin
+           TracerId: _tracer_3
+           Selecting target 0 values for path
+           Path: {"inverse":"http://datashapes.org/sh/tests/core/complex/personexample.test#worksFor"}
+           Selected: []
+           Error? false

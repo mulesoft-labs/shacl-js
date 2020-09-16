@@ -1,0 +1,87 @@
++ Shape: http://datashapes.org/sh/tests/core/node/not-002.test#NotExampleShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/not-002.test#NotExampleShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/not-002.test#NotExampleShape
+     [target-selection]
+     Selecting targets by Target nodes => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/not-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/not-002.test#ValidInstance1","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/not-002.test#NotExampleShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/not-002.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/node/not-002.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/not-002.test#NotExampleShape
+         [not]
+         Target: http://datashapes.org/sh/tests/core/node/not-002.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating not
+         Error? true
+        |
+        -> Shape: _:b3571
+           [properties]
+           Target: http://datashapes.org/sh/tests/core/node/not-002.test#InvalidInstance1
+           TracerId: _tracer_1
+           Evaluating nested property constraints
+           Error? false
+          |
+          -> Shape: _:b3572
+             [path]
+             Target: http://datashapes.org/sh/tests/core/node/not-002.test#InvalidInstance1
+             TracerId: _tracer_1
+             Selecting target 1 values for path
+             Path: "http://datashapes.org/sh/tests/core/node/not-002.test#property"
+             Selected: [{"termType":"Literal","value":"Some value","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+             Error? false
+            |
+            -> Shape: _:b3572
+               [function]
+               Target: http://datashapes.org/sh/tests/core/node/not-002.test#InvalidInstance1
+               TracerId: _tracer_1
+               Evaluating function validateMinCountProperty
+               Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/not-002.test#NotExampleShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/not-002.test#ValidInstance1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/not-002.test#ValidInstance1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/not-002.test#NotExampleShape
+         [not]
+         Target: http://datashapes.org/sh/tests/core/node/not-002.test#ValidInstance1
+         TracerId: _tracer_2
+         Evaluating not
+         Error? false
+        |
+        -> Shape: _:b3571
+           [properties]
+           Target: http://datashapes.org/sh/tests/core/node/not-002.test#ValidInstance1
+           TracerId: _tracer_2
+           Evaluating nested property constraints
+           Error? true
+          |
+          -> Shape: _:b3572
+             [path]
+             Target: http://datashapes.org/sh/tests/core/node/not-002.test#ValidInstance1
+             TracerId: _tracer_2
+             Selecting target 0 values for path
+             Path: "http://datashapes.org/sh/tests/core/node/not-002.test#property"
+             Selected: []
+             Error? true
+            |
+            -> Shape: _:b3572
+               [function]
+               Target: http://datashapes.org/sh/tests/core/node/not-002.test#ValidInstance1
+               TracerId: _tracer_2
+               Evaluating function validateMinCountProperty
+               Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? true

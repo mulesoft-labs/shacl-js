@@ -1,0 +1,73 @@
++ Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/maxCount-002.test#ValidResource","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape-versionInfo
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://www.w3.org/2002/07/owl#versionInfo"
+           Selected: [{"termType":"Literal","value":"1.0","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape-versionInfo
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/maxCount-002.test#InvalidResource
+             TracerId: _tracer_1
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"0\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/maxCount-002.test#ValidResource
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/maxCount-002.test#ValidResource
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/maxCount-002.test#ValidResource
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape-versionInfo
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/maxCount-002.test#ValidResource
+           TracerId: _tracer_2
+           Selecting target 0 values for path
+           Path: "http://www.w3.org/2002/07/owl#versionInfo"
+           Selected: []
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-002.test#TestShape-versionInfo
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/maxCount-002.test#ValidResource
+             TracerId: _tracer_2
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"0\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false

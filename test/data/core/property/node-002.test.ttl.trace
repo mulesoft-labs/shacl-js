@@ -1,0 +1,179 @@
++ Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/node-002.test#Person => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/node-002.test#Bob","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/node-002.test#Reto","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/node-002.test#Bob
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/node-002.test#Bob
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/node-002.test#Bob
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/node-002.test#Bob
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/node-002.test#address"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress"}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/node-002.test#Bob
+             TracerId: _tracer_1
+             Evaluating function validateMinCountProperty
+             Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+             [node]
+             Target: http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
+             TracerId: _tracer_3
+             Evaluating target node http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+               [shape]
+               Target: http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
+               TracerId: _tracer_3
+               Evaluating shape
+               Error? false
+              |
+              -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape
+                 [properties]
+                 Target: http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
+                 TracerId: _tracer_3
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode
+                   [path]
+                   Target: http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
+                   TracerId: _tracer_3
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/node-002.test#postalCode"
+                   Selected: [{"termType":"Literal","value":"1234","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+                   Error? false
+                  |
+                  -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode
+                     [function]
+                     Target: http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
+                     TracerId: _tracer_3
+                     Evaluating function validateMaxCountProperty
+                     Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                     Error? false
+                  |
+                  -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode
+                     [node]
+                     Target: "1234"
+                     TracerId: _tracer_4
+                     Evaluating target node "1234"
+                     Error? false
+                    |
+                    -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode
+                       [function]
+                       Target: "1234"
+                       TracerId: _tracer_4
+                       Evaluating function validateDatatype
+                       Args: {"$value":"\"1234\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                       Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/node-002.test#Reto
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/node-002.test#Reto
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/node-002.test#Reto
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/node-002.test#Reto
+           TracerId: _tracer_2
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/node-002.test#address"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress"}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/node-002.test#Reto
+             TracerId: _tracer_2
+             Evaluating function validateMinCountProperty
+             Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+             [node]
+             Target: http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
+             TracerId: _tracer_5
+             Evaluating target node http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+               [shape]
+               Target: http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
+               TracerId: _tracer_5
+               Evaluating shape
+               Error? true
+              |
+              -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape
+                 [properties]
+                 Target: http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
+                 TracerId: _tracer_5
+                 Evaluating nested property constraints
+                 Error? true
+                |
+                -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode
+                   [path]
+                   Target: http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
+                   TracerId: _tracer_5
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/node-002.test#postalCode"
+                   Selected: [{"termType":"Literal","value":"5678","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
+                   Error? true
+                  |
+                  -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode
+                     [function]
+                     Target: http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
+                     TracerId: _tracer_5
+                     Evaluating function validateMaxCountProperty
+                     Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                     Error? false
+                  |
+                  -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode
+                     [node]
+                     Target: "5678"^^http://www.w3.org/2001/XMLSchema#integer
+                     TracerId: _tracer_6
+                     Evaluating target node "5678"^^http://www.w3.org/2001/XMLSchema#integer
+                     Error? true
+                    |
+                    -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape-postalCode
+                       [function]
+                       Target: "5678"^^http://www.w3.org/2001/XMLSchema#integer
+                       TracerId: _tracer_6
+                       Evaluating function validateDatatype
+                       Args: {"$value":"\"5678\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                       Error? true

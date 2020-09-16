@@ -1,0 +1,172 @@
++ Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/pattern-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance1","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance2","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/pattern-002.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#InvalidInstance1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/pattern-002.test#property"
+           Selected: [{"termType":"Literal","value":"Maria","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+             [node]
+             Target: "Maria"
+             TracerId: _tracer_4
+             Evaluating target node "Maria"
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+               [function]
+               Target: "Maria"
+               TracerId: _tracer_4
+               Evaluating function validateDatatype
+               Args: {"$value":"\"Maria\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+               [function]
+               Target: "Maria"
+               TracerId: _tracer_4
+               Evaluating function validatePattern
+               Args: {"$value":"\"Maria\"","pattern":"\"joh\"","flags":"\"i\""}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance1
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance1
+           TracerId: _tracer_2
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/pattern-002.test#property"
+           Selected: [{"termType":"Literal","value":"Hi Joh","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"John","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+             [node]
+             Target: "Hi Joh"
+             TracerId: _tracer_5
+             Evaluating target node "Hi Joh"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+               [function]
+               Target: "Hi Joh"
+               TracerId: _tracer_5
+               Evaluating function validateDatatype
+               Args: {"$value":"\"Hi Joh\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+               [function]
+               Target: "Hi Joh"
+               TracerId: _tracer_5
+               Evaluating function validatePattern
+               Args: {"$value":"\"Hi Joh\"","pattern":"\"joh\"","flags":"\"i\""}
+               Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+             [node]
+             Target: "John"
+             TracerId: _tracer_6
+             Evaluating target node "John"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+               [function]
+               Target: "John"
+               TracerId: _tracer_6
+               Evaluating function validateDatatype
+               Args: {"$value":"\"John\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+               [function]
+               Target: "John"
+               TracerId: _tracer_6
+               Evaluating function validatePattern
+               Args: {"$value":"\"John\"","pattern":"\"joh\"","flags":"\"i\""}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance2
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance2
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance2
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/pattern-002.test#ValidInstance2
+           TracerId: _tracer_3
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/pattern-002.test#property"
+           Selected: [{"termType":"Literal","value":"john","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+             [node]
+             Target: "john"
+             TracerId: _tracer_7
+             Evaluating target node "john"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+               [function]
+               Target: "john"
+               TracerId: _tracer_7
+               Evaluating function validateDatatype
+               Args: {"$value":"\"john\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/pattern-002.test#TestShape-property
+               [function]
+               Target: "john"
+               TracerId: _tracer_7
+               Evaluating function validatePattern
+               Args: {"$value":"\"john\"","pattern":"\"joh\"","flags":"\"i\""}
+               Error? false

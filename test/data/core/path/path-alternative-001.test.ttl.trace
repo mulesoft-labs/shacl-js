@@ -1,0 +1,96 @@
++ Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 5 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/path/path-alternative-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/path/path-alternative-001.test#InvalidResource2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource1","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource2","tracerId":"_tracer_4"},{"id":"http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource3","tracerId":"_tracer_5"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+       [path]
+       Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#InvalidResource1
+       TracerId: _tracer_1
+       Selecting target 1 values for path
+       Path: {"or":["http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property1","http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property2"]}
+       Selected: [{"termType":"Literal","value":"One","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating function validateMinCountProperty
+         Args: {"minCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+       [path]
+       Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#InvalidResource2
+       TracerId: _tracer_2
+       Selecting target 0 values for path
+       Path: {"or":["http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property1","http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property2"]}
+       Selected: []
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#InvalidResource2
+         TracerId: _tracer_2
+         Evaluating function validateMinCountProperty
+         Args: {"minCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+       [path]
+       Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource1
+       TracerId: _tracer_3
+       Selecting target 2 values for path
+       Path: {"or":["http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property1","http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property2"]}
+       Selected: [{"termType":"Literal","value":"One","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"Two","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource1
+         TracerId: _tracer_3
+         Evaluating function validateMinCountProperty
+         Args: {"minCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+       [path]
+       Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource2
+       TracerId: _tracer_4
+       Selecting target 2 values for path
+       Path: {"or":["http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property1","http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property2"]}
+       Selected: [{"termType":"Literal","value":"One","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"Two","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource2
+         TracerId: _tracer_4
+         Evaluating function validateMinCountProperty
+         Args: {"minCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+       [path]
+       Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource3
+       TracerId: _tracer_5
+       Selecting target 2 values for path
+       Path: {"or":["http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property1","http://datashapes.org/sh/tests/core/path/path-alternative-001.test#property2"]}
+       Selected: [{"termType":"Literal","value":"One","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"Two","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/path/path-alternative-001.test#ValidResource3
+         TracerId: _tracer_5
+         Evaluating function validateMinCountProperty
+         Args: {"minCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false

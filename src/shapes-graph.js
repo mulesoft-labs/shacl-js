@@ -23,6 +23,7 @@ var RDFQuery = require("./rdfquery");
 var NodeSet = RDFQuery.NodeSet;
 var T = RDFQuery.T;
 var ValidationFunction = require("./validation-function");
+var tracer = require("./trace");
 
 TermFactory.registerNamespace("dash", "http://datashapes.org/dash#");
 
@@ -242,14 +243,16 @@ Constraint.prototype.fetchPrefixes = function(rdfDataGraph, cb) {
 };
 
 Constraint.prototype.runValidationQuery = function(prefixString, rdfDataGraph, valueNode, cb) {
-    rdfDataGraph.sparqlQuery(this.sparql(prefixString), function(e, result) {
+    const text = this.sparql(prefixString);
+    rdfDataGraph.sparqlQuery(text, (e, result) => {
         if (e) {
             cb(e)
         } else {
-            const filteredResult = result.filter(function(result) {
+            const filteredResult = result.filter((result) => {
                 const thisBinding = (result.get("?this") || result.get("$this"));
                 return thisBinding.toString() === valueNode.uri || thisBinding.toString() === valueNode.id
             });
+            tracer.log(this.shape.shapeNode, valueNode, valueNode.__TRACER_ID, "SPARQL-QUERY", {text: text, results: filteredResult})
             cb(e,filteredResult);
         }
     });
@@ -392,29 +395,40 @@ Shape.prototype.getConstraints = function () {
 
 Shape.prototype.getTargetNodes = function (rdfDataGraph) {
     var results = new NodeSet();
-
+    const that = this;
     if (new RDFQueryUtil(this.context.$shapes).isInstanceOf(this.shapeNode, T("rdfs:Class"))) {
-        results.addAll(new RDFQueryUtil(rdfDataGraph).getInstancesOf(this.shapeNode).toArray());
+        const toAdd = new RDFQueryUtil(rdfDataGraph).getInstancesOf(this.shapeNode).toArray()
+        tracer.setTargets(this.shapeNode.id, toAdd, "Instances of shape class: " + this.shapeNode, "instance", this.shapeNode.id);
+        results.addAll(toAdd);
     }
 
     this.context.$shapes.query().
         match(this.shapeNode, "sh:targetClass", "?targetClass").forEachNode("?targetClass", function (targetClass) {
-            results.addAll(new RDFQueryUtil(rdfDataGraph).getInstancesOf(targetClass).toArray());
+            let toAdd = new RDFQueryUtil(rdfDataGraph).getInstancesOf(targetClass).toArray()
+            tracer.setTargets(that.shapeNode.id, toAdd, "Instances of target class: " + targetClass, "targetClass", targetClass.id);
+            results.addAll(toAdd);
         });
 
-    results.addAll(this.context.$shapes.query().
-        match(this.shapeNode, "sh:targetNode", "?targetNode").getNodeArray("?targetNode"));
+    const toAdd = this.context.$shapes.query().match(this.shapeNode, "sh:targetNode", "?targetNode").getNodeArray("?targetNode");
+    if (toAdd.length > 0) {
+        tracer.setTargets(that.shapeNode.id, toAdd, "Target nodes", "targetNode", null);
+    }
+    results.addAll(toAdd);
 
     this.context.$shapes.query().
         match(this.shapeNode, "sh:targetSubjectsOf", "?subjectsOf").
         forEachNode("?subjectsOf", function (predicate) {
-            results.addAll(rdfDataGraph.query().match("?subject", predicate, null).getNodeArray("?subject"));
+            let toAdd = rdfDataGraph.query().match("?subject", predicate, null).getNodeArray("?subject");
+            tracer.setTargets(that.shapeNode.id, toAdd, "subjects of predicate: " + predicate, "subjectsOf", predicate.id);
+            results.addAll(toAdd);
         });
 
     this.context.$shapes.query().
         match(this.shapeNode, "sh:targetObjectsOf", "?objectsOf").
         forEachNode("?objectsOf", function (predicate) {
-            results.addAll(rdfDataGraph.query().match(null, predicate, "?object").getNodeArray("?object"));
+            let toAdd = rdfDataGraph.query().match(null, predicate, "?object").getNodeArray("?object")
+            tracer.setTargets(that.shapeNode.id, toAdd, "objects of predicate: " + predicate, "objectsOf", predicate.id);
+            results.addAll(toAdd);
         });
 
     return results.toArray();
@@ -423,7 +437,11 @@ Shape.prototype.getTargetNodes = function (rdfDataGraph) {
 
 Shape.prototype.getValueNodes = function (focusNode, rdfDataGraph) {
     if (this.path) {
-        return rdfDataGraph.query().path(focusNode, toRDFQueryPath(this.context.$shapes, this.path), "?object").getNodeArray("?object");
+        const path = toRDFQueryPath(this.context.$shapes, this.path)
+        const nodes = rdfDataGraph.query().path(focusNode, path, "?object").getNodeArray("?object");
+        tracer.mark(nodes)
+        tracer.log(this.shapeNode, focusNode, focusNode.__TRACER_ID, "PATH-SELECTION", {path: path, target: nodes});
+        return nodes
     }
     else {
         return [focusNode];

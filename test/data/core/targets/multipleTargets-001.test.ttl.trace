@@ -1,0 +1,65 @@
++ Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+     [target-selection]
+     Selecting targets by subjects of predicate: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#property1 => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#InvalidResource1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#InvalidResource1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating function validateIn
+         Args: {"$value":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#InvalidResource1","in":"_:b10075"}
+         Explanation: {"set":["http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1","http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2"]}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1
+         TracerId: _tracer_2
+         Evaluating function validateIn
+         Args: {"$value":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1","in":"_:b10075"}
+         Explanation: {"set":["http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1","http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2"]}
+         Error? false
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+     [target-selection]
+     Selecting targets by subjects of predicate: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#property2 => 1 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2","tracerId":"_tracer_3"}]
+     Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2
+         TracerId: _tracer_3
+         Evaluating function validateIn
+         Args: {"$value":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2","in":"_:b10075"}
+         Explanation: {"set":["http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1","http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2"]}
+         Error? false

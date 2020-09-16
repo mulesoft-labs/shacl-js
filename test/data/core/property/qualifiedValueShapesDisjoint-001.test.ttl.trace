@@ -1,0 +1,139 @@
++ Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape
+  Selected: []
+  Error? false
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Hand => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand","tracerId":"_tracer_2"}]
+     Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit1
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+           TracerId: _tracer_1
+           Selecting target 4 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#digit"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger1"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger2"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger3"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#FingerAndThumb"}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit1
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+             TracerId: _tracer_1
+             Evaluating function validateQualifiedMaxCountProperty
+             Args: {"qualifiedValueShape":"_:b9493","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMaxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit1
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+             TracerId: _tracer_1
+             Evaluating function validateQualifiedMinCountProperty
+             Args: {"qualifiedValueShape":"_:b9493","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMinCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit4
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+           TracerId: _tracer_1
+           Selecting target 4 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#digit"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger1"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger2"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger3"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#FingerAndThumb"}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit4
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+             TracerId: _tracer_1
+             Evaluating function validateQualifiedMaxCountProperty
+             Args: {"qualifiedValueShape":"_:b9494","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMaxCount":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit4
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#InvalidHand1
+             TracerId: _tracer_1
+             Evaluating function validateQualifiedMinCountProperty
+             Args: {"qualifiedValueShape":"_:b9494","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMinCount":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit1
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+           TracerId: _tracer_2
+           Selecting target 5 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#digit"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger1"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger2"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger3"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger4"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Thumb1"}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit1
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+             TracerId: _tracer_2
+             Evaluating function validateQualifiedMaxCountProperty
+             Args: {"qualifiedValueShape":"_:b9493","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMaxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit1
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+             TracerId: _tracer_2
+             Evaluating function validateQualifiedMinCountProperty
+             Args: {"qualifiedValueShape":"_:b9493","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMinCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit4
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+           TracerId: _tracer_2
+           Selecting target 5 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#digit"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger1"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger2"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger3"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Finger4"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#Thumb1"}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit4
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+             TracerId: _tracer_2
+             Evaluating function validateQualifiedMaxCountProperty
+             Args: {"qualifiedValueShape":"_:b9494","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMaxCount":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#HandShape-digit4
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShapesDisjoint-001.test#ValidHand
+             TracerId: _tracer_2
+             Evaluating function validateQualifiedMinCountProperty
+             Args: {"qualifiedValueShape":"_:b9494","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMinCount":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false

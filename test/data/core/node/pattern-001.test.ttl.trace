@@ -1,0 +1,137 @@
++ Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestClass => 1 nodes found
+     Selected: [{"id":"b158_b9649","tracerId":"_tracer_1"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+       [node]
+       Target: b158_b9649
+       TracerId: _tracer_1
+       Evaluating target node b158_b9649
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+         [function]
+         Target: b158_b9649
+         TracerId: _tracer_1
+         Evaluating function validatePattern
+         Args: {"$value":"_:b158_b9649","pattern":"\"^[2-8][0-9]*$\"","flags":null}
+         Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 7 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/pattern-001.test#Test","tracerId":"_tracer_2"},{"id":"9","tracerId":"_tracer_3"},{"id":"John","tracerId":"_tracer_4"},{"id":"20000123","tracerId":"_tracer_5"},{"id":"3456","tracerId":"_tracer_6"},{"id":"39","tracerId":"_tracer_7"},{"id":"777777","tracerId":"_tracer_8"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/pattern-001.test#Test
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/pattern-001.test#Test
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/pattern-001.test#Test
+         TracerId: _tracer_2
+         Evaluating function validatePattern
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/pattern-001.test#Test","pattern":"\"^[2-8][0-9]*$\"","flags":null}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+       [node]
+       Target: 9
+       TracerId: _tracer_3
+       Evaluating target node 9
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+         [function]
+         Target: 9
+         TracerId: _tracer_3
+         Evaluating function validatePattern
+         Args: {"$value":"\"9\"^^http://www.w3.org/2001/XMLSchema#integer","pattern":"\"^[2-8][0-9]*$\"","flags":null}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+       [node]
+       Target: John
+       TracerId: _tracer_4
+       Evaluating target node John
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+         [function]
+         Target: John
+         TracerId: _tracer_4
+         Evaluating function validatePattern
+         Args: {"$value":"\"John\"","pattern":"\"^[2-8][0-9]*$\"","flags":null}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+       [node]
+       Target: 20000123
+       TracerId: _tracer_5
+       Evaluating target node 20000123
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+         [function]
+         Target: 20000123
+         TracerId: _tracer_5
+         Evaluating function validatePattern
+         Args: {"$value":"\"20000123\"^^http://www.w3.org/2001/XMLSchema#integer","pattern":"\"^[2-8][0-9]*$\"","flags":null}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+       [node]
+       Target: 3456
+       TracerId: _tracer_6
+       Evaluating target node 3456
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+         [function]
+         Target: 3456
+         TracerId: _tracer_6
+         Evaluating function validatePattern
+         Args: {"$value":"\"3456\"","pattern":"\"^[2-8][0-9]*$\"","flags":null}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+       [node]
+       Target: 39
+       TracerId: _tracer_7
+       Evaluating target node 39
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+         [function]
+         Target: 39
+         TracerId: _tracer_7
+         Evaluating function validatePattern
+         Args: {"$value":"\"39\"^^http://www.w3.org/2001/XMLSchema#integer","pattern":"\"^[2-8][0-9]*$\"","flags":null}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+       [node]
+       Target: 777777
+       TracerId: _tracer_8
+       Evaluating target node 777777
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
+         [function]
+         Target: 777777
+         TracerId: _tracer_8
+         Evaluating function validatePattern
+         Args: {"$value":"\"777777\"@mi","pattern":"\"^[2-8][0-9]*$\"","flags":null}
+         Error? false

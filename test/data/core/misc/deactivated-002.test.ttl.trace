@@ -1,0 +1,26 @@
++ Shape: http://datashapes.org/sh/tests/core/misc/deactivated-002.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/misc/deactivated-002.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/misc/deactivated-002.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 1 nodes found
+     Selected: [{"id":"32","tracerId":"_tracer_1"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/misc/deactivated-002.test#TestShape
+       [node]
+       Target: 32
+       TracerId: _tracer_1
+       Evaluating target node 32
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/misc/deactivated-002.test#TestShape
+         [function]
+         Target: 32
+         TracerId: _tracer_1
+         Evaluating function validateDatatype
+         Args: {"$value":"\"32\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#boolean"}
+         Error? true

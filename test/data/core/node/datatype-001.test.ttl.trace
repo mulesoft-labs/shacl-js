@@ -1,0 +1,77 @@
++ Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestClass => 1 nodes found
+     Selected: [{"id":"b68_b9649","tracerId":"_tracer_1"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+       [node]
+       Target: b68_b9649
+       TracerId: _tracer_1
+       Evaluating target node b68_b9649
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+         [function]
+         Target: b68_b9649
+         TracerId: _tracer_1
+         Evaluating function validateDatatype
+         Args: {"$value":"_:b68_b9649","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 3 nodes found
+     Selected: [{"id":"http://www.w3.org/2001/XMLSchema#integer","tracerId":"_tracer_2"},{"id":"aldi","tracerId":"_tracer_3"},{"id":"42","tracerId":"_tracer_4"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+       [node]
+       Target: http://www.w3.org/2001/XMLSchema#integer
+       TracerId: _tracer_2
+       Evaluating target node http://www.w3.org/2001/XMLSchema#integer
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+         [function]
+         Target: http://www.w3.org/2001/XMLSchema#integer
+         TracerId: _tracer_2
+         Evaluating function validateDatatype
+         Args: {"$value":"http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+       [node]
+       Target: aldi
+       TracerId: _tracer_3
+       Evaluating target node aldi
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+         [function]
+         Target: aldi
+         TracerId: _tracer_3
+         Evaluating function validateDatatype
+         Args: {"$value":"\"aldi\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+       [node]
+       Target: 42
+       TracerId: _tracer_4
+       Evaluating target node 42
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/datatype-001.test#TestShape
+         [function]
+         Target: 42
+         TracerId: _tracer_4
+         Evaluating function validateDatatype
+         Args: {"$value":"\"42\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false

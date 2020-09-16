@@ -1,0 +1,212 @@
++ Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+     [target-selection]
+     Selecting targets by Target nodes => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/or-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource1","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource2","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/or-001.test#InvalidResource1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/or-001.test#InvalidResource1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/or-001.test#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/or-001.test#InvalidResource1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/or-001.test#address"
+           Selected: [{"termType":"Literal","value":"true","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#boolean"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+             [node]
+             Target: "true"^^http://www.w3.org/2001/XMLSchema#boolean
+             TracerId: _tracer_4
+             Evaluating target node "true"^^http://www.w3.org/2001/XMLSchema#boolean
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+               [or]
+               Target: "true"^^http://www.w3.org/2001/XMLSchema#boolean
+               TracerId: _tracer_4
+               Evaluating OR
+               Error? true
+              |
+              -> Shape: _:b8627
+                 [node]
+                 Target: true
+                 TracerId: _tracer_4
+                 Evaluating target node true
+                 Error? true
+                |
+                -> Shape: _:b8627
+                   [function]
+                   Target: true
+                   TracerId: _tracer_4
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? true
+              |
+              -> Shape: _:b8629
+                 [node]
+                 Target: true
+                 TracerId: _tracer_4
+                 Evaluating target node true
+                 Error? true
+                |
+                -> Shape: _:b8629
+                   [function]
+                   Target: true
+                   TracerId: _tracer_4
+                   Evaluating function validateClass
+                   Args: {"$value":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","class":"http://datashapes.org/sh/tests/core/property/or-001.test#Address"}
+                   Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource1
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource1
+           TracerId: _tracer_2
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/or-001.test#address"
+           Selected: [{"termType":"Literal","value":"Home","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+             [node]
+             Target: "Home"
+             TracerId: _tracer_5
+             Evaluating target node "Home"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+               [or]
+               Target: "Home"
+               TracerId: _tracer_5
+               Evaluating OR
+               Error? false
+              |
+              -> Shape: _:b8627
+                 [node]
+                 Target: Home
+                 TracerId: _tracer_5
+                 Evaluating target node Home
+                 Error? false
+                |
+                -> Shape: _:b8627
+                   [function]
+                   Target: Home
+                   TracerId: _tracer_5
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"Home\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? false
+              |
+              -> Shape: _:b8629
+                 [node]
+                 Target: Home
+                 TracerId: _tracer_5
+                 Evaluating target node Home
+                 Error? true
+                |
+                -> Shape: _:b8629
+                   [function]
+                   Target: Home
+                   TracerId: _tracer_5
+                   Evaluating function validateClass
+                   Args: {"$value":"\"Home\"","class":"http://datashapes.org/sh/tests/core/property/or-001.test#Address"}
+                   Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource2
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource2
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource2
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/or-001.test#ValidResource2
+           TracerId: _tracer_3
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/or-001.test#address"
+           Selected: [{"termType":"BlankNode","value":"b8625"}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+             [node]
+             Target: _:b8625
+             TracerId: _tracer_6
+             Evaluating target node _:b8625
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-001.test#AddressShape-address
+               [or]
+               Target: _:b8625
+               TracerId: _tracer_6
+               Evaluating OR
+               Error? false
+              |
+              -> Shape: _:b8627
+                 [node]
+                 Target: _:b8625
+                 TracerId: _tracer_6
+                 Evaluating target node _:b8625
+                 Error? true
+                |
+                -> Shape: _:b8627
+                   [function]
+                   Target: _:b8625
+                   TracerId: _tracer_6
+                   Evaluating function validateDatatype
+                   Args: {"$value":"_:b8625","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? true
+              |
+              -> Shape: _:b8629
+                 [node]
+                 Target: _:b8625
+                 TracerId: _tracer_6
+                 Evaluating target node _:b8625
+                 Error? false
+                |
+                -> Shape: _:b8629
+                   [function]
+                   Target: _:b8625
+                   TracerId: _tracer_6
+                   Evaluating function validateClass
+                   Args: {"$value":"_:b8625","class":"http://datashapes.org/sh/tests/core/property/or-001.test#Address"}
+                   Error? false

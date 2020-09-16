@@ -1,0 +1,575 @@
++ Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#ValidResource1","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#InvalidResource1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#InvalidResource1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#InvalidResource1
+           TracerId: _tracer_1
+           Selecting target 4 values for path
+           Path: "http://www.w3.org/2000/01/rdf-schema#comment"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2002/07/owl#Thing"},{"termType":"Literal","value":"42","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}},{"termType":"Literal","value":"none","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#boolean"}},{"termType":"Literal","value":"A string","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+             [node]
+             Target: http://www.w3.org/2002/07/owl#Thing
+             TracerId: _tracer_3
+             Evaluating target node http://www.w3.org/2002/07/owl#Thing
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+               [or]
+               Target: http://www.w3.org/2002/07/owl#Thing
+               TracerId: _tracer_3
+               Evaluating OR
+               Error? true
+              |
+              -> Shape: _:b8768
+                 [node]
+                 Target: http://www.w3.org/2002/07/owl#Thing
+                 TracerId: _tracer_3
+                 Evaluating target node http://www.w3.org/2002/07/owl#Thing
+                 Error? true
+                |
+                -> Shape: _:b8768
+                   [function]
+                   Target: http://www.w3.org/2002/07/owl#Thing
+                   TracerId: _tracer_3
+                   Evaluating function validateDatatype
+                   Args: {"$value":"http://www.w3.org/2002/07/owl#Thing","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? true
+              |
+              -> Shape: _:b8770
+                 [node]
+                 Target: http://www.w3.org/2002/07/owl#Thing
+                 TracerId: _tracer_3
+                 Evaluating target node http://www.w3.org/2002/07/owl#Thing
+                 Error? true
+                |
+                -> Shape: _:b8770
+                   [function]
+                   Target: http://www.w3.org/2002/07/owl#Thing
+                   TracerId: _tracer_3
+                   Evaluating function validateDatatype
+                   Args: {"$value":"http://www.w3.org/2002/07/owl#Thing","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"}
+                   Error? true
+              |
+              -> Shape: _:b8772
+                 [node]
+                 Target: http://www.w3.org/2002/07/owl#Thing
+                 TracerId: _tracer_3
+                 Evaluating target node http://www.w3.org/2002/07/owl#Thing
+                 Error? true
+                |
+                -> Shape: _:b8772
+                   [function]
+                   Target: http://www.w3.org/2002/07/owl#Thing
+                   TracerId: _tracer_3
+                   Evaluating function validateDatatype
+                   Args: {"$value":"http://www.w3.org/2002/07/owl#Thing","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+                   Error? true
+              |
+              -> Shape: _:b8774
+                 [node]
+                 Target: http://www.w3.org/2002/07/owl#Thing
+                 TracerId: _tracer_3
+                 Evaluating target node http://www.w3.org/2002/07/owl#Thing
+                 Error? true
+                |
+                -> Shape: _:b8774
+                   [function]
+                   Target: http://www.w3.org/2002/07/owl#Thing
+                   TracerId: _tracer_3
+                   Evaluating function validateDatatype
+                   Args: {"$value":"http://www.w3.org/2002/07/owl#Thing","datatype":"http://www.w3.org/2001/XMLSchema#boolean"}
+                   Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+             [node]
+             Target: "42"^^http://www.w3.org/2001/XMLSchema#integer
+             TracerId: _tracer_4
+             Evaluating target node "42"^^http://www.w3.org/2001/XMLSchema#integer
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+               [or]
+               Target: "42"^^http://www.w3.org/2001/XMLSchema#integer
+               TracerId: _tracer_4
+               Evaluating OR
+               Error? true
+              |
+              -> Shape: _:b8768
+                 [node]
+                 Target: 42
+                 TracerId: _tracer_4
+                 Evaluating target node 42
+                 Error? true
+                |
+                -> Shape: _:b8768
+                   [function]
+                   Target: 42
+                   TracerId: _tracer_4
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"42\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? true
+              |
+              -> Shape: _:b8770
+                 [node]
+                 Target: 42
+                 TracerId: _tracer_4
+                 Evaluating target node 42
+                 Error? true
+                |
+                -> Shape: _:b8770
+                   [function]
+                   Target: 42
+                   TracerId: _tracer_4
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"42\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"}
+                   Error? true
+              |
+              -> Shape: _:b8772
+                 [node]
+                 Target: 42
+                 TracerId: _tracer_4
+                 Evaluating target node 42
+                 Error? true
+                |
+                -> Shape: _:b8772
+                   [function]
+                   Target: 42
+                   TracerId: _tracer_4
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"42\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+                   Error? true
+              |
+              -> Shape: _:b8774
+                 [node]
+                 Target: 42
+                 TracerId: _tracer_4
+                 Evaluating target node 42
+                 Error? true
+                |
+                -> Shape: _:b8774
+                   [function]
+                   Target: 42
+                   TracerId: _tracer_4
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"42\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#boolean"}
+                   Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+             [node]
+             Target: "none"^^http://www.w3.org/2001/XMLSchema#boolean
+             TracerId: _tracer_5
+             Evaluating target node "none"^^http://www.w3.org/2001/XMLSchema#boolean
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+               [or]
+               Target: "none"^^http://www.w3.org/2001/XMLSchema#boolean
+               TracerId: _tracer_5
+               Evaluating OR
+               Error? true
+              |
+              -> Shape: _:b8768
+                 [node]
+                 Target: none
+                 TracerId: _tracer_5
+                 Evaluating target node none
+                 Error? true
+                |
+                -> Shape: _:b8768
+                   [function]
+                   Target: none
+                   TracerId: _tracer_5
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"none\"^^http://www.w3.org/2001/XMLSchema#boolean","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? true
+              |
+              -> Shape: _:b8770
+                 [node]
+                 Target: none
+                 TracerId: _tracer_5
+                 Evaluating target node none
+                 Error? true
+                |
+                -> Shape: _:b8770
+                   [function]
+                   Target: none
+                   TracerId: _tracer_5
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"none\"^^http://www.w3.org/2001/XMLSchema#boolean","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"}
+                   Error? true
+              |
+              -> Shape: _:b8772
+                 [node]
+                 Target: none
+                 TracerId: _tracer_5
+                 Evaluating target node none
+                 Error? true
+                |
+                -> Shape: _:b8772
+                   [function]
+                   Target: none
+                   TracerId: _tracer_5
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"none\"^^http://www.w3.org/2001/XMLSchema#boolean","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+                   Error? true
+              |
+              -> Shape: _:b8774
+                 [node]
+                 Target: none
+                 TracerId: _tracer_5
+                 Evaluating target node none
+                 Error? true
+                |
+                -> Shape: _:b8774
+                   [function]
+                   Target: none
+                   TracerId: _tracer_5
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"none\"^^http://www.w3.org/2001/XMLSchema#boolean","datatype":"http://www.w3.org/2001/XMLSchema#boolean"}
+                   Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+             [node]
+             Target: "A string"
+             TracerId: _tracer_6
+             Evaluating target node "A string"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+               [or]
+               Target: "A string"
+               TracerId: _tracer_6
+               Evaluating OR
+               Error? false
+              |
+              -> Shape: _:b8768
+                 [node]
+                 Target: A string
+                 TracerId: _tracer_6
+                 Evaluating target node A string
+                 Error? false
+                |
+                -> Shape: _:b8768
+                   [function]
+                   Target: A string
+                   TracerId: _tracer_6
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A string\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? false
+              |
+              -> Shape: _:b8770
+                 [node]
+                 Target: A string
+                 TracerId: _tracer_6
+                 Evaluating target node A string
+                 Error? true
+                |
+                -> Shape: _:b8770
+                   [function]
+                   Target: A string
+                   TracerId: _tracer_6
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A string\"","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"}
+                   Error? true
+              |
+              -> Shape: _:b8772
+                 [node]
+                 Target: A string
+                 TracerId: _tracer_6
+                 Evaluating target node A string
+                 Error? true
+                |
+                -> Shape: _:b8772
+                   [function]
+                   Target: A string
+                   TracerId: _tracer_6
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A string\"","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+                   Error? true
+              |
+              -> Shape: _:b8774
+                 [node]
+                 Target: A string
+                 TracerId: _tracer_6
+                 Evaluating target node A string
+                 Error? true
+                |
+                -> Shape: _:b8774
+                   [function]
+                   Target: A string
+                   TracerId: _tracer_6
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A string\"","datatype":"http://www.w3.org/2001/XMLSchema#boolean"}
+                   Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#ValidResource1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#ValidResource1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#ValidResource1
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#ValidResource1
+           TracerId: _tracer_2
+           Selecting target 3 values for path
+           Path: "http://www.w3.org/2000/01/rdf-schema#comment"
+           Selected: [{"termType":"Literal","value":"A string","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"<div>HTML</div>","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"}},{"termType":"Literal","value":"A language string","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+             [node]
+             Target: "A string"
+             TracerId: _tracer_7
+             Evaluating target node "A string"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+               [or]
+               Target: "A string"
+               TracerId: _tracer_7
+               Evaluating OR
+               Error? false
+              |
+              -> Shape: _:b8768
+                 [node]
+                 Target: A string
+                 TracerId: _tracer_7
+                 Evaluating target node A string
+                 Error? false
+                |
+                -> Shape: _:b8768
+                   [function]
+                   Target: A string
+                   TracerId: _tracer_7
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A string\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? false
+              |
+              -> Shape: _:b8770
+                 [node]
+                 Target: A string
+                 TracerId: _tracer_7
+                 Evaluating target node A string
+                 Error? true
+                |
+                -> Shape: _:b8770
+                   [function]
+                   Target: A string
+                   TracerId: _tracer_7
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A string\"","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"}
+                   Error? true
+              |
+              -> Shape: _:b8772
+                 [node]
+                 Target: A string
+                 TracerId: _tracer_7
+                 Evaluating target node A string
+                 Error? true
+                |
+                -> Shape: _:b8772
+                   [function]
+                   Target: A string
+                   TracerId: _tracer_7
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A string\"","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+                   Error? true
+              |
+              -> Shape: _:b8774
+                 [node]
+                 Target: A string
+                 TracerId: _tracer_7
+                 Evaluating target node A string
+                 Error? true
+                |
+                -> Shape: _:b8774
+                   [function]
+                   Target: A string
+                   TracerId: _tracer_7
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A string\"","datatype":"http://www.w3.org/2001/XMLSchema#boolean"}
+                   Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+             [node]
+             Target: "<div>HTML</div>"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
+             TracerId: _tracer_8
+             Evaluating target node "<div>HTML</div>"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+               [or]
+               Target: "<div>HTML</div>"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
+               TracerId: _tracer_8
+               Evaluating OR
+               Error? false
+              |
+              -> Shape: _:b8768
+                 [node]
+                 Target: <div>HTML</div>
+                 TracerId: _tracer_8
+                 Evaluating target node <div>HTML</div>
+                 Error? true
+                |
+                -> Shape: _:b8768
+                   [function]
+                   Target: <div>HTML</div>
+                   TracerId: _tracer_8
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"<div>HTML</div>\"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? true
+              |
+              -> Shape: _:b8770
+                 [node]
+                 Target: <div>HTML</div>
+                 TracerId: _tracer_8
+                 Evaluating target node <div>HTML</div>
+                 Error? false
+                |
+                -> Shape: _:b8770
+                   [function]
+                   Target: <div>HTML</div>
+                   TracerId: _tracer_8
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"<div>HTML</div>\"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"}
+                   Error? false
+              |
+              -> Shape: _:b8772
+                 [node]
+                 Target: <div>HTML</div>
+                 TracerId: _tracer_8
+                 Evaluating target node <div>HTML</div>
+                 Error? true
+                |
+                -> Shape: _:b8772
+                   [function]
+                   Target: <div>HTML</div>
+                   TracerId: _tracer_8
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"<div>HTML</div>\"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+                   Error? true
+              |
+              -> Shape: _:b8774
+                 [node]
+                 Target: <div>HTML</div>
+                 TracerId: _tracer_8
+                 Evaluating target node <div>HTML</div>
+                 Error? true
+                |
+                -> Shape: _:b8774
+                   [function]
+                   Target: <div>HTML</div>
+                   TracerId: _tracer_8
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"<div>HTML</div>\"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML","datatype":"http://www.w3.org/2001/XMLSchema#boolean"}
+                   Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+             [node]
+             Target: "A language string"@en
+             TracerId: _tracer_9
+             Evaluating target node "A language string"@en
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/or-datatypes-001.test#TestShape-comment
+               [or]
+               Target: "A language string"@en
+               TracerId: _tracer_9
+               Evaluating OR
+               Error? false
+              |
+              -> Shape: _:b8768
+                 [node]
+                 Target: A language string
+                 TracerId: _tracer_9
+                 Evaluating target node A language string
+                 Error? true
+                |
+                -> Shape: _:b8768
+                   [function]
+                   Target: A language string
+                   TracerId: _tracer_9
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A language string\"@en","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+                   Error? true
+              |
+              -> Shape: _:b8770
+                 [node]
+                 Target: A language string
+                 TracerId: _tracer_9
+                 Evaluating target node A language string
+                 Error? true
+                |
+                -> Shape: _:b8770
+                   [function]
+                   Target: A language string
+                   TracerId: _tracer_9
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A language string\"@en","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"}
+                   Error? true
+              |
+              -> Shape: _:b8772
+                 [node]
+                 Target: A language string
+                 TracerId: _tracer_9
+                 Evaluating target node A language string
+                 Error? false
+                |
+                -> Shape: _:b8772
+                   [function]
+                   Target: A language string
+                   TracerId: _tracer_9
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A language string\"@en","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+                   Error? false
+              |
+              -> Shape: _:b8774
+                 [node]
+                 Target: A language string
+                 TracerId: _tracer_9
+                 Evaluating target node A language string
+                 Error? true
+                |
+                -> Shape: _:b8774
+                   [function]
+                   Target: A language string
+                   TracerId: _tracer_9
+                   Evaluating function validateDatatype
+                   Args: {"$value":"\"A language string\"@en","datatype":"http://www.w3.org/2001/XMLSchema#boolean"}
+                   Error? true

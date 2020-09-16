@@ -1,0 +1,290 @@
++ Shape: http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/node/xone-001.test#Person => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/xone-001.test#Bob","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/xone-001.test#Carla","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/node/xone-001.test#Dory","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+         [xone]
+         Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+         TracerId: _tracer_1
+         Evaluating XONE
+         Error? false
+        |
+        -> Shape: _:b4069
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+           TracerId: _tracer_1
+           Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+           Error? true
+          |
+          -> Shape: _:b4069
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+             TracerId: _tracer_1
+             Evaluating nested property constraints
+             Error? true
+            |
+            -> Shape: _:b4070
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+               TracerId: _tracer_1
+               Selecting target 0 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#fullName"
+               Selected: []
+               Error? true
+              |
+              -> Shape: _:b4070
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+                 TracerId: _tracer_1
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? true
+        |
+        -> Shape: _:b4072
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+           TracerId: _tracer_1
+           Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+           Error? false
+          |
+          -> Shape: _:b4072
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+             TracerId: _tracer_1
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b4073
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+               TracerId: _tracer_1
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#firstName"
+               Selected: [{"termType":"Literal","value":"Robert","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b4073
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+                 TracerId: _tracer_1
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+            |
+            -> Shape: _:b4074
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+               TracerId: _tracer_1
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#lastName"
+               Selected: [{"termType":"Literal","value":"Coin","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b4074
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Bob
+                 TracerId: _tracer_1
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+         [xone]
+         Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+         TracerId: _tracer_2
+         Evaluating XONE
+         Error? false
+        |
+        -> Shape: _:b4069
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+           TracerId: _tracer_2
+           Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+           Error? false
+          |
+          -> Shape: _:b4069
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+             TracerId: _tracer_2
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b4070
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+               TracerId: _tracer_2
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#fullName"
+               Selected: [{"termType":"Literal","value":"Carla Miller","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b4070
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+                 TracerId: _tracer_2
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+        |
+        -> Shape: _:b4072
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+           TracerId: _tracer_2
+           Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+           Error? true
+          |
+          -> Shape: _:b4072
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+             TracerId: _tracer_2
+             Evaluating nested property constraints
+             Error? true
+            |
+            -> Shape: _:b4073
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+               TracerId: _tracer_2
+               Selecting target 0 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#firstName"
+               Selected: []
+               Error? true
+              |
+              -> Shape: _:b4073
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+                 TracerId: _tracer_2
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? true
+            |
+            -> Shape: _:b4074
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+               TracerId: _tracer_2
+               Selecting target 0 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#lastName"
+               Selected: []
+               Error? true
+              |
+              -> Shape: _:b4074
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Carla
+                 TracerId: _tracer_2
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/xone-001.test#XoneConstraintExampleShape
+         [xone]
+         Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+         TracerId: _tracer_3
+         Evaluating XONE
+         Error? true
+        |
+        -> Shape: _:b4069
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+           TracerId: _tracer_3
+           Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+           Error? false
+          |
+          -> Shape: _:b4069
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+             TracerId: _tracer_3
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b4070
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+               TracerId: _tracer_3
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#fullName"
+               Selected: [{"termType":"Literal","value":"Dory Dunce","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b4070
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+                 TracerId: _tracer_3
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+        |
+        -> Shape: _:b4072
+           [node]
+           Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+           TracerId: _tracer_3
+           Evaluating target node http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+           Error? false
+          |
+          -> Shape: _:b4072
+             [properties]
+             Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+             TracerId: _tracer_3
+             Evaluating nested property constraints
+             Error? false
+            |
+            -> Shape: _:b4073
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+               TracerId: _tracer_3
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#firstName"
+               Selected: [{"termType":"Literal","value":"Dory","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b4073
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+                 TracerId: _tracer_3
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false
+            |
+            -> Shape: _:b4074
+               [path]
+               Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+               TracerId: _tracer_3
+               Selecting target 1 values for path
+               Path: "http://datashapes.org/sh/tests/core/node/xone-001.test#lastName"
+               Selected: [{"termType":"Literal","value":"Dunce","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+               Error? false
+              |
+              -> Shape: _:b4074
+                 [function]
+                 Target: http://datashapes.org/sh/tests/core/node/xone-001.test#Dory
+                 TracerId: _tracer_3
+                 Evaluating function validateMinCountProperty
+                 Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+                 Error? false

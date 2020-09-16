@@ -1,0 +1,93 @@
++ Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/not-001#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/node/not-001#TestShape => 0 nodes found
+     Selected: []
+     Error? false
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/not-001#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/not-001#ValidResource1","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/not-001#InvalidResource1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/node/not-001#InvalidResource1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape
+         [not]
+         Target: http://datashapes.org/sh/tests/core/node/not-001#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating not
+         Error? true
+        |
+        -> Shape: _:b3453
+           [properties]
+           Target: http://datashapes.org/sh/tests/core/node/not-001#InvalidResource1
+           TracerId: _tracer_1
+           Evaluating nested property constraints
+           Error? false
+          |
+          -> Shape: _:b3454
+             [path]
+             Target: http://datashapes.org/sh/tests/core/node/not-001#InvalidResource1
+             TracerId: _tracer_1
+             Selecting target 1 values for path
+             Path: "http://datashapes.org/sh/tests/core/node/not-001#property"
+             Selected: [{"termType":"Literal","value":"some value","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+             Error? false
+            |
+            -> Shape: _:b3454
+               [function]
+               Target: http://datashapes.org/sh/tests/core/node/not-001#InvalidResource1
+               TracerId: _tracer_1
+               Evaluating function validateMinCountProperty
+               Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/not-001#ValidResource1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/not-001#ValidResource1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape
+         [not]
+         Target: http://datashapes.org/sh/tests/core/node/not-001#ValidResource1
+         TracerId: _tracer_2
+         Evaluating not
+         Error? false
+        |
+        -> Shape: _:b3453
+           [properties]
+           Target: http://datashapes.org/sh/tests/core/node/not-001#ValidResource1
+           TracerId: _tracer_2
+           Evaluating nested property constraints
+           Error? true
+          |
+          -> Shape: _:b3454
+             [path]
+             Target: http://datashapes.org/sh/tests/core/node/not-001#ValidResource1
+             TracerId: _tracer_2
+             Selecting target 0 values for path
+             Path: "http://datashapes.org/sh/tests/core/node/not-001#property"
+             Selected: []
+             Error? true
+            |
+            -> Shape: _:b3454
+               [function]
+               Target: http://datashapes.org/sh/tests/core/node/not-001#ValidResource1
+               TracerId: _tracer_2
+               Evaluating function validateMinCountProperty
+               Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? true

@@ -1,0 +1,57 @@
++ Shape: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#S
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#S
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#S
+     [target-selection]
+     Selecting targets by Target nodes => 1 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#A","tracerId":"_tracer_1"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#S
+       [node]
+       Target: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#A
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#A
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#S
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#A
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#SP
+           [path]
+           Target: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#A
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: ["http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#p1","http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#p2"]
+           Selected: [{"termType":"Literal","value":"value","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#SP
+             [function]
+             Target: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#A
+             TracerId: _tracer_1
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#SP
+             [node]
+             Target: "value"
+             TracerId: _tracer_2
+             Evaluating target node "value"
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/path/path-sequence-duplicate-001.test#SP
+               [function]
+               Target: "value"
+               TracerId: _tracer_2
+               Evaluating function validateNodeKind
+               Args: {"$value":"\"value\"","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+               Error? true

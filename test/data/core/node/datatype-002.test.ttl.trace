@@ -1,0 +1,71 @@
++ Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 4 nodes found
+     Selected: [{"id":"<span>Hello</span>","tracerId":"_tracer_1"},{"id":"Hello","tracerId":"_tracer_2"},{"id":"G'day","tracerId":"_tracer_3"},{"id":"Hallo","tracerId":"_tracer_4"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+       [node]
+       Target: <span>Hello</span>
+       TracerId: _tracer_1
+       Evaluating target node <span>Hello</span>
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+         [function]
+         Target: <span>Hello</span>
+         TracerId: _tracer_1
+         Evaluating function validateDatatype
+         Args: {"$value":"\"<span>Hello</span>\"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+       [node]
+       Target: Hello
+       TracerId: _tracer_2
+       Evaluating target node Hello
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+         [function]
+         Target: Hello
+         TracerId: _tracer_2
+         Evaluating function validateDatatype
+         Args: {"$value":"\"Hello\"","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+       [node]
+       Target: G'day
+       TracerId: _tracer_3
+       Evaluating target node G'day
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+         [function]
+         Target: G'day
+         TracerId: _tracer_3
+         Evaluating function validateDatatype
+         Args: {"$value":"\"G'day\"@en-au","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+       [node]
+       Target: Hallo
+       TracerId: _tracer_4
+       Evaluating target node Hallo
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/datatype-002.test#TestShape
+         [function]
+         Target: Hallo
+         TracerId: _tracer_4
+         Evaluating function validateDatatype
+         Args: {"$value":"\"Hallo\"@de","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
+         Error? false

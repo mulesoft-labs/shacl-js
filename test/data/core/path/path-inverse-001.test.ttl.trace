@@ -1,0 +1,128 @@
++ Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Person => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+           [path]
+           Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: {"inverse":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#child"}
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Parent1"}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+             [function]
+             Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1
+             TracerId: _tracer_1
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+             [function]
+             Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1
+             TracerId: _tracer_1
+             Evaluating function validateMinCountProperty
+             Args: {"minCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+           [path]
+           Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2
+           TracerId: _tracer_2
+           Selecting target 3 values for path
+           Path: {"inverse":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#child"}
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Parent1"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Parent2"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Parent3"}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+             [function]
+             Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2
+             TracerId: _tracer_2
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+             [function]
+             Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2
+             TracerId: _tracer_2
+             Evaluating function validateMinCountProperty
+             Args: {"minCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+           [path]
+           Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1
+           TracerId: _tracer_3
+           Selecting target 2 values for path
+           Path: {"inverse":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#child"}
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Parent1"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Parent2"}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+             [function]
+             Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1
+             TracerId: _tracer_3
+             Evaluating function validateMaxCountProperty
+             Args: {"maxCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape-P
+             [function]
+             Target: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1
+             TracerId: _tracer_3
+             Evaluating function validateMinCountProperty
+             Args: {"minCount":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             Error? false

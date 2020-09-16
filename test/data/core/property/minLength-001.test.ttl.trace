@@ -1,0 +1,149 @@
++ Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/minLength-001.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance1","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance2","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/minLength-001.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#InvalidInstance1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/minLength-001.test#testProperty"
+           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+             [node]
+             Target: "A"
+             TracerId: _tracer_4
+             Evaluating target node "A"
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+               [function]
+               Target: "A"
+               TracerId: _tracer_4
+               Evaluating function validateDatatype
+               Args: {"$value":"\"A\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+               [function]
+               Target: "A"
+               TracerId: _tracer_4
+               Evaluating function validateMinLength
+               Args: {"$value":"\"A\"","minLength":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance1
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance1
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance1
+           TracerId: _tracer_2
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/minLength-001.test#testProperty"
+           Selected: [{"termType":"Literal","value":"AB","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"ABC","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+             [node]
+             Target: "AB"
+             TracerId: _tracer_5
+             Evaluating target node "AB"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+               [function]
+               Target: "AB"
+               TracerId: _tracer_5
+               Evaluating function validateDatatype
+               Args: {"$value":"\"AB\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+               [function]
+               Target: "AB"
+               TracerId: _tracer_5
+               Evaluating function validateMinLength
+               Args: {"$value":"\"AB\"","minLength":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+             [node]
+             Target: "ABC"
+             TracerId: _tracer_6
+             Evaluating target node "ABC"
+             Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+               [function]
+               Target: "ABC"
+               TracerId: _tracer_6
+               Evaluating function validateDatatype
+               Args: {"$value":"\"ABC\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
+               Error? false
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+               [function]
+               Target: "ABC"
+               TracerId: _tracer_6
+               Evaluating function validateMinLength
+               Args: {"$value":"\"ABC\"","minLength":"\"2\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance2
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance2
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance2
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/minLength-001.test#TestShape-testProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/minLength-001.test#ValidInstance2
+           TracerId: _tracer_3
+           Selecting target 0 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/minLength-001.test#testProperty"
+           Selected: []
+           Error? false

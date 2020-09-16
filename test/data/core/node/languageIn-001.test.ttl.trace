@@ -1,0 +1,86 @@
++ Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 5 nodes found
+     Selected: [{"id":"http://www.w3.org/2000/01/rdf-schema#Resource","tracerId":"_tracer_1"},{"id":"Deutsch","tracerId":"_tracer_2"},{"id":"Plain String","tracerId":"_tracer_3"},{"id":"English","tracerId":"_tracer_4"},{"id":"Francais","tracerId":"_tracer_5"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+       [node]
+       Target: http://www.w3.org/2000/01/rdf-schema#Resource
+       TracerId: _tracer_1
+       Evaluating target node http://www.w3.org/2000/01/rdf-schema#Resource
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+         [function]
+         Target: http://www.w3.org/2000/01/rdf-schema#Resource
+         TracerId: _tracer_1
+         Evaluating function validateLanguageIn
+         Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Resource","languageIn":"_:b2376"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+       [node]
+       Target: Deutsch
+       TracerId: _tracer_2
+       Evaluating target node Deutsch
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+         [function]
+         Target: Deutsch
+         TracerId: _tracer_2
+         Evaluating function validateLanguageIn
+         Args: {"$value":"\"Deutsch\"@de","languageIn":"_:b2376"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+       [node]
+       Target: Plain String
+       TracerId: _tracer_3
+       Evaluating target node Plain String
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+         [function]
+         Target: Plain String
+         TracerId: _tracer_3
+         Evaluating function validateLanguageIn
+         Args: {"$value":"\"Plain String\"","languageIn":"_:b2376"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+       [node]
+       Target: English
+       TracerId: _tracer_4
+       Evaluating target node English
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+         [function]
+         Target: English
+         TracerId: _tracer_4
+         Evaluating function validateLanguageIn
+         Args: {"$value":"\"English\"@en","languageIn":"_:b2376"}
+         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+       [node]
+       Target: Francais
+       TracerId: _tracer_5
+       Evaluating target node Francais
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/languageIn-001.test#TestShape
+         [function]
+         Target: Francais
+         TracerId: _tracer_5
+         Evaluating function validateLanguageIn
+         Args: {"$value":"\"Francais\"@fr","languageIn":"_:b2376"}
+         Error? false

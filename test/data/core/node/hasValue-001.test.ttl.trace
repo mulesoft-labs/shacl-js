@@ -1,0 +1,41 @@
++ Shape: http://datashapes.org/sh/tests/core/node/hasValue-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/hasValue-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/hasValue-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 2 nodes found
+     Selected: [{"id":"Invalid String","tracerId":"_tracer_1"},{"id":"Test","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/hasValue-001.test#TestShape
+       [node]
+       Target: Invalid String
+       TracerId: _tracer_1
+       Evaluating target node Invalid String
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/hasValue-001.test#TestShape
+         [function]
+         Target: Invalid String
+         TracerId: _tracer_1
+         Evaluating function validateHasValueNode
+         Args: {"hasValue":"\"Test\""}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/hasValue-001.test#TestShape
+       [node]
+       Target: Test
+       TracerId: _tracer_2
+       Evaluating target node Test
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/hasValue-001.test#TestShape
+         [function]
+         Target: Test
+         TracerId: _tracer_2
+         Evaluating function validateHasValueNode
+         Args: {"hasValue":"\"Test\""}
+         Error? false

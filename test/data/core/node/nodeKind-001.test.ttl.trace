@@ -1,0 +1,41 @@
++ Shape: http://datashapes.org/sh/tests/core/node/nodeKind-001.test#IRITestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/nodeKind-001.test#IRITestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/nodeKind-001.test#IRITestShape
+     [target-selection]
+     Selecting targets by Target nodes => 2 nodes found
+     Selected: [{"id":"true","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/nodeKind-001.test#John","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/nodeKind-001.test#IRITestShape
+       [node]
+       Target: true
+       TracerId: _tracer_1
+       Evaluating target node true
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/nodeKind-001.test#IRITestShape
+         [function]
+         Target: true
+         TracerId: _tracer_1
+         Evaluating function validateNodeKind
+         Args: {"$value":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/nodeKind-001.test#IRITestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/nodeKind-001.test#John
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/nodeKind-001.test#John
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/nodeKind-001.test#IRITestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/nodeKind-001.test#John
+         TracerId: _tracer_2
+         Evaluating function validateNodeKind
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/nodeKind-001.test#John","nodeKind":"http://www.w3.org/ns/shacl#IRI"}
+         Error? false

@@ -1,0 +1,232 @@
++ Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/property-001.test#Person => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/property-001.test#ValidPerson1","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b9119
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/property-001.test#address"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress"}]
+           Error? true
+          |
+          -> Shape: _:b9119
+             [node]
+             Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress
+             TracerId: _tracer_4
+             Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress
+             Error? true
+            |
+            -> Shape: _:b9119
+               [properties]
+               Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress
+               TracerId: _tracer_4
+               Evaluating nested property constraints
+               Error? true
+              |
+              -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                 [path]
+                 Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress
+                 TracerId: _tracer_4
+                 Selecting target 1 values for path
+                 Path: "http://datashapes.org/sh/tests/core/property/property-001.test#city"
+                 Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity"}]
+                 Error? true
+                |
+                -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                   [node]
+                   Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity
+                   TracerId: _tracer_5
+                   Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity
+                   Error? true
+                  |
+                  -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                     [function]
+                     Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity
+                     TracerId: _tracer_5
+                     Evaluating function validateClass
+                     Args: {"$value":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity","class":"http://datashapes.org/sh/tests/core/property/property-001.test#City"}
+                     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson2
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson2
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson2
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: _:b9119
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson2
+           TracerId: _tracer_2
+           Selecting target 2 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/property-001.test#address"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress"}]
+           Error? true
+          |
+          -> Shape: _:b9119
+             [node]
+             Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress
+             TracerId: _tracer_6
+             Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress
+             Error? true
+            |
+            -> Shape: _:b9119
+               [properties]
+               Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress
+               TracerId: _tracer_6
+               Evaluating nested property constraints
+               Error? true
+              |
+              -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                 [path]
+                 Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidAddress
+                 TracerId: _tracer_6
+                 Selecting target 1 values for path
+                 Path: "http://datashapes.org/sh/tests/core/property/property-001.test#city"
+                 Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity"}]
+                 Error? true
+                |
+                -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                   [node]
+                   Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity
+                   TracerId: _tracer_8
+                   Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity
+                   Error? true
+                  |
+                  -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                     [function]
+                     Target: http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity
+                     TracerId: _tracer_8
+                     Evaluating function validateClass
+                     Args: {"$value":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidCity","class":"http://datashapes.org/sh/tests/core/property/property-001.test#City"}
+                     Error? true
+          |
+          -> Shape: _:b9119
+             [node]
+             Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress
+             TracerId: _tracer_7
+             Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress
+             Error? false
+            |
+            -> Shape: _:b9119
+               [properties]
+               Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress
+               TracerId: _tracer_7
+               Evaluating nested property constraints
+               Error? false
+              |
+              -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                 [path]
+                 Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress
+                 TracerId: _tracer_7
+                 Selecting target 1 values for path
+                 Path: "http://datashapes.org/sh/tests/core/property/property-001.test#city"
+                 Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity"}]
+                 Error? false
+                |
+                -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                   [node]
+                   Target: http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity
+                   TracerId: _tracer_11
+                   Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity
+                   Error? false
+                  |
+                  -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                     [function]
+                     Target: http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity
+                     TracerId: _tracer_11
+                     Evaluating function validateClass
+                     Args: {"$value":"http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity","class":"http://datashapes.org/sh/tests/core/property/property-001.test#City"}
+                     Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidPerson1
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#ValidPerson1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidPerson1
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: _:b9119
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidPerson1
+           TracerId: _tracer_3
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/property-001.test#address"
+           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress"}]
+           Error? false
+          |
+          -> Shape: _:b9119
+             [node]
+             Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress
+             TracerId: _tracer_9
+             Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress
+             Error? false
+            |
+            -> Shape: _:b9119
+               [properties]
+               Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress
+               TracerId: _tracer_9
+               Evaluating nested property constraints
+               Error? false
+              |
+              -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                 [path]
+                 Target: http://datashapes.org/sh/tests/core/property/property-001.test#ValidAddress
+                 TracerId: _tracer_9
+                 Selecting target 1 values for path
+                 Path: "http://datashapes.org/sh/tests/core/property/property-001.test#city"
+                 Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity"}]
+                 Error? false
+                |
+                -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                   [node]
+                   Target: http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity
+                   TracerId: _tracer_10
+                   Evaluating target node http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity
+                   Error? false
+                  |
+                  -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape-address-city
+                     [function]
+                     Target: http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity
+                     TracerId: _tracer_10
+                     Evaluating function validateClass
+                     Args: {"$value":"http://datashapes.org/sh/tests/core/property/property-001.test#ProperCity","class":"http://datashapes.org/sh/tests/core/property/property-001.test#City"}
+                     Error? false

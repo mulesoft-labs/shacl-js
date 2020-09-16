@@ -1,4 +1,5 @@
 var SHACLValidator = require("../index");
+var tracer = require("../src/trace");
 var fs = require("fs");
 // expected result
 var rdflibgraph = require("../src/n3-graph");
@@ -82,7 +83,6 @@ var isBlank = function(s) {
 
 var validateReports = function(test, input) {
     var data = fs.readFileSync(input).toString();
-
     expectedResult(data, "text/turtle", function(expectedReport, e) {
         if (e != null) {
             console.log(e);
@@ -90,6 +90,10 @@ var validateReports = function(test, input) {
             test.done();
         } else {
             new SHACLValidator().validate(data, "text/turtle", data, "text/turtle", function (e, report) {
+                // debug
+                let framesTrace = tracer.renderFrames().join("\n")
+                fs.writeFileSync(input + ".trace",framesTrace,{encoding:'utf8',flag:'w'})
+
                 if (e != null) {
                     var testCase = new RDFLibGraph();
                     testCase.loadGraph(data, input, "text/turtle", function() {
@@ -136,8 +140,15 @@ var validateReports = function(test, input) {
 
 fs.readdirSync(__dirname + "/data/core").forEach(function(dir) {
     fs.readdirSync(__dirname + "/data/core/" + dir).forEach(function(file) {
-        exports[dir + "-test-" + file] = function (test) {
-            validateReports(test, __dirname + "/data/core/" + dir + "/" + file);
-        };
+        if (!file.endsWith(".trace")) {
+            //if (dir === "sparql") {
+                //if (file.indexOf("select-001") > -1) {
+                    exports[dir + "-test-" + file] = function (test) {
+                        tracer.withTracing(true);
+                        validateReports(test, __dirname + "/data/core/" + dir + "/" + file);
+                    };
+                //}
+            //}
+        }
     });
 });

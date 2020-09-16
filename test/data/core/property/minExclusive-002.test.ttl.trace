@@ -1,0 +1,87 @@
++ Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape => 2 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance2","tracerId":"_tracer_2"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape-testProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance1
+           TracerId: _tracer_1
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/minExclusive-002.test#testProperty"
+           Selected: [{"termType":"Literal","value":"A string","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape-testProperty
+             [node]
+             Target: "A string"
+             TracerId: _tracer_3
+             Evaluating target node "A string"
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape-testProperty
+               [function]
+               Target: "A string"
+               TracerId: _tracer_3
+               Evaluating function validateMinExclusive
+               Args: {"$value":"\"A string\"","minExclusive":"\"40\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance2
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance2
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance2
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape-testProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#InvalidInstance2
+           TracerId: _tracer_2
+           Selecting target 1 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/minExclusive-002.test#testProperty"
+           Selected: [{"termType":"NamedNode","value":"http://www.w3.org/2000/01/rdf-schema#Resource"}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape-testProperty
+             [node]
+             Target: http://www.w3.org/2000/01/rdf-schema#Resource
+             TracerId: _tracer_4
+             Evaluating target node http://www.w3.org/2000/01/rdf-schema#Resource
+             Error? true
+            |
+            -> Shape: http://datashapes.org/sh/tests/core/property/minExclusive-002.test#TestShape-testProperty
+               [function]
+               Target: http://www.w3.org/2000/01/rdf-schema#Resource
+               TracerId: _tracer_4
+               Evaluating function validateMinExclusive
+               Args: {"$value":"http://www.w3.org/2000/01/rdf-schema#Resource","minExclusive":"\"40\"^^http://www.w3.org/2001/XMLSchema#integer"}
+               Error? true

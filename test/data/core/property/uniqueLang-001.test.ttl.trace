@@ -1,0 +1,106 @@
++ Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape => 3 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#ValidInstance1","tracerId":"_tracer_3"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance1
+       TracerId: _tracer_1
+       Evaluating target node http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance1
+         TracerId: _tracer_1
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape-testProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance1
+           TracerId: _tracer_1
+           Selecting target 4 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#testProperty"
+           Selected: [{"termType":"Literal","value":"Me","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"Me","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Moi","language":"fr","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Myself","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape-testProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance1
+             TracerId: _tracer_1
+             Evaluating function validateUniqueLangProperty
+             Args: {"uniqueLang":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean"}
+             Explanation: ["Language \"en\" has been used by 2 values"]
+             Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance2
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance2
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance2
+         TracerId: _tracer_2
+         Evaluating nested property constraints
+         Error? true
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape-testProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance2
+           TracerId: _tracer_2
+           Selecting target 5 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#testProperty"
+           Selected: [{"termType":"Literal","value":"Me","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Myself","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"I","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Ich","language":"de","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Mich","language":"de","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}}]
+           Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape-testProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#InvalidInstance2
+             TracerId: _tracer_2
+             Evaluating function validateUniqueLangProperty
+             Args: {"uniqueLang":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean"}
+             Explanation: ["Language \"en\" has been used by 3 values","Language \"de\" has been used by 2 values"]
+             Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#ValidInstance1
+       TracerId: _tracer_3
+       Evaluating target node http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#ValidInstance1
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape
+         [properties]
+         Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#ValidInstance1
+         TracerId: _tracer_3
+         Evaluating nested property constraints
+         Error? false
+        |
+        -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape-testProperty
+           [path]
+           Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#ValidInstance1
+           TracerId: _tracer_3
+           Selecting target 4 values for path
+           Path: "http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#testProperty"
+           Selected: [{"termType":"Literal","value":"Me","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"Me","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Moi","language":"fr","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Myself","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
+           Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#TestShape-testProperty
+             [function]
+             Target: http://datashapes.org/sh/tests/core/property/uniqueLang-001.test#ValidInstance1
+             TracerId: _tracer_3
+             Evaluating function validateUniqueLangProperty
+             Args: {"uniqueLang":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean"}
+             Error? false

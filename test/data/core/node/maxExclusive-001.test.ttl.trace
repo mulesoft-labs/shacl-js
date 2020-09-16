@@ -1,0 +1,122 @@
++ Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+  [top-level-shape]
+  Evaluating shape http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+  Selected: []
+  Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+     [target-selection]
+     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestClass => 1 nodes found
+     Selected: [{"id":"b103_b9649","tracerId":"_tracer_1"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+       [node]
+       Target: b103_b9649
+       TracerId: _tracer_1
+       Evaluating target node b103_b9649
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+         [function]
+         Target: b103_b9649
+         TracerId: _tracer_1
+         Evaluating function validateMaxExclusive
+         Args: {"$value":"_:b103_b9649","maxExclusive":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+  |
+  -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+     [target-selection]
+     Selecting targets by Target nodes => 6 nodes found
+     Selected: [{"id":"http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#John","tracerId":"_tracer_2"},{"id":"4","tracerId":"_tracer_3"},{"id":"4.0","tracerId":"_tracer_4"},{"id":"4.1","tracerId":"_tracer_5"},{"id":"Hello","tracerId":"_tracer_6"},{"id":"3.9","tracerId":"_tracer_7"}]
+     Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+       [node]
+       Target: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#John
+       TracerId: _tracer_2
+       Evaluating target node http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#John
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+         [function]
+         Target: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#John
+         TracerId: _tracer_2
+         Evaluating function validateMaxExclusive
+         Args: {"$value":"http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#John","maxExclusive":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+       [node]
+       Target: 4
+       TracerId: _tracer_3
+       Evaluating target node 4
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+         [function]
+         Target: 4
+         TracerId: _tracer_3
+         Evaluating function validateMaxExclusive
+         Args: {"$value":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer","maxExclusive":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+       [node]
+       Target: 4.0
+       TracerId: _tracer_4
+       Evaluating target node 4.0
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+         [function]
+         Target: 4.0
+         TracerId: _tracer_4
+         Evaluating function validateMaxExclusive
+         Args: {"$value":"\"4.0\"^^http://www.w3.org/2001/XMLSchema#decimal","maxExclusive":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+       [node]
+       Target: 4.1
+       TracerId: _tracer_5
+       Evaluating target node 4.1
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+         [function]
+         Target: 4.1
+         TracerId: _tracer_5
+         Evaluating function validateMaxExclusive
+         Args: {"$value":"\"4.1\"^^http://www.w3.org/2001/XMLSchema#decimal","maxExclusive":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+       [node]
+       Target: Hello
+       TracerId: _tracer_6
+       Evaluating target node Hello
+       Error? true
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+         [function]
+         Target: Hello
+         TracerId: _tracer_6
+         Evaluating function validateMaxExclusive
+         Args: {"$value":"\"Hello\"","maxExclusive":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+       [node]
+       Target: 3.9
+       TracerId: _tracer_7
+       Evaluating target node 3.9
+       Error? false
+      |
+      -> Shape: http://datashapes.org/sh/tests/core/node/maxExclusive-001.test#TestShape
+         [function]
+         Target: 3.9
+         TracerId: _tracer_7
+         Evaluating function validateMaxExclusive
+         Args: {"$value":"\"3.9\"^^http://www.w3.org/2001/XMLSchema#decimal","maxExclusive":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
+         Error? false
