@@ -2,27 +2,28 @@
   [top-level-shape]
   Evaluating shape http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
   Selected: []
-  Error? false
+  Error? true
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
      [target-selection]
      Selecting targets by Target nodes => 1 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1","tracerId":"_tracer_1"}]
-     Error? false
+     Explanation: {"selector":"targetNode","argument":null}
+     Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
-       Error? false
+       Error? true
       |
       -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape
          [properties]
          Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
          TracerId: _tracer_1
          Evaluating nested property constraints
-         Error? false
+         Error? true
         |
         -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape-related
            [path]
@@ -30,21 +31,1317 @@
            TracerId: _tracer_1
            Selecting target 3 values for path
            Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related"
-           Selected: [{"termType":"BlankNode","value":"b9356"},{"termType":"BlankNode","value":"b9358"},{"termType":"BlankNode","value":"b9360"}]
-           Error? false
+           Selected: [{"termType":"BlankNode","value":"b366"},{"termType":"BlankNode","value":"b368"},{"termType":"BlankNode","value":"b370"}]
+           Error? true
           |
           -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape-related
-             [function]
+             [qualified]
              Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
              TracerId: _tracer_1
-             Evaluating function validateQualifiedMaxCountProperty
-             Args: {"qualifiedValueShape":"_:b9362","qualifiedValueShapesDisjoint":null,"qualifiedMaxCount":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer"}
+             evaluating qualified maxCount
+             Args: {"qualifiedValueShape":"_:b372","qualifiedValueShapesDisjoint":null,"qualifiedMaxCount":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer","qualifiedCount":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer","qualification":"maxCount"}
              Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b366
+               TracerId: _tracer_1_0
+               Evaluating target node _:b366
+               Error? false
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b366
+                 TracerId: _tracer_1_0
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b366
+                   TracerId: _tracer_1_0
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b367"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating target node _:b367
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b367
+                         TracerId: _tracer_5
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b367
+                           TracerId: _tracer_5
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b367
+                             TracerId: _tracer_5
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b366
+                   TracerId: _tracer_1_0
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b367"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating target node _:b367
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b367
+                         TracerId: _tracer_5
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b367
+                           TracerId: _tracer_5
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b367
+                             TracerId: _tracer_5
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b368
+               TracerId: _tracer_1_1
+               Evaluating target node _:b368
+               Error? false
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b368
+                 TracerId: _tracer_1_1
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b368
+                   TracerId: _tracer_1_1
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b369"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating target node _:b369
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b369
+                         TracerId: _tracer_7
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b369
+                           TracerId: _tracer_7
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b369
+                             TracerId: _tracer_7
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b368
+                   TracerId: _tracer_1_1
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b369"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating target node _:b369
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b369
+                         TracerId: _tracer_7
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b369
+                           TracerId: _tracer_7
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b369
+                             TracerId: _tracer_7
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b370
+               TracerId: _tracer_1_2
+               Evaluating target node _:b370
+               Error? true
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b370
+                 TracerId: _tracer_1_2
+                 Evaluating nested property constraints
+                 Error? true
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b370
+                   TracerId: _tracer_1_2
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b371"}]
+                   Error? true
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating target node _:b371
+                     Error? true
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating shape
+                     Error? true
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b371
+                         TracerId: _tracer_9
+                         Evaluating nested property constraints
+                         Error? true
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b371
+                           TracerId: _tracer_9
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#unrelated"}]
+                           Error? true
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b371
+                             TracerId: _tracer_9
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? true
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b370
+                   TracerId: _tracer_1_2
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b371"}]
+                   Error? true
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating target node _:b371
+                     Error? true
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating shape
+                     Error? true
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b371
+                         TracerId: _tracer_9
+                         Evaluating nested property constraints
+                         Error? true
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b371
+                           TracerId: _tracer_9
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#unrelated"}]
+                           Error? true
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b371
+                             TracerId: _tracer_9
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? true
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b366
+               TracerId: _tracer_1_0
+               Evaluating target node _:b366
+               Error? false
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b366
+                 TracerId: _tracer_1_0
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b366
+                   TracerId: _tracer_1_0
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b367"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating target node _:b367
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b367
+                         TracerId: _tracer_5
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b367
+                           TracerId: _tracer_5
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b367
+                             TracerId: _tracer_5
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b366
+                   TracerId: _tracer_1_0
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b367"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating target node _:b367
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b367
+                         TracerId: _tracer_5
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b367
+                           TracerId: _tracer_5
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b367
+                             TracerId: _tracer_5
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b368
+               TracerId: _tracer_1_1
+               Evaluating target node _:b368
+               Error? false
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b368
+                 TracerId: _tracer_1_1
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b368
+                   TracerId: _tracer_1_1
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b369"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating target node _:b369
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b369
+                         TracerId: _tracer_7
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b369
+                           TracerId: _tracer_7
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b369
+                             TracerId: _tracer_7
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b368
+                   TracerId: _tracer_1_1
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b369"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating target node _:b369
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b369
+                         TracerId: _tracer_7
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b369
+                           TracerId: _tracer_7
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b369
+                             TracerId: _tracer_7
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b370
+               TracerId: _tracer_1_2
+               Evaluating target node _:b370
+               Error? true
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b370
+                 TracerId: _tracer_1_2
+                 Evaluating nested property constraints
+                 Error? true
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b370
+                   TracerId: _tracer_1_2
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b371"}]
+                   Error? true
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating target node _:b371
+                     Error? true
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating shape
+                     Error? true
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b371
+                         TracerId: _tracer_9
+                         Evaluating nested property constraints
+                         Error? true
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b371
+                           TracerId: _tracer_9
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#unrelated"}]
+                           Error? true
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b371
+                             TracerId: _tracer_9
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? true
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b370
+                   TracerId: _tracer_1_2
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b371"}]
+                   Error? true
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating target node _:b371
+                     Error? true
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating shape
+                     Error? true
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b371
+                         TracerId: _tracer_9
+                         Evaluating nested property constraints
+                         Error? true
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b371
+                           TracerId: _tracer_9
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#unrelated"}]
+                           Error? true
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b371
+                             TracerId: _tracer_9
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? true
           |
           -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#APGARObservationShape-related
-             [function]
+             [qualified]
              Target: http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#Observation1
              TracerId: _tracer_1
-             Evaluating function validateQualifiedMinCountProperty
-             Args: {"qualifiedValueShape":"_:b9362","qualifiedValueShapesDisjoint":null,"qualifiedMinCount":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer"}
-             Error? false
+             evaluating qualified minCount
+             Args: {"qualifiedValueShape":"_:b372","qualifiedValueShapesDisjoint":null,"qualifiedMinCount":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer","qualifiedCount":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer","qualification":"minCount"}
+             Error? true
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b366
+               TracerId: _tracer_1_0
+               Evaluating target node _:b366
+               Error? false
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b366
+                 TracerId: _tracer_1_0
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b366
+                   TracerId: _tracer_1_0
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b367"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating target node _:b367
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b367
+                         TracerId: _tracer_5
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b367
+                           TracerId: _tracer_5
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b367
+                             TracerId: _tracer_5
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b366
+                   TracerId: _tracer_1_0
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b367"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating target node _:b367
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b367
+                         TracerId: _tracer_5
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b367
+                           TracerId: _tracer_5
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b367
+                             TracerId: _tracer_5
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b368
+               TracerId: _tracer_1_1
+               Evaluating target node _:b368
+               Error? false
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b368
+                 TracerId: _tracer_1_1
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b368
+                   TracerId: _tracer_1_1
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b369"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating target node _:b369
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b369
+                         TracerId: _tracer_7
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b369
+                           TracerId: _tracer_7
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b369
+                             TracerId: _tracer_7
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b368
+                   TracerId: _tracer_1_1
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b369"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating target node _:b369
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b369
+                         TracerId: _tracer_7
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b369
+                           TracerId: _tracer_7
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b369
+                             TracerId: _tracer_7
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b370
+               TracerId: _tracer_1_2
+               Evaluating target node _:b370
+               Error? true
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b370
+                 TracerId: _tracer_1_2
+                 Evaluating nested property constraints
+                 Error? true
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b370
+                   TracerId: _tracer_1_2
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b371"}]
+                   Error? true
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating target node _:b371
+                     Error? true
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating shape
+                     Error? true
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b371
+                         TracerId: _tracer_9
+                         Evaluating nested property constraints
+                         Error? true
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b371
+                           TracerId: _tracer_9
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#unrelated"}]
+                           Error? true
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b371
+                             TracerId: _tracer_9
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? true
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b370
+                   TracerId: _tracer_1_2
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b371"}]
+                   Error? true
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating target node _:b371
+                     Error? true
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating shape
+                     Error? true
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b371
+                         TracerId: _tracer_9
+                         Evaluating nested property constraints
+                         Error? true
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b371
+                           TracerId: _tracer_9
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#unrelated"}]
+                           Error? true
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b371
+                             TracerId: _tracer_9
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? true
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b366
+               TracerId: _tracer_1_0
+               Evaluating target node _:b366
+               Error? false
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b366
+                 TracerId: _tracer_1_0
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b366
+                   TracerId: _tracer_1_0
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b367"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating target node _:b367
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b367
+                         TracerId: _tracer_5
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b367
+                           TracerId: _tracer_5
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b367
+                             TracerId: _tracer_5
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b366
+                   TracerId: _tracer_1_0
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b367"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating target node _:b367
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b367
+                     TracerId: _tracer_5
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b367
+                         TracerId: _tracer_5
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b367
+                           TracerId: _tracer_5
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b367
+                             TracerId: _tracer_5
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b368
+               TracerId: _tracer_1_1
+               Evaluating target node _:b368
+               Error? false
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b368
+                 TracerId: _tracer_1_1
+                 Evaluating nested property constraints
+                 Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b368
+                   TracerId: _tracer_1_1
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b369"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating target node _:b369
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b369
+                         TracerId: _tracer_7
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b369
+                           TracerId: _tracer_7
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b369
+                             TracerId: _tracer_7
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b368
+                   TracerId: _tracer_1_1
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b369"}]
+                   Error? false
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating target node _:b369
+                     Error? false
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b369
+                     TracerId: _tracer_7
+                     Evaluating shape
+                     Error? false
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b369
+                         TracerId: _tracer_7
+                         Evaluating nested property constraints
+                         Error? false
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b369
+                           TracerId: _tracer_7
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}]
+                           Error? false
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b369
+                             TracerId: _tracer_7
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? false
+            |
+            -> Shape: _:b372
+               [node]
+               Target: _:b370
+               TracerId: _tracer_1_2
+               Evaluating target node _:b370
+               Error? true
+              |
+              -> Shape: _:b372
+                 [properties]
+                 Target: _:b370
+                 TracerId: _tracer_1_2
+                 Evaluating nested property constraints
+                 Error? true
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b370
+                   TracerId: _tracer_1_2
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b371"}]
+                   Error? true
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating target node _:b371
+                     Error? true
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating shape
+                     Error? true
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b371
+                         TracerId: _tracer_9
+                         Evaluating nested property constraints
+                         Error? true
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b371
+                           TracerId: _tracer_9
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#unrelated"}]
+                           Error? true
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b371
+                             TracerId: _tracer_9
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? true
+                |
+                -> Shape: _:b373
+                   [path]
+                   Target: _:b370
+                   TracerId: _tracer_1_2
+                   Selecting target 1 values for path
+                   Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#related_target"
+                   Selected: [{"termType":"BlankNode","value":"b371"}]
+                   Error? true
+                  |
+                  -> Shape: _:b373
+                     [node]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating target node _:b371
+                     Error? true
+                  |
+                  -> Shape: _:b373
+                     [shape]
+                     Target: _:b371
+                     TracerId: _tracer_9
+                     Evaluating shape
+                     Error? true
+                      |
+                      -> Shape: _:b374
+                         [properties]
+                         Target: _:b371
+                         TracerId: _tracer_9
+                         Evaluating nested property constraints
+                         Error? true
+                        |
+                        -> Shape: _:b375
+                           [path]
+                           Target: _:b371
+                           TracerId: _tracer_9
+                           Selecting target 1 values for path
+                           Path: "http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#reference"
+                           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#unrelated"}]
+                           Error? true
+                          |
+                          -> Shape: _:b375
+                             [function]
+                             Target: _:b371
+                             TracerId: _tracer_9
+                             Evaluating function validateHasValueProperty
+                             Args: {"hasValue":"http://datashapes.org/sh/tests/core/property/qualifiedValueShape-001.test#something"}
+                             Error? true

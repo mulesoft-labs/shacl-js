@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Hand => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#InvalidHand1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ValidHand1","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Hand"}
      Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape

@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Target nodes => 4 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/node/class-001.test#Quokki","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/class-001.test#Typeless","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/node/class-001.test#John","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/node/class-001.test#Someone","tracerId":"_tracer_4"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/class-001.test#TestShape

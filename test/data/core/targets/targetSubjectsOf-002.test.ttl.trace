@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#MyClass => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#MyClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape
@@ -76,6 +77,7 @@
      [target-selection]
      Selecting targets by subjects of predicate: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#myProperty => 6 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2","tracerId":"_tracer_4"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance1","tracerId":"_tracer_5"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#ValidInstance2","tracerId":"_tracer_6"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance1","tracerId":"_tracer_7"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#InvalidInstance2","tracerId":"_tracer_8"}]
+     Explanation: {"selector":"subjectsOf","argument":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#myProperty"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-002.test#TestShape

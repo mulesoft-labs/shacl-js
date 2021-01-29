@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/node/maxLength-001.test#TestClass => 1 nodes found
      Selected: [{"id":"b113_b9649","tracerId":"_tracer_1"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/node/maxLength-001.test#TestClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/maxLength-001.test#TestShape
@@ -29,6 +30,7 @@
      [target-selection]
      Selecting targets by Target nodes => 10 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/node/maxLength-001.test#John","tracerId":"_tracer_2"},{"id":"12345","tracerId":"_tracer_3"},{"id":"2017-03-29","tracerId":"_tracer_4"},{"id":"Hello","tracerId":"_tracer_5"},{"id":"a:b","tracerId":"_tracer_6"},{"id":"123","tracerId":"_tracer_7"},{"id":"1234","tracerId":"_tracer_8"},{"id":"Hel","tracerId":"_tracer_9"},{"id":"Hell","tracerId":"_tracer_10"},{"id":"Hell","tracerId":"_tracer_11"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/maxLength-001.test#TestShape

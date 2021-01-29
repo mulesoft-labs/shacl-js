@@ -141,14 +141,14 @@ var validateReports = function(test, input) {
 fs.readdirSync(__dirname + "/data/core").forEach(function(dir) {
     fs.readdirSync(__dirname + "/data/core/" + dir).forEach(function(file) {
         if (!file.endsWith(".trace")) {
-            //if (dir === "sparql") {
-                //if (file.indexOf("select-001") > -1) {
+            if (dir === "property") {
+                if (file.indexOf("qualifiedValueShape-001") > -1) {
                     exports[dir + "-test-" + file] = function (test) {
                         tracer.withTracing(true);
                         validateReports(test, __dirname + "/data/core/" + dir + "/" + file);
                     };
-                //}
-            //}
+                }
+            }
         }
     });
 });

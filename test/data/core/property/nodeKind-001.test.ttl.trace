@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_4"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_5"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_6"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithLiteral
@@ -292,6 +293,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_16"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_17"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_18"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_19"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_20"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_21"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRI
@@ -576,6 +578,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_31"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_32"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_33"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_34"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_35"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_36"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithIRIOrLiteral
@@ -860,6 +863,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_46"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_47"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_48"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_49"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_50"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_51"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrLiteral
@@ -1144,6 +1148,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_61"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_62"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_63"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_64"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_65"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_66"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNode
@@ -1428,6 +1433,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass => 6 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNode","tracerId":"_tracer_76"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndIRI","tracerId":"_tracer_77"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithBlankNodeAndLiteral","tracerId":"_tracer_78"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRI","tracerId":"_tracer_79"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithIRIAndLiteral","tracerId":"_tracer_80"},{"id":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#InstanceWithLiteral","tracerId":"_tracer_81"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/nodeKind-001.test#MyClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/nodeKind-001.test#ShapeWithBlankNodeOrIRI

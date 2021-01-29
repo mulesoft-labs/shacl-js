@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Target nodes => 4 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/and-001.test#InvalidResource3","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/property/and-001.test#ValidResource1","tracerId":"_tracer_4"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/and-001.test#AddressShape

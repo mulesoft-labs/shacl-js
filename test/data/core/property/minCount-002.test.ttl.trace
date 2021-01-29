@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Target nodes => 1 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/minCount-002.test#ValidResource1","tracerId":"_tracer_1"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/minCount-002.test#TestShape

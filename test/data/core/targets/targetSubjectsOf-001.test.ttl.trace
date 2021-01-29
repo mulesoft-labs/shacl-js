@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by subjects of predicate: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-001.test#myProperty => 3 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-001.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-001.test#ValidInstance1","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-001.test#InvalidInstance1","tracerId":"_tracer_3"}]
+     Explanation: {"selector":"subjectsOf","argument":"http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-001.test#myProperty"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/targets/targetSubjectsOf-001.test#TestShape

@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by objects of predicate: http://datashapes.org/sh/tests/core/targets/targetObjectsOf-001.test#testProperty => 4 nodes found
      Selected: [{"id":"http://www.w3.org/2000/01/rdf-schema#Resource","tracerId":"_tracer_1"},{"id":"String","tracerId":"_tracer_2"},{"id":"100","tracerId":"_tracer_3"},{"id":"42","tracerId":"_tracer_4"}]
+     Explanation: {"selector":"objectsOf","argument":"http://datashapes.org/sh/tests/core/targets/targetObjectsOf-001.test#testProperty"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/targets/targetObjectsOf-001.test#TestShape

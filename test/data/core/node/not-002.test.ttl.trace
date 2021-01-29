@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Target nodes => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/node/not-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/not-002.test#ValidInstance1","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/not-002.test#NotExampleShape

@@ -8,12 +8,14 @@
      [target-selection]
      Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/node/not-001#TestShape => 0 nodes found
      Selected: []
+     Explanation: {"selector":"instance","argument":"http://datashapes.org/sh/tests/core/node/not-001#TestShape"}
      Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape
      [target-selection]
      Selecting targets by Target nodes => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/node/not-001#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/not-001#ValidResource1","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/not-001#TestShape

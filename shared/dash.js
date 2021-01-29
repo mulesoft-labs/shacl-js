@@ -379,10 +379,16 @@ function validateQualifiedHelper($this, $path, $qualifiedValueShape, $qualifiedV
 		.path($this, toRDFQueryPath($path), "?value")
 		.getArray();
 
+	let subTraceCounter = 0;
 	const proms = allResults.map((sol) => {
+		const nextTrace = `${$this.__TRACER_ID}_${subTraceCounter}`;
+		sol.value.__TRACER_ID = nextTrace;
+		subTraceCounter++;
+		tracer.log($qualifiedValueShape, sol.value, nextTrace, "QUALIFIED-BRANCH", {$this: $this})
 		const condProm1 = SHACL.nodeConformsToShape(sol.value, $qualifiedValueShape);
 		const condProm2 = validateQualifiedConformsToASibling(sol.value, siblingShapes.toArray());
 		return Promise.all([condProm1, condProm2]).then((results) => {
+			tracer.log($qualifiedValueShape, sol.value, sol.value.__TRACER_ID,"QUALIFIED-BRANCH-RESULT", {$this: $this, result: results[0] && !results[1], results: results} )
 			return results[0] && !results[1]; // negation on second condition
 		});
 	});

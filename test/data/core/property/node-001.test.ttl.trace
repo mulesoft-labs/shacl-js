@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/node-001.test#Issue => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/node-001.test#Issue_1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/node-001.test#Issue_2","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"instance","argument":"http://datashapes.org/sh/tests/core/property/node-001.test#Issue"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue
@@ -287,6 +288,7 @@
      [target-selection]
      Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/node-001.test#Person => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/node-001.test#Anon","tracerId":"_tracer_9"},{"id":"http://datashapes.org/sh/tests/core/property/node-001.test#JohnDoeWithEmail","tracerId":"_tracer_10"}]
+     Explanation: {"selector":"instance","argument":"http://datashapes.org/sh/tests/core/property/node-001.test#Person"}
      Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Person

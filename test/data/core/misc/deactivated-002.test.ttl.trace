@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Target nodes => 1 nodes found
      Selected: [{"id":"32","tracerId":"_tracer_1"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/misc/deactivated-002.test#TestShape

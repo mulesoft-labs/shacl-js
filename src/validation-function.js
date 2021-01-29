@@ -48,6 +48,7 @@ ValidationFunction.prototype.doExecute = function (args) {
 ValidationFunction.prototype.execute = function (focusNode, valueNode, constraint) {
     var args = [];
     var namedParams = {};
+    var pushedValue = false;
     for (var i = 0; i < this.funcArgs.length; i++) {
         var arg = this.funcArgs[i];
         var param = this.parameters[i];
@@ -71,6 +72,7 @@ ValidationFunction.prototype.execute = function (focusNode, valueNode, constrain
             if (valueNode != null) {
                 namedParams["$value"] = valueNode.id;
             }
+            pushedValue = true;
             args.push(valueNode);
         }
         else if (arg === "currentShape") {
