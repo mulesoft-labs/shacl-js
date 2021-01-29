@@ -37755,7 +37755,7 @@ module.exports={
   "_args": [
     [
       "elliptic@6.5.2",
-      "/home/agarrote/Development/mulesoft-labs/shacl-js"
+      "/Users/aloose/mulesoft/shacl-js"
     ]
   ],
   "_development": true,
@@ -37781,7 +37781,7 @@ module.exports={
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz",
   "_spec": "6.5.2",
-  "_where": "/home/agarrote/Development/mulesoft-labs/shacl-js",
+  "_where": "/Users/aloose/mulesoft/shacl-js",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"

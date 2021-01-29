@@ -1,6 +1,10 @@
 node_modules
 .idea
+.project
 public/data/*
 public/test.js
 public/test_cases.json
 public/shacl.js
+.DS_Store
+dist/shacl.js
+package-lock.json

@@ -1,0 +1,9 @@
+.project
+.travis.yaml
+gulpfile.js
+webpack.config.js
+LICENSE
+dist
+test
+.DS_Store
+*/package-lock.json
