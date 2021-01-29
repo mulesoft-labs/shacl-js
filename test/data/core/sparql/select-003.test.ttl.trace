@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/sparql/select-003.test#Country => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/sparql/select-003.test#InvalidCountry","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/sparql/select-003.test#ValidCountry","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/sparql/select-003.test#Country"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/sparql/select-003.test#LanguageExampleShape

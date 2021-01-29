@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/maxCount-001.test#Person => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/maxCount-001.test#Person"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape
@@ -121,6 +122,7 @@
      [target-selection]
      Selecting targets by Target nodes => 1 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource","tracerId":"_tracer_3"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape

@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Person => 3 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#InvalidResource2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#ValidResource1","tracerId":"_tracer_3"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/path/path-inverse-001.test#Person"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/path/path-inverse-001.test#TestShape

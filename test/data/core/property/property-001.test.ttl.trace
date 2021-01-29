@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/property-001.test#Person => 3 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/property-001.test#InvalidPerson2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/property-001.test#ValidPerson1","tracerId":"_tracer_3"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/property-001.test#Person"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/property-001.test#PersonShape

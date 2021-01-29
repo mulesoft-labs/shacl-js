@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle => 3 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/and-001.test#InvalidRectangle2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/node/and-001.test#ValidRectangle1","tracerId":"_tracer_3"}]
+     Explanation: {"selector":"instance","argument":"http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/and-001.test#Rectangle

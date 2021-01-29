@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"instance","argument":"http://datashapes.org/sh/tests/core/node/node-001.test#TestClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
@@ -16,13 +17,13 @@
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance
        Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
-         [shape]
-         Target: http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance
-         TracerId: _tracer_1
-         Evaluating shape
-         Error? true
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+       [shape]
+       Target: http://datashapes.org/sh/tests/core/node/node-001.test#InvalidInstance
+       TracerId: _tracer_1
+       Evaluating shape
+       Error? true
         |
         -> Shape: _:b3224
            [function]
@@ -38,13 +39,13 @@
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
-         [shape]
-         Target: http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance
-         TracerId: _tracer_2
-         Evaluating shape
-         Error? false
+    |
+    -> Shape: http://datashapes.org/sh/tests/core/node/node-001.test#TestClass
+       [shape]
+       Target: http://datashapes.org/sh/tests/core/node/node-001.test#ValidInstance
+       TracerId: _tracer_2
+       Evaluating shape
+       Error? false
         |
         -> Shape: _:b3224
            [function]

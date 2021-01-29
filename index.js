@@ -200,6 +200,11 @@ SHACLValidator.prototype.showValidationResults = function(cb) {
 SHACLValidator.prototype.getTrace = function() {
 	return tracer.frames();
 }
+
+SHACLValidator.prototype.printTrace = function() {
+	return tracer.printFrames();
+}
+
 /**
  * Reloads the shapes graph.
  * It will load SHACL and DASH shapes constraints.
@@ -341,13 +346,12 @@ SHACLValidator.prototype.validate = function (data, dataMediaType, shapes, shape
  * Validates the provided data graph against the provided shapes graph
  */
 SHACLValidator.prototype.validateFromModels = function (dataRdfGraph, shapesRdfGraph, cb) {
-	var that = this;
 	tracer.reset();
-	this.updateDataGraphRdfModel(dataRdfGraph, function (e) {
+	this.updateDataGraphRdfModel(dataRdfGraph, (e) => {
 		if (e != null) {
 			cb(e, null);
 		} else {
-			that.updateShapesGraphRdfModel(shapesRdfGraph, function (e, result) {
+			this.updateShapesGraphRdfModel(shapesRdfGraph, (e, result) => {
 				if (e) {
 					cb(e, null);
 				} else {
@@ -390,9 +394,11 @@ SHACLValidator.$rdf = $rdf;
 
 if (typeof(window) != "undefined") {
 	window.GlobalSHACLValidator = SHACLValidator;
+	window.GlobalSHACLValidatorTracer = SHACLValidator;
 }
 if (typeof(global) != "undefined") {
 	global.GlobalSHACLValidator = SHACLValidator;
+	global.GlobalSHACLValidatorTracer = SHACLValidator;
 }
 
 

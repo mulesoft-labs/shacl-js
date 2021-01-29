@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#InvalidInstance","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#ValidInstance","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"instance","argument":"http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/targets/targetClassImplicit-001.test#SuperClass

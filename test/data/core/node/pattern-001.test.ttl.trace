@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestClass => 1 nodes found
      Selected: [{"id":"b158_b9649","tracerId":"_tracer_1"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/node/pattern-001.test#TestClass"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape
@@ -29,6 +30,7 @@
      [target-selection]
      Selecting targets by Target nodes => 7 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/node/pattern-001.test#Test","tracerId":"_tracer_2"},{"id":"9","tracerId":"_tracer_3"},{"id":"John","tracerId":"_tracer_4"},{"id":"20000123","tracerId":"_tracer_5"},{"id":"3456","tracerId":"_tracer_6"},{"id":"39","tracerId":"_tracer_7"},{"id":"777777","tracerId":"_tracer_8"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/pattern-001.test#TestShape

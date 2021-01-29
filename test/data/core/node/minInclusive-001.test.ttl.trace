@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Target nodes => 3 nodes found
      Selected: [{"id":"7","tracerId":"_tracer_1"},{"id":"8","tracerId":"_tracer_2"},{"id":"9","tracerId":"_tracer_3"}]
+     Explanation: {"selector":"targetNode","argument":null}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/minInclusive-001.test#TestShape

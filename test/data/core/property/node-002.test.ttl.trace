@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/node-002.test#Person => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/node-002.test#Bob","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/node-002.test#Reto","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/node-002.test#Person"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape
@@ -47,13 +48,13 @@
              TracerId: _tracer_3
              Evaluating target node http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
              Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
-               [shape]
-               Target: http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
-               TracerId: _tracer_3
-               Evaluating shape
-               Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+             [shape]
+             Target: http://datashapes.org/sh/tests/core/property/node-002.test#BobsAddress
+             TracerId: _tracer_3
+             Evaluating shape
+             Error? false
               |
               -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape
                  [properties]
@@ -131,13 +132,13 @@
              TracerId: _tracer_5
              Evaluating target node http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
              Error? true
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
-               [shape]
-               Target: http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
-               TracerId: _tracer_5
-               Evaluating shape
-               Error? true
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#PersonShape-address
+             [shape]
+             Target: http://datashapes.org/sh/tests/core/property/node-002.test#RetosAddress
+             TracerId: _tracer_5
+             Evaluating shape
+             Error? true
               |
               -> Shape: http://datashapes.org/sh/tests/core/property/node-002.test#AddressShape
                  [properties]

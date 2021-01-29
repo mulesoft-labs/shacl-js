@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/complex/personexample.test#Person => 3 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/complex/personexample.test#Alice","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/complex/personexample.test#Bob","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin","tracerId":"_tracer_3"}]
+     Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/complex/personexample.test#Person"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
@@ -207,7 +208,7 @@
          Evaluating function validateClosed
          Args: {"$value":"http://datashapes.org/sh/tests/core/complex/personexample.test#Calvin","closed":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","ignoredProperties":"_:b376"}
          Explanation: [{"path":{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/complex/personexample.test#birthDate"},"value":{"termType":"Literal","value":"1999-09-09","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#date"}}}]
-         Error? true
+         Error? false
       |
       -> Shape: http://datashapes.org/sh/tests/core/complex/personexample.test#PersonShape
          [properties]

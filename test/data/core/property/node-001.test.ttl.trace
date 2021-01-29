@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/node-001.test#Issue => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/node-001.test#Issue_1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/node-001.test#Issue_2","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"instance","argument":"http://datashapes.org/sh/tests/core/property/node-001.test#Issue"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue
@@ -41,11 +42,19 @@
              Error? true
             |
             -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue-assignedTo
-               [shape]
+               [function]
                Target: http://datashapes.org/sh/tests/core/property/node-001.test#Anon
                TracerId: _tracer_3
-               Evaluating shape
-               Error? true
+               Evaluating function validateClass
+               Args: {"$value":"http://datashapes.org/sh/tests/core/property/node-001.test#Anon","class":"http://datashapes.org/sh/tests/core/property/node-001.test#Person"}
+               Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue-assignedTo
+             [shape]
+             Target: http://datashapes.org/sh/tests/core/property/node-001.test#Anon
+             TracerId: _tracer_3
+             Evaluating shape
+             Error? true
               |
               -> Shape: _:b8083
                  [properties]
@@ -103,14 +112,6 @@
                      Evaluating function validateMinCountProperty
                      Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
                      Error? true
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue-assignedTo
-               [function]
-               Target: http://datashapes.org/sh/tests/core/property/node-001.test#Anon
-               TracerId: _tracer_3
-               Evaluating function validateClass
-               Args: {"$value":"http://datashapes.org/sh/tests/core/property/node-001.test#Anon","class":"http://datashapes.org/sh/tests/core/property/node-001.test#Person"}
-               Error? false
         |
         -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue-submittedBy
            [path]
@@ -175,11 +176,19 @@
              Error? false
             |
             -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue-assignedTo
-               [shape]
+               [function]
                Target: http://datashapes.org/sh/tests/core/property/node-001.test#JohnDoeWithEmail
                TracerId: _tracer_5
-               Evaluating shape
+               Evaluating function validateClass
+               Args: {"$value":"http://datashapes.org/sh/tests/core/property/node-001.test#JohnDoeWithEmail","class":"http://datashapes.org/sh/tests/core/property/node-001.test#Person"}
                Error? false
+          |
+          -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue-assignedTo
+             [shape]
+             Target: http://datashapes.org/sh/tests/core/property/node-001.test#JohnDoeWithEmail
+             TracerId: _tracer_5
+             Evaluating shape
+             Error? false
               |
               -> Shape: _:b8083
                  [properties]
@@ -237,14 +246,6 @@
                      Evaluating function validateMinCountProperty
                      Args: {"minCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
                      Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue-assignedTo
-               [function]
-               Target: http://datashapes.org/sh/tests/core/property/node-001.test#JohnDoeWithEmail
-               TracerId: _tracer_5
-               Evaluating function validateClass
-               Args: {"$value":"http://datashapes.org/sh/tests/core/property/node-001.test#JohnDoeWithEmail","class":"http://datashapes.org/sh/tests/core/property/node-001.test#Person"}
-               Error? false
         |
         -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Issue-submittedBy
            [path]
@@ -287,6 +288,7 @@
      [target-selection]
      Selecting targets by Instances of shape class: http://datashapes.org/sh/tests/core/property/node-001.test#Person => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/node-001.test#Anon","tracerId":"_tracer_9"},{"id":"http://datashapes.org/sh/tests/core/property/node-001.test#JohnDoeWithEmail","tracerId":"_tracer_10"}]
+     Explanation: {"selector":"instance","argument":"http://datashapes.org/sh/tests/core/property/node-001.test#Person"}
      Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/node-001.test#Person

@@ -83,13 +83,26 @@ Tracer.prototype.log = function(shapeId, focusNodeId, tracerId, type, reason) {
             console.log("  - TRACER_ID: " + tracerId);
             console.log("  - REASON: " + JSON.stringify(reason));
         }
-        this.logs.push({
-            shapeId: shapeId.toString(),
-            focusNodeId: actualFocusNodeId,
-            tracerId: tracerId,
-            type: type,
-            reason: reason
-        });
+        if (type === "FUNCTION-EVALUATION" && reason && reason.result && reason.result.then) {
+            reason.result.then((actualResult) => {
+                reason.result = actualResult;
+                this.logs.push({
+                    shapeId: shapeId.toString(),
+                    focusNodeId: actualFocusNodeId,
+                    tracerId: tracerId,
+                    type: type,
+                    reason: reason
+                });
+            })
+        } else {
+            this.logs.push({
+                shapeId: shapeId.toString(),
+                focusNodeId: actualFocusNodeId,
+                tracerId: tracerId,
+                type: type,
+                reason: reason
+            });
+        }
     }
 }
 
@@ -118,6 +131,10 @@ Tracer.prototype.buildFrames = function(shapeId, targetGroups, level) {
             targetValues: focusNodes,
             nested: nested,
             level: level + 1,
+            explanation: {
+                selector:targets.selector,
+                argument: targets.argument
+            },
             error: this.computeStatus(nested)
         }
     });
@@ -263,8 +280,31 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             type: "shape",
             message: "Evaluating shape",
             nested: nested.nested,
+            level: level - 1,
+            error: !functionLog.reason.result
+        }
+    } else if (functionLog.reason.function === "validateQualifiedMinCountProperty" || functionLog.reason.function === "validateQualifiedMaxCountProperty") {
+        const name = functionLog.reason.function === "validateQualifiedMinCountProperty" ? "minCount" : "maxCount";
+        const tracerId = functionLog.tracerId;
+        const branches = this.logs.filter((l) => l.type === "QUALIFIED-BRANCH" && l.reason.$this.__TRACER_ID === tracerId);
+        const nested = branches.map((br) => {
+            const brResult = this.logs.find((l) => l.type === "QUALIFIED-BRANCH-RESULT" && l.shapeId === br.shapeId && l.focusNodeId === br.focusNodeId && l.reason.$this.__TRACER_ID === br.reason.$this.__TRACER_ID);
+            const nestedFrame = this.buildFrame(br.shapeId, {id: br.focusNodeId, tracerId: br.tracerId}, level + 1, acc)
+            nestedFrame.result = this.computeError(brResult);
+            return nestedFrame;
+        });
+        const args = functionLog.reason.args || {};
+        args["qualifiedCount"] = args.qualifiedMinCount || args.qualifiedMaxCount;
+        args["qualification"] = name;
+        return {
+            shapeId: shapeId,
+            focusNode: focusNode,
+            type: "qualified",
+            message: "evaluating qualified " + name,
+            args: args,
+            nested: nested,
             level: level,
-            error: nested.error
+            error: !functionLog.reason.result
         }
     } else if (functionLog.reason.function === "validateNot") {
         const notTargetShape = functionLog.reason.args.not;
@@ -277,7 +317,7 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             message: "Evaluating not",
             nested: nested.nested,
             level: level,
-            error: !nested.error
+            error: !functionLog.reason.result
         }
     } else if (functionLog.reason.function === "validateAnd") {
         const andShape = functionLog.reason.args.and;
@@ -290,7 +330,6 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             nestedFrame.result = this.computeError(brResult);
             return nestedFrame;
         });
-        let error = this.computeStatus(nested);
         return {
             shapeId: shapeId,
             focusNode: focusNode,
@@ -298,7 +337,7 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             message: "Evaluating AND",
             nested: nested,
             level: level,
-            error: error
+            error: !functionLog.reason.result
         }
     } else if (functionLog.reason.function === "validateOr") {
         const orShape = functionLog.reason.args.or;
@@ -311,7 +350,6 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             nestedFrame.result = this.computeError(brResult);
             return nestedFrame;
         });
-        let error = this.computeOrStatus(nested);
         return {
             shapeId: shapeId,
             focusNode: focusNode,
@@ -319,7 +357,7 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             message: "Evaluating OR",
             nested: nested,
             level: level,
-            error: error
+            error: !functionLog.reason.result
         }
     } else if (functionLog.reason.function === "validateXone") {
         const xoneShape = functionLog.reason.args.xone;
@@ -332,7 +370,6 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             nestedFrame.result = this.computeError(brResult);
             return nestedFrame;
         });
-        const branchResult = this.logs.find((l) => l.type === "XONE-RESULT" && l.shapeId === xoneShape && (l.focusNodeId === xoneTargetValueNode || l.focusNodeId === xoneTarget)).reason.result;
         return {
             shapeId: shapeId,
             focusNode: focusNode,
@@ -340,7 +377,7 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             message: "Evaluating XONE",
             nested: nested,
             level: level,
-            error: branchResult
+            error: !functionLog.reason.result
         }
     } else {
         let explanation;
@@ -357,18 +394,18 @@ Tracer.prototype.buildFunctionFrame = function(shapeId, focusNode, functionLog, 
             explanation = functionLog.reason.result
         }
 
-        let error = this.computeError(functionLog);
         return {
             shapeId: shapeId,
             focusNode: focusNode,
             type: "function",
             message: "Evaluating function " + functionLog.reason.function,
+            function: functionLog.reason.function,
             explanation: explanation,
             nested: [],
             args: functionLog.reason.args,
             result: functionLog.reason.result,
             level: level,
-            error: error
+            error: !functionLog.reason.result
         }
     }
 };

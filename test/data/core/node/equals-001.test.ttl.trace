@@ -2,20 +2,21 @@
   [top-level-shape]
   Evaluating shape http://datashapes.org/sh/tests/core/node/equals-001.test#TestShape
   Selected: []
-  Error? true
+  Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/node/equals-001.test#TestShape
      [target-selection]
      Selecting targets by Target nodes => 3 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/node/equals-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/node/equals-001.test#InvalidResource2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/node/equals-001.test#ValidResource1","tracerId":"_tracer_3"}]
-     Error? true
+     Explanation: {"selector":"targetNode","argument":null}
+     Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/equals-001.test#TestShape
        [node]
        Target: http://datashapes.org/sh/tests/core/node/equals-001.test#InvalidResource1
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/node/equals-001.test#InvalidResource1
-       Error? true
+       Error? false
       |
       -> Shape: http://datashapes.org/sh/tests/core/node/equals-001.test#TestShape
          [function]
@@ -24,14 +25,14 @@
          Evaluating function validateEqualsNode
          Args: {"equals":"http://datashapes.org/sh/tests/core/node/equals-001.test#property"}
          Explanation: [{"value":{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/node/equals-001.test#SomeValue"}}]
-         Error? true
+         Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/equals-001.test#TestShape
        [node]
        Target: http://datashapes.org/sh/tests/core/node/equals-001.test#InvalidResource2
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/node/equals-001.test#InvalidResource2
-       Error? true
+       Error? false
       |
       -> Shape: http://datashapes.org/sh/tests/core/node/equals-001.test#TestShape
          [function]
@@ -40,7 +41,7 @@
          Evaluating function validateEqualsNode
          Args: {"equals":"http://datashapes.org/sh/tests/core/node/equals-001.test#property"}
          Explanation: [{"value":{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/node/equals-001.test#InvalidResource2"}}]
-         Error? true
+         Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/node/equals-001.test#TestShape
        [node]

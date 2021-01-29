@@ -8,6 +8,7 @@
      [target-selection]
      Selecting targets by subjects of predicate: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#property1 => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource1","tracerId":"_tracer_2"}]
+     Explanation: {"selector":"subjectsOf","argument":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#property1"}
      Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
@@ -46,6 +47,7 @@
      [target-selection]
      Selecting targets by subjects of predicate: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#property2 => 1 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#ValidResource2","tracerId":"_tracer_3"}]
+     Explanation: {"selector":"subjectsOf","argument":"http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#property2"}
      Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/targets/multipleTargets-001.test#TestShape
