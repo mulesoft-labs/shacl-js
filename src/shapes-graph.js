@@ -112,10 +112,10 @@ var toRDFQueryPath = function ($shapes, shPath) {
         }
         return result;
     }
-    if (shPath.isURI()) {
+    if (shPath.isNamedNode) {
         return shPath;
     }
-    else if (shPath.isBlankNode()) {
+    else if (shPath.isBlankNode) {
         var util = new RDFQueryUtil($shapes);
         if (util.getObject(shPath, "rdf:first")) {
             var paths = util.rdfListToArray(shPath);
@@ -170,7 +170,7 @@ var Constraint = function(shape, component, paramValue, rdfShapesGraph) {
         var param = params[i];
         var value = paramValue ? paramValue : rdfShapesGraph.query().match(shape.shapeNode, param, "?value").getNode("?value");
         if (value) {
-            var localName = RDFQuery.getLocalName(param.uri);
+            var localName = RDFQuery.getLocalName(param.value);
             parameterValues[localName] = value;
         }
     }
@@ -193,7 +193,7 @@ Constraint.prototype.sparql = function(prefixes) {
     const query = (select || ask);
 
     if (query != null) {
-        return (prefixes || "") + query.lex;
+        return (prefixes || "") + query.value;
     }
     return query;
 };
@@ -250,7 +250,7 @@ Constraint.prototype.runValidationQuery = function(prefixString, rdfDataGraph, v
         } else {
             const filteredResult = result.filter((result) => {
                 const thisBinding = (result.get("?this") || result.get("$this"));
-                return thisBinding.toString() === valueNode.uri || thisBinding.toString() === valueNode.id
+                return thisBinding.toString() === valueNode.uri || thisBinding.toString() === valueNode.value
             });
             tracer.log(this.shape.shapeNode, valueNode, valueNode.__TRACER_ID, "SPARQL-QUERY", {text: text, results: filteredResult})
             cb(e,filteredResult);
@@ -314,7 +314,7 @@ ConstraintComponent.prototype.findValidationFunction = function (predicate) {
         if (libraryUrl == null) {
             break;
         } else {
-            libraries.unshift(libraryUrl.toString());
+            libraries.unshift(libraryUrl.value);
         }
         libraryNode = this.context.$shapes.query().match(libraryNode, "sh:jsLibrary", "?library").getNode("?library");
     }
@@ -328,7 +328,7 @@ ConstraintComponent.prototype.findValidationFunction = function (predicate) {
         script = script + "  return function(name) { return eval(name) }\n}";
         eval(script);
         var findInScript = makeFindInScript(this.context.$data, this.context.$shapes, this.context, TermFactory);
-        return new ValidationFunction(functionName.lex, this.parameters, findInScript);
+        return new ValidationFunction(functionName.value, this.parameters, findInScript);
     }
     else {
         return null;
@@ -398,20 +398,20 @@ Shape.prototype.getTargetNodes = function (rdfDataGraph) {
     const that = this;
     if (new RDFQueryUtil(this.context.$shapes).isInstanceOf(this.shapeNode, T("rdfs:Class"))) {
         const toAdd = new RDFQueryUtil(rdfDataGraph).getInstancesOf(this.shapeNode).toArray()
-        tracer.setTargets(this.shapeNode.id, toAdd, "Instances of shape class: " + this.shapeNode, "instance", this.shapeNode.id);
+        tracer.setTargets(this.shapeNode.value, toAdd, "Instances of shape class: " + this.shapeNode, "instance", this.shapeNode.value);
         results.addAll(toAdd);
     }
 
     this.context.$shapes.query().
         match(this.shapeNode, "sh:targetClass", "?targetClass").forEachNode("?targetClass", function (targetClass) {
             let toAdd = new RDFQueryUtil(rdfDataGraph).getInstancesOf(targetClass).toArray()
-            tracer.setTargets(that.shapeNode.id, toAdd, "Instances of target class: " + targetClass, "targetClass", targetClass.id);
+            tracer.setTargets(that.shapeNode.value, toAdd, "Instances of target class: " + targetClass, "targetClass", targetClass.value);
             results.addAll(toAdd);
         });
 
     const toAdd = this.context.$shapes.query().match(this.shapeNode, "sh:targetNode", "?targetNode").getNodeArray("?targetNode");
     if (toAdd.length > 0) {
-        tracer.setTargets(that.shapeNode.id, toAdd, "Target nodes", "targetNode", null);
+        tracer.setTargets(that.shapeNode.value, toAdd, "Target nodes", "targetNode", null);
     }
     results.addAll(toAdd);
 
@@ -419,7 +419,7 @@ Shape.prototype.getTargetNodes = function (rdfDataGraph) {
         match(this.shapeNode, "sh:targetSubjectsOf", "?subjectsOf").
         forEachNode("?subjectsOf", function (predicate) {
             let toAdd = rdfDataGraph.query().match("?subject", predicate, null).getNodeArray("?subject");
-            tracer.setTargets(that.shapeNode.id, toAdd, "subjects of predicate: " + predicate, "subjectsOf", predicate.id);
+            tracer.setTargets(that.shapeNode.value, toAdd, "subjects of predicate: " + predicate, "subjectsOf", predicate.value);
             results.addAll(toAdd);
         });
 
@@ -427,7 +427,7 @@ Shape.prototype.getTargetNodes = function (rdfDataGraph) {
         match(this.shapeNode, "sh:targetObjectsOf", "?objectsOf").
         forEachNode("?objectsOf", function (predicate) {
             let toAdd = rdfDataGraph.query().match(null, predicate, "?object").getNodeArray("?object")
-            tracer.setTargets(that.shapeNode.id, toAdd, "objects of predicate: " + predicate, "objectsOf", predicate.id);
+            tracer.setTargets(that.shapeNode.value, toAdd, "objects of predicate: " + predicate, "objectsOf", predicate.value);
             results.addAll(toAdd);
         });
 
@@ -543,7 +543,7 @@ var fetchLibraries = function(libraries, context, acc, k) {
             try {
                 require('http').get(nextLibrary, function (res) {
                     res.on('data', function (b) {
-                        response = response + b.toString();
+                        response = response + b.value;
                     });
 
                     res.on('error', function (e) {
@@ -567,7 +567,7 @@ ShapesGraph.prototype.loadJSLibraries = function(k) {
     var libraries= this.context.$shapes.query().
       match("?library", "sh:jsLibraryURL", "?library").getNodeArray("?library");
     for (var i=0 ;i<libraries.length; i++) {
-        libraries[i] = libraries[i].toString();
+        libraries[i] = libraries[i].value;
     }
     fetchLibraries(libraries, this.context, that.context.functionsRegistry, function(err) {
         if (err) {

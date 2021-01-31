@@ -18,7 +18,7 @@ var RDFQuery = require("./src/rdfquery");
 var T = RDFQuery.T;
 var ShapesGraph = require("./src/shapes-graph");
 var ValidationEngine = require("./src/validation-engine");
-var rdflibgraph = require("./src/n3-graph");
+var rdflibgraph = require("./src/graphy-graph");
 var RDFLibGraph = rdflibgraph.RDFLibGraph;
 var $rdf = RDFLibGraph.$rdf;
 var fs = require("fs");
@@ -44,8 +44,8 @@ var createRDFListNode = function(store, items, index) {
 	}
 	else {
 		var bnode = TermFactory.blankNode();
-		store.add(bnode, T("rdf:first"), items[index]);
-		store.add(bnode, T("rdf:rest"), createRDFListNode(store, items, index + 1));
+		store.add($rdf.quad(bnode, T("rdf:first"), items[index]));
+		store.add($rdf.quad(bnode, T("rdf:rest"), createRDFListNode(store, items, index + 1)));
 		return bnode;
 	}
 };
@@ -75,7 +75,7 @@ SHACLValidator.prototype.trace = function(shouldTrace) {
 
 SHACLValidator.prototype.compareNodes = function(node1, node2) {
 	// TODO: Does not handle the case where nodes cannot be compared
-	if (node1 && node2 && node1.isLiteral() && node2.isLiteral()) {
+	if (node1 && node2 && node1.isLiteral && node2.isLiteral) {
 		if ((node1.datatype != null) !== (node2.datatype != null)) {
 			return null;
 		} else if (node1.datatype && node2.datatype && node1.datatype.value !== node2.datatype.value) {
@@ -98,6 +98,7 @@ SHACLValidator.prototype.nodeConformsToShape = function(focusNode, shapeNode) {
 				return !foundViolations;
 			})
 			.catch((e) => {
+				console.log(e);
 				this.depth--;
 			})
 	}
@@ -166,17 +167,17 @@ SHACLValidator.prototype.showValidationResults = function(cb) {
 
 		var resultGraph = $rdf.graph();
 		var reportNode = TermFactory.blankNode("report");
-		resultGraph.add(reportNode, T("rdf:type"), T("sh:ValidationReport"));
-		resultGraph.add(reportNode, T("sh:conforms"), T("" + (this.validationEngine.results.length == 0)));
+		resultGraph.add($rdf.quad(reportNode, T("rdf:type"), T("sh:ValidationReport")));
+		resultGraph.add($rdf.quad(reportNode, T("sh:conforms"), T("" + (this.validationEngine.results.length == 0))));
 		var nodes = {};
 
 		for (var i = 0; i < this.validationEngine.results.length; i++) {
 			var result = this.validationEngine.results[i];
 			if (nodes[result[0].toString()] == null) {
 				nodes[result[0].toString()] = true;
-				resultGraph.add(reportNode, T("sh:result"), result[0]);
+				resultGraph.add($rdf.quad(reportNode, T("sh:result"), result[0]));
 			}
-			resultGraph.add(result[0], result[1], result[2]);
+			resultGraph.add($rdf.quad(result[0], result[1], result[2]));
 		}
 
 		const mySerializer = new JsonLdSerializer({ space: '  ' });
@@ -189,9 +190,9 @@ SHACLValidator.prototype.showValidationResults = function(cb) {
 			.on('end', function() {
 				cb(null, new ValidationReport(JSON.parse(acc)));
 			});
-		const resultGraphDataSet = resultGraph.getQuads();
-		for (let i=0; i< resultGraphDataSet.length; i++) {
-			mySerializer.write(resultGraphDataSet[i]);
+		const results = resultGraph.getQuads();
+		for (let i=0; i< results.length; i++) {
+			mySerializer.write(results[i]);
 		}
 		mySerializer.end();
 	}

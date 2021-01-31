@@ -6,7 +6,7 @@
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape
      [target-selection]
-     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Hand => 2 nodes found
+     Selecting targets by Instances of target class: >http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Hand => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#InvalidHand1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ValidHand1","tracerId":"_tracer_2"}]
      Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Hand"}
      Error? false
@@ -17,47 +17,6 @@
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#InvalidHand1
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#InvalidHand1
-         TracerId: _tracer_1
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape-digit-minCount1
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#InvalidHand1
-           TracerId: _tracer_1
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#digit"
-           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#FingerAndThumb"}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape-digit-minCount1
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#InvalidHand1
-             TracerId: _tracer_1
-             Evaluating function validateQualifiedMinCountProperty
-             Args: {"qualifiedValueShape":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ThumbShape","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMinCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
-             Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape-digit-maxCount4
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#InvalidHand1
-           TracerId: _tracer_1
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#digit"
-           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#FingerAndThumb"}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape-digit-maxCount4
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#InvalidHand1
-             TracerId: _tracer_1
-             Evaluating function validateQualifiedMaxCountProperty
-             Args: {"qualifiedValueShape":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#FingerShape","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMaxCount":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
-             Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape
        [node]
@@ -65,44 +24,3 @@
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ValidHand1
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ValidHand1
-         TracerId: _tracer_2
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape-digit-minCount1
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ValidHand1
-           TracerId: _tracer_2
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#digit"
-           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Finger_1"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Thumb_1"}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape-digit-minCount1
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ValidHand1
-             TracerId: _tracer_2
-             Evaluating function validateQualifiedMinCountProperty
-             Args: {"qualifiedValueShape":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ThumbShape","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMinCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
-             Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape-digit-maxCount4
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ValidHand1
-           TracerId: _tracer_2
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#digit"
-           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Finger_1"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#Thumb_1"}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#HandShape-digit-maxCount4
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#ValidHand1
-             TracerId: _tracer_2
-             Evaluating function validateQualifiedMaxCountProperty
-             Args: {"qualifiedValueShape":"http://datashapes.org/sh/tests/core/property/qualifiedMinCountDisjoint-001.test#FingerShape","qualifiedValueShapesDisjoint":"\"true\"^^http://www.w3.org/2001/XMLSchema#boolean","qualifiedMaxCount":"\"4\"^^http://www.w3.org/2001/XMLSchema#integer"}
-             Error? false

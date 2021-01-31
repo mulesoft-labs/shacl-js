@@ -17,27 +17,3 @@
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/minCount-002.test#ValidResource1
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/minCount-002.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/minCount-002.test#ValidResource1
-         TracerId: _tracer_1
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: _:b7616
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/minCount-002.test#ValidResource1
-           TracerId: _tracer_1
-           Selecting target 0 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/minCount-002.test#property"
-           Selected: []
-           Error? false
-          |
-          -> Shape: _:b7616
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/minCount-002.test#ValidResource1
-             TracerId: _tracer_1
-             Evaluating function validateMinCountProperty
-             Args: {"minCount":"\"0\"^^http://www.w3.org/2001/XMLSchema#integer"}
-             Error? false

@@ -2,78 +2,28 @@
   [top-level-shape]
   Evaluating shape http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
   Selected: []
-  Error? true
+  Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
      [target-selection]
      Selecting targets by Target nodes => 5 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource2","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource1","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource2","tracerId":"_tracer_4"},{"id":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource3","tracerId":"_tracer_5"}]
      Explanation: {"selector":"targetNode","argument":null}
-     Error? true
+     Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource1
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource1
-       Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource1
-         TracerId: _tracer_1
-         Evaluating nested property constraints
-         Error? true
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource1
-           TracerId: _tracer_1
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1"
-           Selected: [{"termType":"Literal","value":"5","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
-           Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource1
-             TracerId: _tracer_1
-             Evaluating function validateLessThanOrEqualsProperty
-             Args: {"lessThanOrEquals":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property2"}
-             Explanation: [{"value":{"termType":"Literal","value":"5","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}}]
-             Error? true
+       Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource2
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource2
-       Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource2
-         TracerId: _tracer_2
-         Evaluating nested property constraints
-         Error? true
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource2
-           TracerId: _tracer_2
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1"
-           Selected: [{"termType":"Literal","value":"6","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}},{"termType":"Literal","value":"4","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
-           Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#InvalidResource2
-             TracerId: _tracer_2
-             Evaluating function validateLessThanOrEqualsProperty
-             Args: {"lessThanOrEquals":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property2"}
-             Explanation: [{"value":{"termType":"Literal","value":"6","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}}]
-             Error? true
+       Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
        [node]
@@ -81,30 +31,6 @@
        TracerId: _tracer_3
        Evaluating target node http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource1
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource1
-         TracerId: _tracer_3
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource1
-           TracerId: _tracer_3
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1"
-           Selected: [{"termType":"Literal","value":"4","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource1
-             TracerId: _tracer_3
-             Evaluating function validateLessThanOrEqualsProperty
-             Args: {"lessThanOrEquals":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property2"}
-             Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
        [node]
@@ -112,30 +38,6 @@
        TracerId: _tracer_4
        Evaluating target node http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource2
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource2
-         TracerId: _tracer_4
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource2
-           TracerId: _tracer_4
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1"
-           Selected: [{"termType":"Literal","value":"3.1","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#decimal"}},{"termType":"Literal","value":"3.2","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#decimal"}}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource2
-             TracerId: _tracer_4
-             Evaluating function validateLessThanOrEqualsProperty
-             Args: {"lessThanOrEquals":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property2"}
-             Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
        [node]
@@ -143,27 +45,3 @@
        TracerId: _tracer_5
        Evaluating target node http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource3
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource3
-         TracerId: _tracer_5
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource3
-           TracerId: _tracer_5
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property1"
-           Selected: [{"termType":"Literal","value":"5","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#TestShape-property1
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#ValidResource3
-             TracerId: _tracer_5
-             Evaluating function validateLessThanOrEqualsProperty
-             Args: {"lessThanOrEquals":"http://datashapes.org/sh/tests/core/property/lessThanOrEquals-001.test#property2"}
-             Error? false

@@ -2,82 +2,21 @@
   [top-level-shape]
   Evaluating shape http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape
   Selected: []
-  Error? true
+  Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape
      [target-selection]
      Selecting targets by Target nodes => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/languageIn-001.test#Berg","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/languageIn-001.test#Mountain","tracerId":"_tracer_2"}]
      Explanation: {"selector":"targetNode","argument":null}
-     Error? true
+     Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/languageIn-001.test#Berg
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/languageIn-001.test#Berg
-       Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/languageIn-001.test#Berg
-         TracerId: _tracer_1
-         Evaluating nested property constraints
-         Error? true
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/languageIn-001.test#Berg
-           TracerId: _tracer_1
-           Selecting target 3 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/languageIn-001.test#prefLabel"
-           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/languageIn-001.test#BergLabel"},{"termType":"Literal","value":"Berg","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"Berg","language":"de","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}}]
-           Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-             [node]
-             Target: http://datashapes.org/sh/tests/core/property/languageIn-001.test#BergLabel
-             TracerId: _tracer_3
-             Evaluating target node http://datashapes.org/sh/tests/core/property/languageIn-001.test#BergLabel
-             Error? true
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-               [function]
-               Target: http://datashapes.org/sh/tests/core/property/languageIn-001.test#BergLabel
-               TracerId: _tracer_3
-               Evaluating function validateLanguageIn
-               Args: {"$value":"http://datashapes.org/sh/tests/core/property/languageIn-001.test#BergLabel","languageIn":"_:b6456"}
-               Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-             [node]
-             Target: "Berg"
-             TracerId: _tracer_4
-             Evaluating target node "Berg"
-             Error? true
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-               [function]
-               Target: "Berg"
-               TracerId: _tracer_4
-               Evaluating function validateLanguageIn
-               Args: {"$value":"\"Berg\"","languageIn":"_:b6456"}
-               Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-             [node]
-             Target: "Berg"@de
-             TracerId: _tracer_5
-             Evaluating target node "Berg"@de
-             Error? true
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-               [function]
-               Target: "Berg"@de
-               TracerId: _tracer_5
-               Evaluating function validateLanguageIn
-               Args: {"$value":"\"Berg\"@de","languageIn":"_:b6456"}
-               Error? true
+       Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape
        [node]
@@ -85,64 +24,3 @@
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/property/languageIn-001.test#Mountain
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/languageIn-001.test#Mountain
-         TracerId: _tracer_2
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/languageIn-001.test#Mountain
-           TracerId: _tracer_2
-           Selecting target 3 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/languageIn-001.test#prefLabel"
-           Selected: [{"termType":"Literal","value":"Hill","language":"en-nz","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Maunga","language":"mi","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}},{"termType":"Literal","value":"Mountain","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-             [node]
-             Target: "Hill"@en-nz
-             TracerId: _tracer_6
-             Evaluating target node "Hill"@en-nz
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-               [function]
-               Target: "Hill"@en-nz
-               TracerId: _tracer_6
-               Evaluating function validateLanguageIn
-               Args: {"$value":"\"Hill\"@en-nz","languageIn":"_:b6456"}
-               Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-             [node]
-             Target: "Maunga"@mi
-             TracerId: _tracer_7
-             Evaluating target node "Maunga"@mi
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-               [function]
-               Target: "Maunga"@mi
-               TracerId: _tracer_7
-               Evaluating function validateLanguageIn
-               Args: {"$value":"\"Maunga\"@mi","languageIn":"_:b6456"}
-               Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-             [node]
-             Target: "Mountain"@en
-             TracerId: _tracer_8
-             Evaluating target node "Mountain"@en
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/languageIn-001.test#NewZealandLanguagesShape-prefLabel
-               [function]
-               Target: "Mountain"@en
-               TracerId: _tracer_8
-               Evaluating function validateLanguageIn
-               Args: {"$value":"\"Mountain\"@en","languageIn":"_:b6456"}
-               Error? false

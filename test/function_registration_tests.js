@@ -22,6 +22,7 @@ exports.functionRegistrationTest = function(test) {
         test.ok(e == null);
 
         validator.validate(data, "text/turtle", data, "text/turtle", function (e, report) {
+            test.ok(e == null)
             test.ok(report.conforms() === false);
             test.ok(report.results().length === 2);
             report.results().forEach(function(result) {

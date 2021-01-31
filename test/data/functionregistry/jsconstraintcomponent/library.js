@@ -1,9 +1,10 @@
 function hasMaxLength($value, $customMaxLength) {
-    if($value.isLiteral()) {
-        return $value.lex.length <= $customMaxLength.lex;
+    debugger;
+    if($value.isLiteral) {
+        return $value.value.length <= $customMaxLength.value;
     }
-    else if($value.isURI()) {
-        return $value.uri.length <= $customMaxLength.lex;
+    else if($value.isNamedNode) {
+        return $value.value.length <= $customMaxLength.value;
     }
     else { // Blank node
         return false;
@@ -12,5 +13,6 @@ function hasMaxLength($value, $customMaxLength) {
 
 
 function constantValid($focusNode, $constantValidation) {
-    return $constantValidation.lex === "true";
+    debugger;
+    return $constantValidation.value === "true";
 }

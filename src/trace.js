@@ -69,7 +69,7 @@ Tracer.prototype.setRootShape = function(shapeId) {
             console.log("** SET ROOT SHAPE")
             console.log(" - SHAPE: " + shapeId);
         }
-        this.roots[shapeId] = true;
+        this.roots[shapeId.value] = true;
     }
 }
 

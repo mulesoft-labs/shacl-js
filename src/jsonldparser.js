@@ -1,9 +1,8 @@
-const n3 = require("n3");
 if (typeof (self) === "undefined" && typeof (window) === "undefined" && typeof (global) !== "undefined") {
     self = global;
 }
 const jsonld = require("./jsonld/api");
-var $rdf = n3.DataFactory;
+var $rdf = require("@graphy/core.data.factory");
 
 
 function jsonldObjectToTerm(kb, obj) {

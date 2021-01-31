@@ -2,81 +2,21 @@
   [top-level-shape]
   Evaluating shape http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
   Selected: []
-  Error? true
+  Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
      [target-selection]
      Selecting targets by Target nodes => 4 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/datatype-003.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance1","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance2","tracerId":"_tracer_3"},{"id":"http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance3","tracerId":"_tracer_4"}]
      Explanation: {"selector":"targetNode","argument":null}
-     Error? true
+     Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#InvalidInstance1
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/datatype-003.test#InvalidInstance1
-       Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#InvalidInstance1
-         TracerId: _tracer_1
-         Evaluating nested property constraints
-         Error? true
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#InvalidInstance1
-           TracerId: _tracer_1
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/datatype-003.test#value"
-           Selected: [{"termType":"Literal","value":"42","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
-           Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-             [node]
-             Target: "42"^^http://www.w3.org/2001/XMLSchema#integer
-             TracerId: _tracer_5
-             Evaluating target node "42"^^http://www.w3.org/2001/XMLSchema#integer
-             Error? true
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-               [or]
-               Target: "42"^^http://www.w3.org/2001/XMLSchema#integer
-               TracerId: _tracer_5
-               Evaluating OR
-               Error? true
-              |
-              -> Shape: _:b5859
-                 [node]
-                 Target: 42
-                 TracerId: _tracer_5
-                 Evaluating target node 42
-                 Error? true
-                |
-                -> Shape: _:b5859
-                   [function]
-                   Target: 42
-                   TracerId: _tracer_5
-                   Evaluating function validateDatatype
-                   Args: {"$value":"\"42\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/2001/XMLSchema#string"}
-                   Error? true
-              |
-              -> Shape: _:b5861
-                 [node]
-                 Target: 42
-                 TracerId: _tracer_5
-                 Evaluating target node 42
-                 Error? true
-                |
-                -> Shape: _:b5861
-                   [function]
-                   Target: 42
-                   TracerId: _tracer_5
-                   Evaluating function validateDatatype
-                   Args: {"$value":"\"42\"^^http://www.w3.org/2001/XMLSchema#integer","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
-                   Error? true
+       Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
        [node]
@@ -84,66 +24,6 @@
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance1
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance1
-         TracerId: _tracer_2
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance1
-           TracerId: _tracer_2
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/datatype-003.test#value"
-           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-             [node]
-             Target: "A"
-             TracerId: _tracer_6
-             Evaluating target node "A"
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-               [or]
-               Target: "A"
-               TracerId: _tracer_6
-               Evaluating OR
-               Error? false
-              |
-              -> Shape: _:b5859
-                 [node]
-                 Target: A
-                 TracerId: _tracer_6
-                 Evaluating target node A
-                 Error? false
-                |
-                -> Shape: _:b5859
-                   [function]
-                   Target: A
-                   TracerId: _tracer_6
-                   Evaluating function validateDatatype
-                   Args: {"$value":"\"A\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
-                   Error? false
-              |
-              -> Shape: _:b5861
-                 [node]
-                 Target: A
-                 TracerId: _tracer_6
-                 Evaluating target node A
-                 Error? true
-                |
-                -> Shape: _:b5861
-                   [function]
-                   Target: A
-                   TracerId: _tracer_6
-                   Evaluating function validateDatatype
-                   Args: {"$value":"\"A\"","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
-                   Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
        [node]
@@ -151,66 +31,6 @@
        TracerId: _tracer_3
        Evaluating target node http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance2
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance2
-         TracerId: _tracer_3
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance2
-           TracerId: _tracer_3
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/datatype-003.test#value"
-           Selected: [{"termType":"Literal","value":"A","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-             [node]
-             Target: "A"
-             TracerId: _tracer_7
-             Evaluating target node "A"
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-               [or]
-               Target: "A"
-               TracerId: _tracer_7
-               Evaluating OR
-               Error? false
-              |
-              -> Shape: _:b5859
-                 [node]
-                 Target: A
-                 TracerId: _tracer_7
-                 Evaluating target node A
-                 Error? false
-                |
-                -> Shape: _:b5859
-                   [function]
-                   Target: A
-                   TracerId: _tracer_7
-                   Evaluating function validateDatatype
-                   Args: {"$value":"\"A\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
-                   Error? false
-              |
-              -> Shape: _:b5861
-                 [node]
-                 Target: A
-                 TracerId: _tracer_7
-                 Evaluating target node A
-                 Error? true
-                |
-                -> Shape: _:b5861
-                   [function]
-                   Target: A
-                   TracerId: _tracer_7
-                   Evaluating function validateDatatype
-                   Args: {"$value":"\"A\"","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
-                   Error? true
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
        [node]
@@ -218,63 +38,3 @@
        TracerId: _tracer_4
        Evaluating target node http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance3
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance3
-         TracerId: _tracer_4
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/datatype-003.test#ValidInstance3
-           TracerId: _tracer_4
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/datatype-003.test#value"
-           Selected: [{"termType":"Literal","value":"A","language":"en","datatype":{"termType":"NamedNode","value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-             [node]
-             Target: "A"@en
-             TracerId: _tracer_8
-             Evaluating target node "A"@en
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/datatype-003.test#TestShape-value
-               [or]
-               Target: "A"@en
-               TracerId: _tracer_8
-               Evaluating OR
-               Error? false
-              |
-              -> Shape: _:b5859
-                 [node]
-                 Target: A
-                 TracerId: _tracer_8
-                 Evaluating target node A
-                 Error? true
-                |
-                -> Shape: _:b5859
-                   [function]
-                   Target: A
-                   TracerId: _tracer_8
-                   Evaluating function validateDatatype
-                   Args: {"$value":"\"A\"@en","datatype":"http://www.w3.org/2001/XMLSchema#string"}
-                   Error? true
-              |
-              -> Shape: _:b5861
-                 [node]
-                 Target: A
-                 TracerId: _tracer_8
-                 Evaluating target node A
-                 Error? false
-                |
-                -> Shape: _:b5861
-                   [function]
-                   Target: A
-                   TracerId: _tracer_8
-                   Evaluating function validateDatatype
-                   Args: {"$value":"\"A\"@en","datatype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"}
-                   Error? false

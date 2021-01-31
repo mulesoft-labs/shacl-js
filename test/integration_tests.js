@@ -2,7 +2,7 @@ var SHACLValidator = require("../index");
 var tracer = require("../src/trace");
 var fs = require("fs");
 // expected result
-var rdflibgraph = require("../src/n3-graph");
+var rdflibgraph = require("../src/graphy-graph");
 var RDFLibGraph = rdflibgraph.RDFLibGraph;
 
 
@@ -101,6 +101,7 @@ var validateReports = function(test, input) {
                             .query()
                             .match("?s","dash:expectedResult", "dash:FailureResult")
                             .hasSolution();
+                        console.log(e)
                         test.ok(maybeFailure);
                         test.done();
                     }, function(e) {
@@ -142,12 +143,12 @@ fs.readdirSync(__dirname + "/data/core").forEach(function(dir) {
     fs.readdirSync(__dirname + "/data/core/" + dir).forEach(function(file) {
         if (!file.endsWith(".trace")) {
             if (dir === "property") {
-                if (file.indexOf("qualifiedValueShape-001") > -1) {
+                //if (file.indexOf("qualifiedMinCountDisjoint-001.test.ttl") > -1) {
                     exports[dir + "-test-" + file] = function (test) {
                         tracer.withTracing(true);
                         validateReports(test, __dirname + "/data/core/" + dir + "/" + file);
                     };
-                }
+                //}
             }
         }
     });

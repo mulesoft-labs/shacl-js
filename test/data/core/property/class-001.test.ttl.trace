@@ -2,67 +2,21 @@
   [top-level-shape]
   Evaluating shape http://datashapes.org/sh/tests/core/property/class-001.test#TestShape
   Selected: []
-  Error? true
+  Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape
      [target-selection]
      Selecting targets by Target nodes => 3 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource1","tracerId":"_tracer_2"},{"id":"http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource2","tracerId":"_tracer_3"}]
      Explanation: {"selector":"targetNode","argument":null}
-     Error? true
+     Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1
-       Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1
-         TracerId: _tracer_1
-         Evaluating nested property constraints
-         Error? true
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1
-           TracerId: _tracer_1
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/class-001.test#testProperty"
-           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1"},{"termType":"Literal","value":"A string","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
-           Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-             [node]
-             Target: http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1
-             TracerId: _tracer_4
-             Evaluating target node http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1
-             Error? true
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-               [function]
-               Target: http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1
-               TracerId: _tracer_4
-               Evaluating function validateClass
-               Args: {"$value":"http://datashapes.org/sh/tests/core/property/class-001.test#InvalidResource1","class":"http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass"}
-               Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-             [node]
-             Target: "A string"
-             TracerId: _tracer_5
-             Evaluating target node "A string"
-             Error? true
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-               [function]
-               Target: "A string"
-               TracerId: _tracer_5
-               Evaluating function validateClass
-               Args: {"$value":"\"A string\"","class":"http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass"}
-               Error? true
+       Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape
        [node]
@@ -70,52 +24,6 @@
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource1
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource1
-         TracerId: _tracer_2
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource1
-           TracerId: _tracer_2
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/class-001.test#testProperty"
-           Selected: [{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/class-001.test#SubClassInstance"},{"termType":"NamedNode","value":"http://datashapes.org/sh/tests/core/property/class-001.test#SuperClassInstance"}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-             [node]
-             Target: http://datashapes.org/sh/tests/core/property/class-001.test#SubClassInstance
-             TracerId: _tracer_6
-             Evaluating target node http://datashapes.org/sh/tests/core/property/class-001.test#SubClassInstance
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-               [function]
-               Target: http://datashapes.org/sh/tests/core/property/class-001.test#SubClassInstance
-               TracerId: _tracer_6
-               Evaluating function validateClass
-               Args: {"$value":"http://datashapes.org/sh/tests/core/property/class-001.test#SubClassInstance","class":"http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass"}
-               Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-             [node]
-             Target: http://datashapes.org/sh/tests/core/property/class-001.test#SuperClassInstance
-             TracerId: _tracer_7
-             Evaluating target node http://datashapes.org/sh/tests/core/property/class-001.test#SuperClassInstance
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-               [function]
-               Target: http://datashapes.org/sh/tests/core/property/class-001.test#SuperClassInstance
-               TracerId: _tracer_7
-               Evaluating function validateClass
-               Args: {"$value":"http://datashapes.org/sh/tests/core/property/class-001.test#SuperClassInstance","class":"http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass"}
-               Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape
        [node]
@@ -123,49 +31,3 @@
        TracerId: _tracer_3
        Evaluating target node http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource2
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource2
-         TracerId: _tracer_3
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/class-001.test#ValidResource2
-           TracerId: _tracer_3
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/class-001.test#testProperty"
-           Selected: [{"termType":"BlankNode","value":"b5501"},{"termType":"BlankNode","value":"b5502"}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-             [node]
-             Target: _:b5501
-             TracerId: _tracer_8
-             Evaluating target node _:b5501
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-               [function]
-               Target: _:b5501
-               TracerId: _tracer_8
-               Evaluating function validateClass
-               Args: {"$value":"_:b5501","class":"http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass"}
-               Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-             [node]
-             Target: _:b5502
-             TracerId: _tracer_9
-             Evaluating target node _:b5502
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/class-001.test#TestShape-testProperty
-               [function]
-               Target: _:b5502
-               TracerId: _tracer_9
-               Evaluating function validateClass
-               Args: {"$value":"_:b5502","class":"http://datashapes.org/sh/tests/core/property/class-001.test#SuperClass"}
-               Error? false

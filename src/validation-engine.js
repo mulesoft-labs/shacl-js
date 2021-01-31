@@ -12,7 +12,7 @@ var nodeLabel = function (node, store) {
         }
         return acc.join(", ");
     }
-    if (node.isURI()) {
+    if (node.isNamedNode) {
         for (prefix in store.namespaces) {
             var ns = store.namespaces[prefix];
             if (node.value.indexOf(ns) === 0) {
@@ -21,11 +21,11 @@ var nodeLabel = function (node, store) {
         }
         return "<" + node.value + ">";
     }
-    else if (node.isBlankNode()) {
+    else if (node.isBlankNode) {
         return "Blank node " + node.toString();
     }
     else {
-        return "" + node;
+        return node.value;
     }
 };
 
@@ -353,7 +353,7 @@ ValidationEngine.prototype.maxErrorsReached = function() {
 };
 
 ValidationEngine.prototype.withSubstitutions = function (msg, constraint) {
-    var str = msg.lex;
+    var str = msg.value;
     var values = constraint.parameterValues;
     for (var key in values) {
         var label = nodeLabel(values[key], this.context.$shapes);

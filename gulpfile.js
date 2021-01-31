@@ -87,29 +87,6 @@ gulp.task('generate-vocabularies', function () {
     }
 });
 
-/**
- * We generate rdfquery from the shared library and we add it to the validator code and to the
- * list of libraries that must be loaded.
- * Dash.js is only added to the list of loaded libraries.
- */
-gulp.task('generate-libraries', function (done) {
-    var libraries = {
-        "http://datashapes.org/js/dash.js": "./shared/dash.js",
-        "http://datashapes.org/js/rdfquery.js": "./shared/rdfquery.js"
-    };
-    var acc = {};
-    for (var library in libraries) {
-        console.log("Generating " + library);
-        acc[library] = fs.readFileSync(libraries[library]).toString();
-        fs.writeFileSync("./src/libraries.js", "var tracer = require(\"./trace\");\nmodule.exports = " + JSON.stringify(acc));
-    }
-
-    var rdfqueryTemplate = fs.readFileSync("./templates/rdfquery.js").toString();
-    var rdfqueryData = fs.readFileSync("./shared/rdfquery.js").toString();
-    var generated = rdfqueryTemplate.replace("</content>", rdfqueryData);
-    fs.writeFileSync("./src/rdfquery.js", generated);
-    done()
-});
 
 gulp.task('browserify-public-tests', function () {
     if (fs.existsSync('public/test.js')) {

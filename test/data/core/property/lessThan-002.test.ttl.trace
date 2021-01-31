@@ -2,75 +2,25 @@
   [top-level-shape]
   Evaluating shape http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape
   Selected: []
-  Error? true
+  Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape
      [target-selection]
      Selecting targets by Target nodes => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance1","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance2","tracerId":"_tracer_2"}]
      Explanation: {"selector":"targetNode","argument":null}
-     Error? true
+     Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance1
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance1
-       Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance1
-         TracerId: _tracer_1
-         Evaluating nested property constraints
-         Error? true
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape-first
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance1
-           TracerId: _tracer_1
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/lessThan-002.test#first"
-           Selected: [{"termType":"Literal","value":"1","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}},{"termType":"Literal","value":"2","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}]
-           Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape-first
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance1
-             TracerId: _tracer_1
-             Evaluating function validateLessThanProperty
-             Args: {"lessThan":"http://datashapes.org/sh/tests/core/property/lessThan-002.test#second"}
-             Explanation: [{"value":{"termType":"Literal","value":"1","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}},{"value":{"termType":"Literal","value":"1","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}},{"value":{"termType":"Literal","value":"2","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}},{"value":{"termType":"Literal","value":"2","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}}]
-             Error? true
+       Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance2
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance2
-       Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance2
-         TracerId: _tracer_2
-         Evaluating nested property constraints
-         Error? true
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape-first
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance2
-           TracerId: _tracer_2
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/lessThan-002.test#first"
-           Selected: [{"termType":"Literal","value":"10","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}},{"termType":"Literal","value":"10.0","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#double"}}]
-           Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/lessThan-002.test#TestShape-first
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/lessThan-002.test#InvalidInstance2
-             TracerId: _tracer_2
-             Evaluating function validateLessThanProperty
-             Args: {"lessThan":"http://datashapes.org/sh/tests/core/property/lessThan-002.test#second"}
-             Explanation: [{"value":{"termType":"Literal","value":"10","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}},{"value":{"termType":"Literal","value":"10","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#integer"}}},{"value":{"termType":"Literal","value":"10.0","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#double"}}},{"value":{"termType":"Literal","value":"10.0","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#double"}}}]
-             Error? true
+       Error? false

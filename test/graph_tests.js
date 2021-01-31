@@ -1,7 +1,7 @@
-var n3graph = require("../src/n3-graph");
+const graphy = require("../src/graphy-graph");
 
 exports.n3graphTest = function(test) {
-    const graph = new n3graph.RDFLibGraph()
+    const graph = new graphy.RDFLibGraph()
     const jsonld = "{\n" +
         "  \"@context\": {\n" +
         "    \"@vocab\": \"http://dbpedia.org/\"\n" +

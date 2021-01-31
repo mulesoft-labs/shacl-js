@@ -4,7 +4,9 @@ var TermFactory = {
 
     REGEX_URI: /^([a-z][a-z0-9+.-]*):(?:\/\/((?:(?=((?:[a-z0-9-._~!$&'()*+,;=:]|%[0-9A-F]{2})*))(\3)@)?(?=(\[[0-9A-F:.]{2,}\]|(?:[a-z0-9-._~!$&'()*+,;=]|%[0-9A-F]{2})*))\5(?::(?=(\d*))\6)?)(\/(?=((?:[a-z0-9-._~!$&'()*+,;=:@\/]|%[0-9A-F]{2})*))\8)?|(\/?(?!\/)(?=((?:[a-z0-9-._~!$&'()*+,;=:@\/]|%[0-9A-F]{2})*))\10)?)(?:\?(?=((?:[a-z0-9-._~!$&'()*+,;=:@\/?]|%[0-9A-F]{2})*))\11)?(?:#(?=((?:[a-z0-9-._~!$&'()*+,;=:@\/?]|%[0-9A-F]{2})*))\12)?$/i,
 
-    impl: require("n3").DataFactory,   // This needs to be connected to an API such as $rdf
+
+    impl: require("@graphy/core.data.factory"),
+    //impl: require("n3").DataFactory,   // This needs to be connected to an API such as $rdf
 
     // Globally registered prefixes for TTL short cuts
     namespaces: {},
@@ -47,7 +49,7 @@ var TermFactory = {
             if (ns != null) {
                 return this.namedNode(ns + str.substring(col + 1));
             } else {
-                if (str.match(REGEX_URI)) {
+                if (str.match(TermFactory.REGEX_URI)) {
                     return this.namedNode(str)
                 }
             }

@@ -2,75 +2,21 @@
   [top-level-shape]
   Evaluating shape http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape
   Selected: []
-  Error? true
+  Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape
      [target-selection]
-     Selecting targets by Instances of target class: http://datashapes.org/sh/tests/core/property/maxCount-001.test#Person => 2 nodes found
+     Selecting targets by Instances of target class: >http://datashapes.org/sh/tests/core/property/maxCount-001.test#Person => 2 nodes found
      Selected: [{"id":"http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson","tracerId":"_tracer_1"},{"id":"http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource","tracerId":"_tracer_2"}]
      Explanation: {"selector":"targetClass","argument":"http://datashapes.org/sh/tests/core/property/maxCount-001.test#Person"}
-     Error? true
+     Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape
        [node]
        Target: http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson
        TracerId: _tracer_1
        Evaluating target node http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson
-       Error? true
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson
-         TracerId: _tracer_1
-         Evaluating nested property constraints
-         Error? true
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson
-           TracerId: _tracer_1
-           Selecting target 2 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/maxCount-001.test#firstName"
-           Selected: [{"termType":"Literal","value":"George","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}},{"termType":"Literal","value":"John","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
-           Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/maxCount-001.test#InvalidPerson
-             TracerId: _tracer_1
-             Evaluating function validateMaxCountProperty
-             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
-             Error? true
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-             [node]
-             Target: "George"
-             TracerId: _tracer_4
-             Evaluating target node "George"
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-               [function]
-               Target: "George"
-               TracerId: _tracer_4
-               Evaluating function validateDatatype
-               Args: {"$value":"\"George\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
-               Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-             [node]
-             Target: "John"
-             TracerId: _tracer_5
-             Evaluating target node "John"
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-               [function]
-               Target: "John"
-               TracerId: _tracer_5
-               Evaluating function validateDatatype
-               Args: {"$value":"\"John\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
-               Error? false
+       Error? false
     |
     -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape
        [node]
@@ -78,45 +24,6 @@
        TracerId: _tracer_2
        Evaluating target node http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource
        Error? false
-      |
-      -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape
-         [properties]
-         Target: http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource
-         TracerId: _tracer_2
-         Evaluating nested property constraints
-         Error? false
-        |
-        -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-           [path]
-           Target: http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource
-           TracerId: _tracer_2
-           Selecting target 1 values for path
-           Path: "http://datashapes.org/sh/tests/core/property/maxCount-001.test#firstName"
-           Selected: [{"termType":"Literal","value":"John","language":"","datatype":{"termType":"NamedNode","value":"http://www.w3.org/2001/XMLSchema#string"}}]
-           Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-             [function]
-             Target: http://datashapes.org/sh/tests/core/property/maxCount-001.test#ValidResource
-             TracerId: _tracer_2
-             Evaluating function validateMaxCountProperty
-             Args: {"maxCount":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
-             Error? false
-          |
-          -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-             [node]
-             Target: "John"
-             TracerId: _tracer_6
-             Evaluating target node "John"
-             Error? false
-            |
-            -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape-firstName
-               [function]
-               Target: "John"
-               TracerId: _tracer_6
-               Evaluating function validateDatatype
-               Args: {"$value":"\"John\"","datatype":"http://www.w3.org/2001/XMLSchema#string"}
-               Error? false
   |
   -> Shape: http://datashapes.org/sh/tests/core/property/maxCount-001.test#PersonShape
      [target-selection]

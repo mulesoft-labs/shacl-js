@@ -1,4 +1,5 @@
 /// ADDED...
+const NodeSet = require("./rdfquery/node-set");
 var TermFactory = require("./rdfquery/term-factory");
 this["TermFactory"] = TermFactory;
 ///
@@ -265,7 +266,7 @@ AbstractQuery.prototype.orderBy = function(varName) {
  * @param o  the match object or a variable name (string)
  */
 AbstractQuery.prototype.path = function(s, path, o) {
-    if(path && path.value && path.isURI()) {
+    if(path && path.value && path.isNamedNode) {
         return new MatchQuery(this, s, path, o);
     }
     else {
@@ -912,9 +913,9 @@ function compareTerms(t1, t2) {
         return bt;
     }
     else {
-        if(t1.isLiteral()) {
+        if(t1.isLiteral) {
             // TODO: Does not handle date comparison
-            var bd = t1.datatype.uri.localeCompare(t2.datatype.uri);
+            var bd = t1.datatype.value.localeCompare(t2.datatype.value);
             if(bd != 0) {
                 return bd;
             }
@@ -922,8 +923,8 @@ function compareTerms(t1, t2) {
                 return t1.language.localeCompare(t2.language);
             }
             else if(T("xsd:integer").equals(t1.datatype) || T("xsd:decimal").equals(t1.datatype) || T("xsd:long").equals(t1.datatype)) {
-                const t1val = parseInt(t1.valueOf());
-                const t2val = parseInt(t2.valueOf());
+                const t1val = parseInt(t1.value);
+                const t2val = parseInt(t2.value);
                 if (t1val === t2val) {
                     return 0;
                 } else if (t1val < t2val) {
@@ -933,8 +934,8 @@ function compareTerms(t1, t2) {
                 }
             }
             else if(T("xsd:float").equals(t1.datatype) || T("xsd:double").equals(t1.datatype)) {
-                const t1val = parseFloat(t1.valueOf());
-                const t2val = parseFloat(t2.valueOf());
+                const t1val = parseFloat(t1.value);
+                const t2val = parseFloat(t2.value);
                 if (t1val === t2val) {
                     return 0;
                 } else if (t1val < t2val) {
@@ -972,61 +973,6 @@ function getLocalName(uri) {
 }
 
 
-// class NodeSet
-// (a super-primitive implementation for now!)
-
-function NodeSet() {
-    this.values = [];
-}
-
-NodeSet.prototype.add = function(node) {
-    if(!this.contains(node)) {
-        this.values.push(node);
-    }
-}
-
-NodeSet.prototype.addAll = function(nodes) {
-    for(var i = 0; i < nodes.length; i++) {
-        this.add(nodes[i]);
-    }
-}
-
-NodeSet.prototype.contains = function(node) {
-    for(var i = 0; i < this.values.length; i++) {
-        if(this.values[i].equals(node)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-NodeSet.prototype.forEach = function(callback) {
-    for(var i = 0; i < this.values.length; i++) {
-        callback(this.values[i]);
-    }
-}
-
-NodeSet.prototype.size = function() {
-    return this.values.length;
-}
-
-NodeSet.prototype.toArray = function() {
-    return this.values;
-}
-
-NodeSet.prototype.toString = function() {
-    var str = "NodeSet(" + this.size() + "): [";
-    var arr = this.toArray();
-    for(var i = 0; i < arr.length; i++) {
-        if(i > 0) {
-            str += ", ";
-        }
-        str += arr[i];
-    }
-    return str + "]";
-}
-
-
 function var2Attr(varName) {
     if(!varName.indexOf("?") == 0) {
         throw "Variable name must start with ?";
@@ -1044,7 +990,7 @@ function var2Attr(varName) {
 // This should really be doing lazy evaluation and only up to the point
 // where the match object is found.
 function addPathValues(graph, subject, path, set) {
-    if(path.uri) {
+    if(path.value) {
         set.addAll(RDFQuery(graph).match(subject, path, "?object").getNodeArray("?object"));
     }
     else if(Array.isArray(path)) {
@@ -1065,7 +1011,7 @@ function addPathValues(graph, subject, path, set) {
         }
     }
     else if(path.inverse) {
-        if(path.inverse.isURI()) {
+        if(path.inverse.isNamedNode) {
             set.addAll(RDFQuery(graph).match("?subject", path.inverse, subject).getNodeArray("?subject"));
         }
         else {
